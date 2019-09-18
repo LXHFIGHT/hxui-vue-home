@@ -1,0 +1,314 @@
+@import "../variable";
+
+.sidebar-buttons::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.sidebar-buttons::-webkit-scrollbar-track {
+  width: 8px;
+  background-color: transparent;
+}
+.sidebar-buttons::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,.15);
+  background-color: rgba(255, 255, 255, .4);
+}
+
+$opacity-low: .55;
+$opacity-height: 1.0;
+$height-second-level: $height-regular + 4px;
+$color-light-font: $color-heavy;
+
+// 左侧侧边栏样式
+.hx-sidebar {
+  height: 100%;
+  float: left;
+  position: relative;
+  width: $width-sidebar;
+  overflow: hidden;
+  box-shadow: 0 0 $pm-sm rgba(0,0,0,.05);
+  border-right: 1px solid $color-gray-light;
+  z-index: 10;
+  transition: width .4s;
+  // 侧边栏隐藏的效果
+  &.folded {
+    width: 49px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    &:hover {
+      width: $width-sidebar;
+    }
+    & + .hx-main {
+      width: calc(100% - #{$height-navbar});
+      float: right;
+    }
+    .group-btn-sidebar {
+      button.first-level, button.second-level {
+        padding-left: $pm-md;
+        &::before {
+          margin-right: $pm-md;
+        }
+      }
+    }
+  }
+  .sidebar {
+    height: 100%;
+    display: block;
+  }
+  .project-info {
+    padding: $pm-bg 0;
+    text-align: center;
+    img.logo {
+      margin-bottom: $pm-sm;
+      height: $height-navbar;
+      width: $height-navbar;
+      border-radius: 50% 50%;
+    }
+    span.text-name {
+      display: block;
+      width: 100%;
+      color: rgba(255,255,255,.8);
+      font-size: $font-md;
+    }
+    span.text-sub-title {
+      display: block;
+      width: 100%;
+      color: rgba(255,255,255,.8);
+      font-size: $font-sm;
+    }
+  }
+  .sidebar-buttons {
+    @include hcalc(calc(100% - 100px));
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .group-btn-sidebar{
+    width: $width-sidebar;
+    display: block;
+    transition: .4s;
+    margin-bottom: 1px;
+    &:hover {
+      background-color: rgba(253, 69, 69, 0.1);
+    }
+    // 一级菜单按钮
+    button.first-level {
+      display: block;
+      height: $height-navbar;
+      &.selected.no-children {
+        background-color: rgba(255,255,255, .1);
+        color: white;
+        opacity: $opacity-height;
+        &:hover {
+          background-color: $color-main;
+        }
+      }
+      &.no-children:hover {
+        opacity: $opacity-height;
+      }
+      &.no-children:after {
+        content: '';
+      }
+      .icon {
+        opacity: $opacity-low;
+        float: right;
+        margin-right: $pm-sm;
+        margin-top: 0;
+        height: 14px;
+        width: 14px;
+        transition: all .4s;
+      }
+      &.selected .icon {
+        transform: rotate(90deg);
+      }
+    }
+    button.second-level {
+      padding-left: $pm-lg;
+    }
+    // 二级普通菜单按钮
+    button {
+      font-size: 13px;
+      width: 100%;
+      text-align: left;
+      padding-left: $pm-md;
+      height: $height-second-level;
+      color: $color-gray-light;
+      background-color: transparent;
+      opacity: $opacity-low;
+      transition: all .3s;
+      &:hover {
+        opacity: $opacity-height;
+      }
+      &.open:before{
+        transform: rotate(90deg);
+      }
+      &:before {
+        text-align: center;
+        width: $pm-md;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: $pm-sm;
+        transition: all .4s;
+        transform-origin: 25% 55%;
+      }
+    }
+    &.selected button{
+      background-color: rgba(255,255,255, .15);
+      color: white;
+      &:hover {
+        background-color: $color-main;
+      }
+    }
+    .pad-children {
+      padding: $pm-xs $pm-xs 0 0;
+      button {
+        @include borderRadiusRight($height-second-level/2);
+        margin-bottom: $pm-xs;
+      }
+      button {
+        &:hover {
+          background-color: rgba(255, 255, 255, .1);
+        }
+        &.selected {
+          opacity: $opacity-height;
+          background-color: rgba(255, 255, 255, .15);
+          color: white;
+        }
+        &.selected:hover {
+          background-color: rgba(255, 255, 255, .25);
+        }
+      }
+    }
+  }
+  .footer-btn-sidebar {
+    display: block;
+    width: 100%;
+    line-height: $height-navbar;
+    text-align: center;
+    margin-top: 15px;
+  }
+  .version {
+    display: block;
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    text-align: center;
+    color: rgba(255,255,255,.3);
+    font-size: $font-sm;
+  }
+  &.light {
+    background-color: white;
+    .group-btn-sidebar {
+      color: $color-heavy;
+      &:hover {
+        background-color: $color-gray-light;
+      }
+      .first-level {
+        color: $color-dark;
+        font-size: $font-md;
+        &.selected.no-children {
+          color: $color-main;
+          font-weight: 600;
+          background-color: $color-main-light;
+          &:hover {
+            color: $color-main;
+            background-color: $color-main-light;
+          }
+        }
+      }
+      .pad-children {
+        button {
+          color: $color-dark;
+          &.selected {
+            background-color: $color-main-light;
+            color: $color-main;
+            &:hover {
+              background-color: $color-main-light;
+            }
+          }
+          &:hover {
+            background-color: $color-gray;
+          }
+        }
+      }
+    }
+    .version {
+      color: $color-gray-deep;
+      position: absolute;
+    }
+    .footer-btn-sidebar {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: $height-navbar;
+      left: 0;
+      background-color: transparent;
+      border-top: 1px solid $color-gray;
+      text-align: center;
+    }
+  }
+  & + .hx-main {
+    background-color: $color-gray-light;
+    z-index: 1;
+    position: relative;
+    transition: width .4s;
+  }
+}
+
+// 侧边栏自定义滚动条样式
+.hxui-sidebar::-webkit-scrollbar {
+  width: $pm-sm;
+  height: $pm-sm;
+}
+.hxui-sidebar::-webkit-scrollbar-track {
+  width: $pm-sm;
+  background-color: $color-main-dark;
+}
+.hxui-sidebar::-webkit-scrollbar-thumb {
+  border-radius: $pm-sm;
+  background-color: rgba(255, 255, 255, .4);
+}
+
+@media screen and (min-width: 640px) {
+  .hx-sidebar {
+    .version {
+      bottom: $height-navbar + $pm-sm;
+    }
+  }
+}
+@media screen and (max-width: 640px) {
+  .hx-sidebar {
+    position: absolute!important;
+    left: -100%;
+    z-index: 19;
+    overflow-y: hidden;
+    overflow-x: auto;
+    transition: left .4s;
+    &.show {
+      left: 0;
+    }
+    .project-info {
+      padding: $pm-sm + 4px;
+      .logo {
+        height: $height-regular!important;
+        width: $height-regular!important;
+      }
+    }
+    .sidebar-buttons {
+      @include hcalc(calc(100% - #{$height-navbar + $height-regular}));
+      display: block;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .version {
+      height: $height-regular;
+      bottom: $height-navbar;
+    }
+    .footer-btn-sidebar {
+      height: $height-normal;
+      margin-top: 0;
+    }
+  }
+}

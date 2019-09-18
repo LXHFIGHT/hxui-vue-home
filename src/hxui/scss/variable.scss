@@ -1,0 +1,85 @@
+// 用于编写适用于整个项目的CSS属性变量
+@import "./mixin";
+
+// 导航栏行高
+$height-navbar: 50px;
+$height-normal: 42px;
+$height-regular: 34px;
+$width-sidebar: 220px;
+
+$height-upload-button: 120px;
+$width-upload-button: 160px;
+
+// 比例
+$full: 100%;
+$half: 50%;
+
+// 通用颜色标注
+$color-main: #ff8f02;
+$color-main-dark: darken($color-main, 36%);
+$color-main-light: rgba($color-main, .1);
+
+$color-white: rgba(255,255,255, .93);
+$color-gray-light: #f8f8f8;
+$color-gray: #eaeaea;
+$color-gray-deep: #bbb;
+$color-heavy:   #636363;
+$color-dark:  #363636;
+$color-black: #000;
+$color-green:   rgb(135, 208, 104);
+$color-green-excel: #1C7243;
+$color-yellow: rgba(255, 235, 90,  1);
+$color-golden: #febf04;
+$color-orange:  #ff8d0a;
+$color-red: #ff5a50;
+$color-red-deep: #dd4b30;
+$color-pink: #f688B4;
+$color-blue: cornflowerblue;
+$color-red-light: rgba(#dd4b30, .1);
+$color-green-light:   rgba(#8ecc45, .1);
+$color-golden-light: rgba(255, 205, 60,  .2);
+$color-orange-light: rgba($color-orange, .1);
+$color-blue-light: lighten($color-blue, 34%);
+
+// 响应式布局参数
+$width-bg-min: 1280px;
+$width-md: 1024px;
+$width-md-min: 100%;
+$width-sm: 640px;
+$width-sm-min: 100%;
+
+// 通用的字体标准
+$font-sm: 12px;
+$font-md: 14px;
+$font-bg: 16px;
+$font-lg: 20px;
+
+// 行高标准
+$line-height-sm: 22px;
+$line-height-md: 26px;
+
+// 圆角半径标准
+$border-radius-md: 4px;
+$border-radius-bg: 8px;
+$border-radius-lg: 12px;
+// 圆角半径标准
+$radius-md: 2vw;
+$radius-bg: 4vw;
+$radius-lg: 6vw;
+
+// padding margin 标准
+$pm-xs: 4px;
+$pm-sm: 8px;
+$pm-md: 16px;
+$pm-bg: 24px;
+$pm-lg: 32px;
+
+// 通用阴影标准
+$shadow-md: 0 3px 6px rgba(0,0,0, .1);
+$shadow-md-dark: 0 3px 6px rgba(0,0,0, .3);
+$shadow-bg: 0 9px 20px -6px rgba(0,0,0, .1);
+$shadow-right-md: 3px 3px 6px rgba(0,0,0, .1);
+$shadow-material:
+0 3px 1px -2px rgba(0,0,0,.2),
+0 2px 2px 0 rgba(0,0,0,.14),
+0 1px 5px 0 rgba(0,0,0,.12);
