@@ -24,16 +24,17 @@
             选择
           </button>
         </div>
-        <div v-for="item in state.poi"
-             v-if="state.poi.length"
-             v-bind:key="item.title"
-             class="item-poi"
-             @click="doChooseItem(item)">
-          {{item.title}}
-          <small v-text="item.address"></small>
-          <button class="hx-button sm btn-select-poi">
-            选择
-          </button>
+        <div v-if="state.poi.length">
+          <div v-for="item in state.poi"
+            v-bind:key="item.title"
+            class="item-poi"
+            @click="doChooseItem(item)">
+            {{item.title}}
+            <small v-text="item.address"></small>
+            <button class="hx-button sm btn-select-poi">
+              选择
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -90,7 +91,6 @@ export default {
         that.map.centerAndZoom(r.point, 16) // 初始化地图,设置中心点坐标和地图级别
         const { lat, lng } = r.point
         that.state.location = { lat, lng, address: '' }
-        console.log('CURRENT STATE: ', this.state)
         that.$_getSurroundingPOIs()
       }, {
         enableHighAccuracy: true
@@ -129,7 +129,6 @@ export default {
       this.Autocomplete.addEventListener('onconfirm', function (e) {
         const _value = e.item.value
         const selectValue = `${_value.province}${_value.city}${_value.district}${_value.street}${_value.business}`
-        console.log('选中的地址为： ', selectValue)
         _setPlace(selectValue)
       })
       this.map.addEventListener('touchend', (e) => {

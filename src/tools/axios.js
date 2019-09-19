@@ -16,7 +16,6 @@ const axios = window.axios
  * @param res 响应数据
  */
 const checkResponse = (res) => {
-  console.log('Analysing Response Data')
   return res.data
 }
 

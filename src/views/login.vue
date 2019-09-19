@@ -111,14 +111,12 @@ export default {
         }
       })
       axios.doPost('user/login', this.userInfo).then((res) => {
-        console.log('LOGIN RESPONSE: ', res)
         this.isLogining = false
       }).catch(() => {
         this.isLogining = false
       })
     },
     doRegister () {
-      console.log('注册')
     },
     keyForLogin () {
       if (event.keyCode === 13) {
@@ -126,7 +124,6 @@ export default {
       }
     },
     keyForRegister () {
-      console.log('Yahoo')
     }
   }
 }

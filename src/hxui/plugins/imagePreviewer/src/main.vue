@@ -131,7 +131,6 @@ export default {
       this.$_transform()
     },
     $_rotate (isRotateRight) {
-      console.log('LINX', toast.LEVEL_WARNING)
       const { degree } = this
       const { imageElem } = this.$refs
       isRotateRight ? (this.degree = degree + 90) : (this.degree = degree - 90)
@@ -172,7 +171,6 @@ export default {
       this.$_adjustScale(false)
     },
     doTouchImage () {
-      console.log(event)
     },
     doMouseDown () {
       const { pageX, pageY } = event
@@ -202,7 +200,6 @@ export default {
       }
     },
     doTouchDown () {
-      console.log('START', event)
       const { pageX, pageY } = event.targetTouches[0]
       this.matrix = {
         ...this.matrix,
@@ -212,7 +209,6 @@ export default {
       }
     },
     doTouchUp () {
-      console.log('END', event)
       this.matrix = {
         ...this.matrix,
         isMoving: false,
@@ -221,7 +217,6 @@ export default {
       }
     },
     doTouchMove () {
-      console.log('MOVING:', event)
       if (this.matrix.isMoving) {
         const { pageX, pageY } = event.changedTouches[0]
         this.matrix = {

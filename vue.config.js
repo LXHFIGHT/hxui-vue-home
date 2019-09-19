@@ -6,9 +6,9 @@ module.exports = {
   publicPath: '/',
   productionSourceMap: false,
   chainWebpack: config => {
-    config // 如果不需要打包接口汇报，则注释调本行配置
-      .plugin('webpack-bundle-analyzer')
-      .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
+    // config // 如果不需要打包接口汇报，则注释调本行配置
+    //   .plugin('webpack-bundle-analyzer')
+    //   .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
   },
 	configureWebpack: config => {
     config.resolve = {

@@ -90,7 +90,6 @@ export default {
   watch: {
     text (newVal) {
       // 当编辑类型为数值时，且有最大数限制时
-      console.log(newVal)
       if (isNaN(newVal) || this.type !== this.InputTypes.NUMBER) {
         return
       }

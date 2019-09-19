@@ -59,7 +59,6 @@ export default {
     doCreateTag () {
       if (!this.content && event.keyCode === 8) { 
         // 内容为空时按删除按钮
-        console.log(event.keyCode)
         this.doRemoveTag(this.value.length - 1)
         return
       }

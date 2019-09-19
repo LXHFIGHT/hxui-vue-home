@@ -51,7 +51,6 @@ const _compressImage = (img, compress) => {
   const initSize = img.src.length
   let height = img.height
   let width = img.width
-  console.log('初始图片高宽：', height, width)
   let ratio = width * height / SIZE_MAX_FOR_CANVAS
   let canvas = document.createElement('canvas')
   // 如果图片大于四百万像素，计算压缩比并将大小压至400万以下

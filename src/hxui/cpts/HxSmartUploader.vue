@@ -152,13 +152,11 @@ export default {
       }
       img.src = image
       img.onload = () => {
-        console.log('IMAGE LOADED')
         this.isImageError = false
         this.isUploading = false
       }
       img.onerror = (err) => {
         this.isImageError = true
-        console.log('IMAGE ERROR:', err)
         this.isUploading = false
       }
     },
@@ -180,7 +178,6 @@ export default {
           this.isImageError = false
           _doUploadImages(this.uploadApi, data).then(res => {
             if (res) {
-              console.log('success', res.data)
               this.isUploading = false
               this.onUpload(res.data, this.id)
             }
@@ -196,7 +193,6 @@ export default {
       document.getElementById(id).click()
     },
     doPreviewImage () {
-      console.log('Image', this.value)
       if (typeof this.value === 'string') {
         previewImage(this.value)
       } else {

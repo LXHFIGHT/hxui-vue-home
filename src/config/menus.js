@@ -25,7 +25,6 @@ let menus = [
 
 export default menus
 export const initMenus = (path) => {
-  console.log('To: ', path)
   for (let menu of menus) {
     if (menu.state === path) {
       menu.selected = true

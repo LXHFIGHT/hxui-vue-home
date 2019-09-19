@@ -36,7 +36,6 @@ export default {
   },
   methods: {
     $_isUrl (url) {
-      console.log('URL:', url)
       if (!url) {
         return false
       } 

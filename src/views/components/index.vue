@@ -40,7 +40,6 @@ export default {
       this.$hxui.popTip('Yahoo')
     },
     doSelectCatalog (value) {
-      console.log('Select Data: ', value)
       this.$router.push(`/components/${value}`)
     }
   }

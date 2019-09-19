@@ -51,7 +51,6 @@ export default {
       const windowHeight = document.body.clientHeight
       $picker.style.top = `${pageY}px`
       $picker.style.left = `${pageX}px`
-      console.log('data', $view, pageX, pageY, windowWidth, windowHeight)
     },
     doShowPicker () {
       this.showPicker = true

@@ -84,7 +84,6 @@ export default {
       this.showOptions = false
     },
     doSelect (option) {
-      console.log('Data:', option, this.detail)
       this.$emit('input', option.key)
       this.$emit('change', option)
       this.$forceUpdate()
