@@ -28,6 +28,7 @@
 
 <script>
 export default {
+  name: 'hx-header',
   data () {
     return {
       hasSearchElem: false

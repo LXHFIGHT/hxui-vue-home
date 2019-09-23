@@ -13,7 +13,9 @@ export default {
     return {}
   },
   props: {
-    value: '',
+    value: {
+      type: [Boolean, String, Number]
+    },
     doToggle: {
       type: Function,
       default: function () {

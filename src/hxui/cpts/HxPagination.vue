@@ -32,7 +32,7 @@
 <script>
 import toast from './../plugins/toast'
 export default {
-  name: 'HxPagination',
+  name: 'hx-pagination',
   data () {
     return {
       timer: null,

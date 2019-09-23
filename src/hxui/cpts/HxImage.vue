@@ -5,24 +5,24 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        type: ''
-      }
-    },
-    props: {
-      image: {
-        type: String,
-        required: true
-      },
-      round: {
-        type: Boolean,
-        default: false
-      }
-    },
-    created () {
-      
+export default {
+  data () {
+    return {
+      type: ''
     }
+  },
+  props: {
+    image: {
+      type: String,
+      required: true
+    },
+    round: {
+      type: Boolean,
+      default: false
+    }
+  },
+  created () {
+      
   }
+}
 </script>
