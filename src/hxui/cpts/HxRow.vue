@@ -3,6 +3,8 @@
     <label v-if="label">
       {{ label }}
       <span v-if="required" class="tip">*</span>
+      <span class="label-tips" v-text="tips" v-if="tips"></span>
+      <slot name="label"></slot>
     </label>
     <div class="content">
       <slot ></slot>
@@ -29,6 +31,9 @@ export default {
         return ['md', 'bg', 'null'].includes(val)
       }
     },
+    tips: {
+      type: String // 展示在label中的提示文本
+    },  
     oneline: {
       type: [String, Boolean, Number],
       default: false

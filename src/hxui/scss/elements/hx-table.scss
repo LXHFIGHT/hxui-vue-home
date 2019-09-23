@@ -15,6 +15,9 @@
       padding: $pm-sm $pm-sm;
       font-size: 13px;
       word-break: break-all;
+      &.left {
+        text-align: justify;
+      }
       &.flex {
         display: flex;
         align-items: center; 

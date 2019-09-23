@@ -47,8 +47,8 @@ export default {
       const $picker = this.$refs.padPicker
       const pageX = getElementToPageLeft($view)
       const pageY = getElementToPageTop($view)
-      const windowWidth = document.body.clientWidth
-      const windowHeight = document.body.clientHeight
+      // const windowWidth = document.body.clientWidth
+      // const windowHeight = document.body.clientHeight
       $picker.style.top = `${pageY}px`
       $picker.style.left = `${pageX}px`
     },

@@ -156,6 +156,7 @@ export default {
         this.isUploading = false
       }
       img.onerror = (err) => {
+        console.warn('Image error: ', err)
         this.isImageError = true
         this.isUploading = false
       }

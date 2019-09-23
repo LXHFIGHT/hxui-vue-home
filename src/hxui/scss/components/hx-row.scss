@@ -84,6 +84,12 @@ $width-label-bg: 200px;
       font-size: $font-sm;
       line-height: $height-regular;
     }
+    .label-tips {
+      color: $color-gray-deep;
+      font-size: $font-sm;
+      line-height: 1.4;
+      display: block;
+    }
   }
 
   // 地图模块
