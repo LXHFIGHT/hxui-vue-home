@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import HxNavbar from './../../hxui/cpts/HxNavbar.vue'
+import { HxNavbar } from 'hxui'
 import menus from './../../config/menus'
 import { project } from './../../config' 
 export default {

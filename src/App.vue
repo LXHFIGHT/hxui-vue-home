@@ -11,7 +11,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./hxui/scss/index";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

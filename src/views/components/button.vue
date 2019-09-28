@@ -125,7 +125,7 @@
 </template>
 
 <script>
-import HxButton from './../../hxui/cpts/HxButton'
+import { HxButton } from 'hxui'
 export default {
   components: {
     HxButton

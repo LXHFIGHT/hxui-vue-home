@@ -64,12 +64,12 @@
 </template>
 
 <script>
+import { HxNavbar } from 'hxui'
 import menus, { restoreMenu } from '../../config/menus'
 import { project } from '../../config'
 import { Themes } from './../../config/const'
-import HxNavbar from './../../hxui/cpts/HxNavbar'
-import iconRight from './../../hxui/img/icon/icon-caret-right.png'
-import iconRightForLight from './../../hxui/img/icon/icon-caret-right-gray.png'
+import iconRight from './../../assets/img/icon-caret-right.png'
+import iconRightForLight from './../../assets/img/icon-caret-right-gray.png'
 export default {
   name: 'admin',
   components: {

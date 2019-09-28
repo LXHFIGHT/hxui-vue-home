@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import HxCatalog from './../../hxui/cpts/HxCatalog'
+import { HxCatalog } from 'hxui'
 import { project } from './../../config'
 export default {
   components: {

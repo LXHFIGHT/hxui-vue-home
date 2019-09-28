@@ -89,8 +89,7 @@
 </template>
 
 <script>
-import HxRow from './../../hxui/cpts/HxRow'
-import HxInput from './../../hxui/cpts/HxInput'
+import { HxRow, HxInput } from 'hxui'
 export default {
   components: {
     HxInput,
