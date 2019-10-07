@@ -13,6 +13,7 @@
 <script>
 import { HxCatalog } from 'hxui'
 import { project } from './../../config'
+import { componentsCatalog } from './../../config/catalogs'
 export default {
   components: {
     HxCatalog
@@ -20,19 +21,7 @@ export default {
   data () {
     return {
       project,
-      menus: [
-        {
-          key: '组件介绍',
-          disabled: true,
-          children: [
-            '基本',
-            { key: 'Button 按钮', value: 'hx-button' },
-            { key: 'Image 图片', value: 'hx-image' },
-            '表单',
-            { key: 'Input 输入框', value: 'hx-input' }
-          ]
-        }
-      ]
+      menus: componentsCatalog
     }
   },
   methods: {

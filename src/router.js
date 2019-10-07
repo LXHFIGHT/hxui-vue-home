@@ -50,6 +50,11 @@ export default new Router({
               component: resolve => require(['@/views/components/input.vue'], resolve)
             },
             {
+              path: '/components/hx-row',
+              name: 'hx-row',
+              component: resolve => require(['@/views/components/row.vue'], resolve)
+            },
+            {
               path: '/components/select',
               name: 'select',
               component: resolve => require(['@/views/components/select.vue'], resolve)
