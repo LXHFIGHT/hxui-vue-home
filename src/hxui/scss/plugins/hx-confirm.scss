@@ -1,0 +1,96 @@
+@import "./../variable.scss";
+
+.hx-modal.confirm {
+  .content {
+    .header, .footer { 
+      margin: 0;
+    }
+    .footer {
+      padding-top: $pm-md;
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .hx-modal.confirm {
+    .content {
+      padding-top: $pm-sm;
+      width: 400px!important;
+      text-align: justify;
+      color: $color-dark;
+      font-size: $font-bg;
+      .confirm-content {
+        padding: $pm-bg $pm-md $pm-bg;
+        text-align: center;
+        font-size: $font-md;
+      }
+      .alert-content {
+        padding: $pm-lg $pm-md $pm-bg;
+        font-size: $font-bg;
+        text-align: center;
+      }
+      .prompt-content {
+        padding: $pm-sm 0 0;
+        .tips {
+          font-size: $font-md;
+          color: #aaa;
+        }
+      }
+      footer {
+        text-align: right;
+        padding: 0;
+        .hx-button {
+          min-width: $height-navbar * 1.5;
+        }
+        .hx-button + .hx-button {
+          margin-left: $pm-sm;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  /* 自下而上弹出样式已迁移到 hx-modal.scss 中 */
+  .hx-modal.confirm {
+    .content {
+      overflow: hidden;
+      color: $color-heavy;
+      font-size: $font-bg;
+      height: auto;
+      padding: 0;
+      header {
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        line-height: $height-navbar;
+        height: $height-navbar;
+        display: block;
+        border-bottom: 1px solid $color-gray;
+      }
+      .confirm-content {
+        display: block;
+        position: relative;
+        text-align: center;
+        font-size: 5vw;
+        line-height: 24px; 
+        padding: $pm-bg*1.5 $pm-md;
+      }
+      footer {
+        font-size: 12px;
+        display: flex;
+        .btn-confirm, .btn-cancel {
+          border: none;
+          border-radius: 0;
+          height: $height-normal;
+          flex: 1;
+          margin: 0!important;
+        }
+        .btn-cancel {
+          background-color: $color-gray-light;
+        }
+      }
+    }
+  }
+}
+

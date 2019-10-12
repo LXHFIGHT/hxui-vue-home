@@ -1,0 +1,73 @@
+@import "./../variable.scss";
+
+/**
+ * hx-block
+ */
+.hx-block {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  .btn-show-sidebar {
+    display: none;
+  }
+  >.right,
+  >.left {
+    display: inline-block;
+    width: 50%;
+  }
+  >.left {
+    float: left;
+  }
+  >.right {
+    float: right;
+  }
+}
+
+@mixin btnSidebar($color) {
+  display: block;
+  position: absolute;
+  top: $pm-sm;
+  left: $pm-sm;
+  padding: 0;
+  height: $height-regular;
+  width: $height-regular;
+  z-index: 20;
+  border-radius: 50% 50%;
+  color: $color;
+  background-color: transparent;
+}
+
+@media screen and (min-width: 640px) {
+  .hx-block {
+    .btn-toggle-sidebar {
+      @include btnSidebar($color-gray-deep);
+      &.folded {
+        background-color: $color-gray-light;
+      }
+      &:hover {
+        background-color: $color-gray-light;
+      }
+      &:active {
+        background-color: $color-gray;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .hx-block {
+    .btn-show-sidebar {
+      @include btnSidebar($color-main);
+    }
+    .btn-toggle-sidebar {
+      display: none;
+    }
+  }
+}

@@ -1,24 +1,25 @@
 <template>
   <article class="pad-article">
     <header class="title">行组件 HxRow</header>
-    <span class="desc">HxRow是一个可以拼入其他表单元素，且具有响应式效果的行组件，带有多个插槽</span>
+    <span class="desc">
+      HxRow是一个可以拼入其他表单元素并为之添加标签，且具有响应式效果的行组件，同时HxRow带有多个位置的插槽</span>
     <!-- 文本输入框 -->
     <div class="section">
-      <span class="title">文本框</span>
+      <span class="title">行的标签</span>
       <span class="desc">
-        通过不同参数拓展文本输入框的功能
+        通过 <em>label</em> 属性设置标签，通过调整 <em>label-size</em> 设置左侧标签的宽度。
       </span>
       <div class="pad-preview">
         <div class="demo">
-          <hx-row label="正常文本框">
+          <hx-row label="带着label的行">
             <hx-input type="text" placeholder="请输入文本..."/>
           </hx-row>
-          <hx-row label="不可编辑">
-            <hx-input disabled type="text" placeholder="请输入文本..."/>
+          <hx-row label-size="sm" label="最小规格">
+            <hx-input type="text" placeholder="请输入文本..."/>
           </hx-row>
           <hx-row label="带清空按钮">
             <hx-input type="text" showClearBtn="true" placeholder="请输入文本..." error/>
-          </hx-row>
+          </hx-row> 
           <hx-row label="显示字数">
             <hx-input v-model="hxInput3" type="text" :showLength="true" placeholder="请输入文本..." error/>
           </hx-row>
@@ -89,7 +90,7 @@
 </template>
 
 <script>
-import { HxRow, HxInput } from 'hxui'
+import { HxRow, HxInput } from '@/hxui'
 export default {
   components: {
     HxInput,

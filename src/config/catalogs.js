@@ -8,7 +8,7 @@ export const componentsCatalog = [
       { key: 'Button 按钮', value: 'hx-button' },
       { key: 'Image 图片', value: 'hx-image' },
       '表单',
-      { key: 'HxRow 行', value: 'hx-row' },
+      { key: 'HxRow 行组件', value: 'hx-row' },
       { key: 'HxInput 输入框', value: 'hx-input' }
     ]
   }

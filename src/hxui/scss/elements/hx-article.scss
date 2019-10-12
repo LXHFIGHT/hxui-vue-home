@@ -1,0 +1,57 @@
+@import "./../variable.scss";
+/**
+  .hx-article HX文档组件包含一下5中常规样式：
+    .main-title 主标题
+    .sub-title 副标题
+    .section 文章主体部分，展示区域（也是后续hx-article拓展的地方）
+      .header 展示区域的标题
+      .content 展示区域内容区
+    .table
+  */
+.hx-article {
+  padding: $pm-bg;
+  .main-title {
+    padding: 0 0 $pm-md;
+    color: $color-black;
+    font: { 
+      size: 28px;
+      weight: 400;
+    }
+  }
+  .sub-title {
+    padding: 0 0 $pm-md;
+    color: $color-heavy;
+    display: block;
+  }
+  .section {
+    padding: $pm-md;
+    border-radius: $pm-sm/2;
+    background-color: $color-gray-light;
+  }
+}
+
+.hx-markdown {
+  padding: $pm-bg;
+  a {
+    font-weight: 500;
+    color: $color-main;
+    margin-left: $pm-sm;
+    &:hover {
+      color: lighten($color-main, 8%);
+    }
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: $pm-sm/2;
+  }
+  p {
+    font-size: $font-md;
+    line-height: 1.6;
+  }
+}
+@media screen and (max-width: 640px) {
+  .hx-markdown {
+    padding: $pm-bg;
+  }
+}

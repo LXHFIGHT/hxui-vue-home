@@ -1,0 +1,106 @@
+@import "./../variable.scss";
+// 加载组件
+.hx-small-modal {
+  @include centerInParent;
+  z-index: 1400;
+  background-color: rgba(0, 0, 0, .6);
+  margin-top: -20px;
+  border-radius: $border-radius-lg;
+  transition: all .4s;
+  height: $height-navbar * 2.4;
+  width: $height-navbar * 2.4;
+  padding: $pm-md $pm-sm $pm-sm $pm-sm;
+  opacity: .0;
+  visibility: hidden;
+  &.show {
+    visibility: visible;
+    opacity: 1.0;
+  }
+  .text-small-modal {
+    text-align: center;
+    width: 100%;
+    display: block;
+    color: rgba(255, 255, 255, .9);
+    font-size: 13px;
+  }
+  .hx-loading {
+    margin: 0 auto $pm-sm;
+  }
+  .hx-icon {
+    margin: 0 auto 5px;
+  }
+}
+.hx-loading {
+  height: $height-navbar * 1.2;
+  width: $height-navbar * 1.2;
+  display: block;
+  position: relative;
+  @include loading;
+}
+
+.hx-icon {
+  height: $height-navbar * 1.2;
+  width: $height-navbar * 1.2;
+  display: block;
+  position: relative;
+  &:before, &:after {
+    height: 10px;
+    width: 100%;
+    content: "";
+    background-color: rgba(255,255,255,.4);
+    display: block;
+    border-radius: 10px;
+    @include centerVertical;
+  }
+  &.success:before {
+    transform: rotate(-50deg);
+    width: 70%;
+    margin-left: 24%;
+    margin-top: -7%;
+  }
+  &.success:after {
+    margin-top: 5%;
+    margin-left: 11%;
+    width: 40%;
+    transform: rotate(40deg);
+  }
+  &.error:before,
+  &.error:after {
+    @include centerInParent;
+    width: 80%;
+  }
+  &.error:before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  &.error:after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}
+@keyframes bigRound {
+  0% {
+    transform: scale(0.2, 0.2);
+    opacity: .7;
+  }
+  50% {
+    transform: scale(1.0, 1.0);
+    opacity: 1.0;
+  }
+  100% {
+    transform: scale(0.2, 0.2);
+    opacity: .7;
+  }
+}
+@keyframes smallRound {
+  0% {
+    transform: scale(1.0, 1.0);
+    opacity: 1.0;
+  }
+  50% {
+    transform: scale(0.2, 0.2);
+    opacity: .7;
+  }
+  100% {
+    transform: scale(1.0, 1.0);
+    opacity: 1.0;
+  }
+}

@@ -1,0 +1,159 @@
+/**
+ *  hx详情模块样式
+ *  通过组合 hx-row 构建管理后台具有交互性的表单页面
+ */
+@import "./../variable.scss";
+.hx-section {
+  border: 1px solid $color-gray;
+  position: relative;
+  margin-bottom: $pm-md;
+  overflow: hidden;
+  background-color: white;
+  > .header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: $font-md;
+    line-height: $height-navbar;
+    height: $height-navbar;
+    padding: 0 $pm-md 0 $pm-lg;
+    color: $color-heavy;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    .title {
+      margin-right: $pm-md;
+      display: inline-flex;
+      align-items: center;
+    }
+    &:before {
+      content: "";
+      height: $height-navbar/2;
+      width: 3px;
+      background-color: $color-main;
+      @include centerVertical;
+      display: block;
+      left: $pm-md;
+    }
+    small {
+      font-size: $font-md;
+      color: $color-gray-deep;
+      margin-left: $pm-sm;
+    }
+  }
+  > .pad-content {
+    display: block;
+    position: relative;
+    .pad-loading {
+      @include block;
+      background-color: rgba(255,255,255,.90);
+    }
+  }
+  & > .right {
+    position: absolute;
+    right: $pm-md;
+    top: $pm-sm;
+    .btn-toggle {
+      border: none;
+      .icon-toggle {
+        margin-top: -2px;
+        opacity: .6;
+        transform: rotate(0);
+        transform-origin: 50% 2px;
+        transition: transform .4s;
+      }
+    }
+    button {
+      margin-left: 5px;
+      width: auto;
+    }
+  }
+  .hx-divider {
+    height: 1px;
+    width: 100%;
+    display: block;
+    margin: $pm-sm 0 0;
+    padding: 0;
+    background-color: $color-gray-light;
+  }
+  &.foldable {
+    &.fold {
+      height: $height-navbar!important;
+      padding-top: $height-navbar;
+      padding-bottom: 0;
+      .icon-toggle {
+        opacity: 1.0;
+        transform: rotate(180deg);
+      }
+      .side-tag {
+        display: none;
+      }
+    }
+  }
+  .side-tag {
+    position: absolute;
+    right: $pm-md;
+    bottom: 0;
+    color: $color-gray;
+    height: $height-navbar;
+    line-height: $height-navbar;
+    display: inline-block;
+    font: {
+      size: $font-md;
+      weight: 800;
+    }
+  }
+}
+@media screen and (min-width: 640px) {
+  .hx-section {
+    padding: ($height-normal+$pm-md) $pm-md $pm-md;
+    border-radius: $border-radius-md;
+    transition: box-shadow .4s, height .4s;
+    &.shadow {
+      box-shadow: 0 10px 15px -10px rgba(0,0,0,.1);
+      &:hover {
+        box-shadow: 0 5px 20px rgba(0,0,0,.1);
+      }
+    }
+    &.half {
+      display: inline-block;
+      @include wcalc(calc(50% - 8px));
+    }
+    &.one-third {
+      display: inline-block;
+      @include wcalc(calc(33.33% - 8px));
+    }
+  }
+}
+@media screen and (max-width: 640px) {
+  .hx-section {
+    padding: $height-navbar $pm-md $pm-md;
+    transition: height .4s;
+    box-shadow: 0 10px 15px -10px rgba(0,0,0,.1);
+    .header {
+      padding: 0 $pm-md;
+      button.right {
+        margin-top: 0;
+      }
+    }
+    .header:before {
+      content: "";
+      height: $height-navbar/2;
+      width: 3px;
+      background-color: $color-main;
+      @include centerVertical;
+      display: block;
+      left: $pm-md;
+    }
+    .header:first-child {
+      padding-left: 2 * $pm-md;
+    }
+    .hx-row:nth-last-child(1) {
+      border: none;
+    }
+    .hx-divider {
+      margin-top: $pm-md;
+      background-color: transparent
+    }
+  }
+}
