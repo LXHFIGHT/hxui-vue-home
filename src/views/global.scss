@@ -34,7 +34,7 @@
     .pad-preview {
       border: 1px solid $color-gray;
       border-radius: $pm-sm;
-      margin-top: $pm-md;
+      margin: $pm-md 0 $pm-bg;
       overflow: hidden;
       // demo区
       .demo {
@@ -53,6 +53,7 @@
           color: $color-heavy;
           font-size: $font-md;
           border-radius: $pm-sm/2;
+          margin-bottom: $pm-md;
         }
         .detail {
           margin: 0;
@@ -60,11 +61,15 @@
           code {
             display: inline-block!important;
             width: 100%;
-            padding: $pm-sm $pm-md 0;
+            padding: 0 $pm-md;
           }
         }
       }
     }
     // 属性或表格区
   }
+}
+
+.bg-outstanding {
+  background-color: rgba($color-red, .1)!important;
 }

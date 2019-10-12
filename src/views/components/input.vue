@@ -60,7 +60,7 @@
     </div>
     <div class="section">
       <span class="title">
-        HxInput Props
+        HxInput 参数
       </span>
       <div class="hx-table">
         <table>
