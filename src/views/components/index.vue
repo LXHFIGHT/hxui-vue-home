@@ -2,7 +2,7 @@
   <div class="hx-block bg-gray">
     <div :class="['bg-white', project.isAdmin ? 'hx-block' : 'hx-container']">
       <aside class="aside-catalog">
-        <hx-catalog :menus="menus" :onSelect="doSelectCatalog"></hx-catalog>
+        <hx-catalog :menus="menus" :validator="$_initSelection" :onSelect="doSelectCatalog"></hx-catalog>
       </aside>
       <div class="hx-main pad-home-main">
         <router-view></router-view>
@@ -11,9 +11,9 @@
   </div>
 </template>
 <script>
-import { HxCatalog } from 'hxui'
+import { HxCatalog } from '@/hxui'
 import { project } from './../../config'
-import { componentsCatalog } from './../../config/catalogs'
+import { componentsCatalog } from './../../config/menus'
 export default {
   components: {
     HxCatalog
@@ -30,7 +30,10 @@ export default {
     },
     doSelectCatalog (value) {
       this.$router.push(`/components/${value}`)
-    }
+    },
+    $_initSelection (item) {
+      return this.$route.path.includes(item.value)
+    } 
   }
 }
 </script>
