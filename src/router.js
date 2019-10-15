@@ -54,9 +54,9 @@ export default new Router({
               component: resolve => require(['@/views/components/row.vue'], resolve)
             },
             {
-              path: '/components/select',
-              name: 'select',
-              component: resolve => require(['@/views/components/select.vue'], resolve)
+              path: '/components/hx-selector',
+              name: 'hx-selector',
+              component: resolve => require(['@/views/components/selector.vue'], resolve)
             }
           ]
         },

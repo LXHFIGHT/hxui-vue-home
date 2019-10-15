@@ -34,7 +34,8 @@ export const componentsCatalog = [
       { key: 'Image 图片', value: 'hx-image' },
       '表单',
       { key: 'HxRow 行组件', value: 'hx-row' },
-      { key: 'HxInput 输入框', value: 'hx-input' }
+      { key: 'HxInput 输入框', value: 'hx-input' },
+      { key: 'HxSelector 下拉菜单', value: 'hx-selector' }
     ]
   }
 ]
