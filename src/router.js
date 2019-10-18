@@ -11,7 +11,7 @@ export default new Router({
       name: 'Root',
       component: resolve => require(['@/views/index.vue'], resolve),
       meta: { keepAlive: true },
-      redirect: '/home',
+      redirect: '/home/',
       children: [
         {
           path: '/home',
