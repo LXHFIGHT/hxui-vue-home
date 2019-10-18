@@ -5,7 +5,7 @@ import store from './store'
 import './registerServiceWorker'
 import VueHighlightJS from 'vue-highlightjs'
 import 'highlight.js/styles/github.css'
-import 'hxui/lib/hxui.css'
+// import 'hxui/lib/hxui.css'
 import combineFilters from './tools/combineFilters'
 const Vue = window.Vue
 Vue.config.productionTip = false
