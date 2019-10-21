@@ -4,6 +4,24 @@
     <span class="desc">HXUI提供可以快速使用的表单输入框</span>
     <!-- 文本输入框 -->
     <div class="section">
+      <span class="title">双向绑定</span>
+      <span class="desc">通过<em>v-model</em>将<strong>hx-input</strong>同父组件中数据进行绑定</span>
+      <div class="pad-preview">
+        <div class="demo">
+          <hx-row label="编辑内容">
+            <hx-input type="text" v-model="str" placeholder="请输入文本..."/>
+          </hx-row>
+          <hx-row label="输入文本为:">
+            <span class="text bg-gray">{{ str }}</span>
+          </hx-row>
+        </div>
+        <div class="code">
+          <pre class="detail" v-highlightjs="textNext" >
+            <code class="xml">
+            </code>
+          </pre>
+        </div>
+      </div>
       <span class="title">文本框</span>
       <span class="desc">
         通过不同参数拓展文本输入框的功能
@@ -97,6 +115,7 @@ export default {
   },
   data () {
     return {
+      str: '',
       hxInput3: '',
       hxInput4: '',
       text: `<hx-row label="正常文本框">
@@ -125,9 +144,9 @@ export default {
 <hx-row label="带清空按钮">
   <hx-input :rows="3" type="text" showClearBtn="true" placeholder="请输入文本..." error/>
 </hx-row>
-
 `,
       typeText: ``,
+      textNext: `<hx-input type="text" v-model="str" placeholder="请输入文本..."/>`,
       props: [
         { name: 'rows', desc: '行数：> 1时显示为文本域', type: 'Number', option: '整数', default: '1' },
         { name: 'type', desc: '输入框类型', type: 'String', option: 'text/password/tel/number/date/email', default: 'text' },

@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 import VueHighlightJS from 'vue-highlightjs'
-import 'highlight.js/styles/github.css'
+import 'highlight.js/styles/atom-one-dark.css'
 import 'hxui/lib/hxui.css'
 import combineFilters from './tools/combineFilters'
 const Vue = window.Vue

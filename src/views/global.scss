@@ -12,14 +12,17 @@
     margin: $pm-bg 0 $pm-sm;
   }
   .desc {
-    color: $color-heavy;
+    color: $color-dark;
     font-size: $font-md;
+    line-height: 1.8;
+    text-align: justify;
   }
   em {
     background-color: white;
     border: 1px solid $color-gray;
     padding: 0 $pm-sm/2;
     line-height: 1.6;
+    font-weight: 600;
     border-radius: $pm-sm/2;
   }
   .section {
@@ -38,22 +41,27 @@
       overflow: hidden;
       // demo区
       .demo {
-        background-color: white;
+        background-color: rgba(255,255,255,.1);
         padding: $pm-bg;
       }
       // 代码区
       .code {
-        background-color: $color-gray-light;
+        background-color: #282c33;
         padding: $pm-md;
         .tips {
-          background-color: white;
+          background-color: rgba(255,255,255,.1);
           display: block;
           width: 100%;
           padding: $pm-sm*1.5 $pm-md;
-          color: $color-heavy;
+          color: rgba(255,255,255,.4);
           font-size: $font-md;
           border-radius: $pm-sm/2;
           margin-bottom: $pm-md;
+        }
+        .tips em {
+          background-color: rgba(255,255,255,.15);
+          color: rgba(255,255,255,.65);
+          border: none;
         }
         .detail {
           margin: 0;

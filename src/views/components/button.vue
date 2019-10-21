@@ -132,28 +132,23 @@ export default {
   },
   data () {
     return {
-      text: `
-<hx-button type="main"> 主题色 </hx-button>
+      text: `<hx-button type="main"> 主题色 </hx-button>
 <hx-button type="info">提示</hx-button>
 <hx-button type="success"> 正常 </hx-button>
 <hx-button type="default"> 默认 </hx-button>
 <hx-button type="warn"> 警告 </hx-button>
 <hx-button type="error"> 错误 </hx-button>
-<hx-button type="fatal"> 崩溃 </hx-button>
-  `,
-      sizeText: `
-<hx-button size="sm"> 小按钮 </hx-button>
+<hx-button type="fatal"> 崩溃 </hx-button>`,
+      sizeText: `<hx-button size="sm"> 小按钮 </hx-button>
 <hx-button size="md"> 按钮 </hx-button>
 <hx-button size="bg"> 大按钮 </hx-button>`,
-      typeText: `
-<hx-button type="main" blank>主题色</hx-button>
+      typeText: `<hx-button type="main" blank>主题色</hx-button>
 <hx-button type="info" blank>提示</hx-button>
 <hx-button type="success" blank>正常</hx-button>
 <hx-button type="error" blank>错误</hx-button>
 <hx-button type="main" text>主题色</hx-button>
 <hx-button type="success" text>正常</hx-button>
-<hx-button type="warn" text>警告</hx-button>
-      `
+<hx-button type="warn" text>警告</hx-button>`
     }
   },
   methods: {
