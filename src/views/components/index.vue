@@ -64,9 +64,9 @@ export default {
   width: 230px;
   display: inline-block;
   padding: $pm-md;
-  .btn-toggle-catalog {
-    display: none;
-  }
+}
+.btn-toggle-catalog {
+  display: none;
 }
 .pad-home-main {
   width: calc(100% - 235px);
