@@ -38,6 +38,7 @@
 
 <script>
 import iconClear from './../img/icon/icon-close.png'
+import { MOBILE_DEVICE_MAX_WIDTH } from './../const'
 /**
  * HxInput组件所接受参数：
  * @prop {String} placeholder 文本框内容
@@ -51,11 +52,15 @@ export default {
   name: 'hx-input',
   data () {
     return {
-      iconClear
+      iconClear,
+      isMobile: false
     }
   },
   props: {
-    value: String,
+    value: {
+      type: [String, Number],
+      default: ''
+    },
     placeholder: {
       type: String,
       default: ''
@@ -125,9 +130,13 @@ export default {
       this.$emit('input', '')
     },
     doBlur () {
-      const view = event.target
-      if (this.required) {
-        !view.value && view.classList.add('error')
+      // const view = event.target
+      // if (this.required) {
+      //   !view.value && view.classList.add('error')
+      // }
+      if (this.isMobile) {
+        window.scroll(0, 0)
+        document.body.scrollTop = 0
       }
       this.$emit('blur')
     },
@@ -136,6 +145,9 @@ export default {
       view.classList.remove('error')
       this.$emit('focus')
     }
+  },
+  created () {
+    this.isMobile = document.body.clientWidth <= MOBILE_DEVICE_MAX_WIDTH
   }
 }
 </script>

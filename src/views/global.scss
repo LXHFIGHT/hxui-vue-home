@@ -81,3 +81,20 @@
 .bg-outstanding {
   background-color: rgba($color-red, .1)!important;
 }
+
+@media screen and (max-width: 640px) {
+  .pad-article {
+    padding: $md;
+    & > .section {
+      margin-top: $lg;
+      .title {
+        margin-bottom: $md;
+      }
+      .pad-preview {
+        & > .demo {
+          padding: $bg $md $md;
+        }
+      }
+    }
+  }
+}
