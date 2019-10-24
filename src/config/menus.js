@@ -35,7 +35,8 @@ export const componentsCatalog = [
       '表单',
       { key: 'HxRow 行组件', value: 'hx-row' },
       { key: 'HxInput 输入框', value: 'hx-input' },
-      { key: 'HxSelector 下拉菜单', value: 'hx-selector' }
+      { key: 'HxSelector 下拉菜单', value: 'hx-selector' },
+      { key: 'HxTagEditor 标签框', value: 'hx-tag-editor' }
     ]
   }
 ]

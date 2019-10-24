@@ -58,6 +58,11 @@ export default new Router({
               path: '/components/hx-selector',
               name: 'hx-selector',
               component: resolve => require(['@/views/components/selector.vue'], resolve)
+            },
+            {
+              path: '/components/hx-tag-editor',
+              name: 'hx-tag-editor',
+              component: resolve => require(['@/views/components/tagEditor.vue'], resolve)
             }
           ]
         },
