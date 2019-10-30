@@ -11,7 +11,7 @@ export default new Router({
       name: 'Root',
       component: resolve => require(['@/views/index.vue'], resolve),
       meta: { keepAlive: true },
-      redirect: '/home/',
+      redirect: '/home',
       children: [
         {
           path: '/home',
@@ -35,32 +35,32 @@ export default new Router({
           meta: { keepAlive: true },
           children: [
             {
-              path: '/components/hx-image',
+              path: 'hx-image',
               name: 'hx-image',
               component: resolve => require(['@/views/components/image.vue'], resolve)
             },
             {
-              path: '/components/hx-button',
+              path: 'hx-button',
               name: 'hx-button',
               component: resolve => require(['@/views/components/button.vue'], resolve)
             },
             {
-              path: '/components/hx-input',
+              path: 'hx-input',
               name: 'hx-input',
               component: resolve => require(['@/views/components/input.vue'], resolve)
             },
             {
-              path: '/components/hx-row',
+              path: 'hx-row',
               name: 'hx-row',
               component: resolve => require(['@/views/components/row.vue'], resolve)
             },
             {
-              path: '/components/hx-selector',
+              path: 'hx-selector',
               name: 'hx-selector',
               component: resolve => require(['@/views/components/selector.vue'], resolve)
             },
             {
-              path: '/components/hx-tag-editor',
+              path: 'hx-tag-editor',
               name: 'hx-tag-editor',
               component: resolve => require(['@/views/components/tagEditor.vue'], resolve)
             }
