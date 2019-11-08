@@ -1,10 +1,11 @@
 <template>
    <div class="hx-tags">
      <span :class="['hx-tag', colorStyle, size]"
-          :style="`background-color: ${color}`"
-          v-for="(item, index) in value"
-          v-bind:key="index"
-          v-text="item"></span>
+        :style="`background-color: ${color}; color: ${textColor}; border: ${ color ? 'none' : '' }`"
+        v-for="(item, index) in value"
+        v-bind:key="index"
+        v-text="item">
+      </span>
    </div>
 </template>
 
@@ -30,6 +31,9 @@ export default {
       }
     },
     color: {
+      type: String
+    },
+    textColor: {
       type: String
     },
     size: { // 一共包含 sm: 20px  md：27px 和 bg： 34px
