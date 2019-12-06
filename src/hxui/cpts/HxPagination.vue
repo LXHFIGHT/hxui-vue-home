@@ -26,7 +26,11 @@
     <input type="text"
       class="page-inputer"
       autocomplete="off"
+      placeholder="请输入"
       v-model="toPage" />
+    <input type="password" 
+      autocomplete="new-password" 
+      style="visiblity: hidden; display: none;" />
     <a class="btn-jump"
       @click="requestListByPage(toPage)">
       跳转
@@ -41,7 +45,6 @@ export default {
   name: 'hx-pagination',
   data () {
     return {
-      timer: null,
       searchInfo: {
         per_page: this.pageSizes[0],
         page: 1
@@ -97,15 +100,9 @@ export default {
         toast({ text: '所选页面超过范围', level: 'warn' })
         return
       }
-      this.searchInfo.page = page
+      this.searchInfo.page = parseInt(page)
       this.$_initRequest()
     }
-  },
-  mounted () {
-    this.timer = window.setTimeout(() => {
-      this.toPage = ''
-      window.clearTimeout(this.timer)
-    }, 5000)
   },
   beforeDestroy () {
     window.clearTimeout(this.timer)
