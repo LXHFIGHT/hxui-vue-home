@@ -76,6 +76,13 @@
     }
     // 属性或表格区
   }
+  .annotation {
+    padding: $pm-sm $pm-md;
+    color: $color-gray-deep;
+    font-size: $font-md;
+    display: block;
+    width: 100%;
+  }
 }
 
 .bg-outstanding {

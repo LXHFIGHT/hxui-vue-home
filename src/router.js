@@ -63,6 +63,16 @@ export default new Router({
               path: 'hx-tag-editor',
               name: 'hx-tag-editor',
               component: resolve => require(['@/views/components/tagEditor.vue'], resolve)
+            },
+            {
+              path: 'hx-smart-uploader',
+              name: 'hx-smart-uploader',
+              component: resolve => require(['@/views/components/smartUploader.vue'], resolve)
+            },
+            {
+              path: 'demo',
+              name: 'demo',
+              component: resolve => require(['@/views/README.vue'], resolve)
             }
           ]
         },

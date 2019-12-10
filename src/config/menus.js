@@ -33,10 +33,11 @@ export const componentsCatalog = [
       { key: 'Button 按钮', value: 'hx-button' },
       // { key: 'Image 图片', value: 'hx-image' },
       '表单',
-      { key: 'HxRow 行组件', value: 'hx-row' },
-      { key: 'HxInput 输入框', value: 'hx-input' },
-      { key: 'HxSelector 下拉菜单', value: 'hx-selector' },
-      { key: 'HxTagEditor 标签框', value: 'hx-tag-editor' }
+      { key: '行组件', value: 'hx-row' },
+      { key: '输入框', value: 'hx-input' },
+      { key: '下拉菜单', value: 'hx-selector' },
+      { key: '标签框', value: 'hx-tag-editor' },
+      { key: '上传文件组件', value: 'hx-smart-uploader' }
     ]
   }
 ]
