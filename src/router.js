@@ -18,16 +18,7 @@ export default new Router({
           name: 'home',
           component: resolve => require(['@/views/home.vue'], resolve)
         },
-        {
-          path: '/style/list',
-          name: 'styleList',
-          component: resolve => require(['@/views/style/list.vue'], resolve)
-        },
-        {
-          path: '/style/display',
-          name: 'styleDisplay',
-          component: resolve => require(['@/views/style/display.vue'], resolve)
-        }, 
+        // 组件库
         {
           path: '/components',
           name: 'components',
@@ -48,11 +39,6 @@ export default new Router({
               path: 'hx-input',
               name: 'hx-input',
               component: resolve => require(['@/views/components/input.vue'], resolve)
-            },
-            {
-              path: 'hx-row',
-              name: 'hx-row',
-              component: resolve => require(['@/views/components/row.vue'], resolve)
             },
             {
               path: 'hx-selector',
@@ -76,6 +62,21 @@ export default new Router({
             }
           ]
         },
+        // 布局库
+        {
+          path: '/layouts',
+          name: 'layouts',
+          component: resolve => require(['@/views/layouts/index.vue'], resolve),
+          meta: { keepAlive: true },
+          children: [
+            {
+              path: 'hx-row',
+              name: 'hx-row',
+              component: resolve => require(['@/views/layouts/row.vue'], resolve)
+            }
+          ]
+        },
+        // 插件库
         {
           path: '/plugins',
           name: 'plugins',
@@ -86,6 +87,11 @@ export default new Router({
               path: '/plugins/confirm',
               name: 'confirm',
               component: resolve => require(['@/views/plugins/confirm.vue'], resolve)
+            },
+            {
+              path: '/plugins/alert',
+              name: 'alert',
+              component: resolve => require(['@/views/plugins/alert.vue'], resolve)
             },
             {
               path: '/plugins/toast',

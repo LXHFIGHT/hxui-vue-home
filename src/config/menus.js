@@ -8,22 +8,23 @@
 let menus = [
   {
     name: 'home',
-    state: '/home',
-    icon: 'home'
+    state: '/home'
+  },
+  {
+    name: 'Layout',
+    state: '/layouts/hx-row'
   },
   {
     name: 'Components',
-    state: '/components/hx-button',
-    icon: 'puzzle-piece'
+    state: '/components/hx-button'
   },
   {
     name: 'Plugins',
-    state: '/plugins',
-    icon: 'plug'
+    state: '/plugins/confirm'
   }
 ]
 
-// 各个页面的目录结构
+// 组件库目录结构
 export const componentsCatalog = [
   {
     key: '组件介绍',
@@ -33,11 +34,33 @@ export const componentsCatalog = [
       { key: 'Button 按钮', value: 'hx-button' },
       // { key: 'Image 图片', value: 'hx-image' },
       '表单',
-      { key: '行组件', value: 'hx-row' },
       { key: '输入框', value: 'hx-input' },
       { key: '下拉菜单', value: 'hx-selector' },
       { key: '标签框', value: 'hx-tag-editor' },
       { key: '上传文件组件', value: 'hx-smart-uploader' }
+    ]
+  }
+]
+// 布局库目录结构
+export const layoutsCatalog = [
+  {
+    key: '行组件',
+    value: 'hx-row'
+  }
+]
+// 插件库目录结构
+export const pluginsCatalog = [
+  {
+    key: '插件介绍',
+    disabled: true,
+    children: [
+      '提示',
+      { key: 'Confirm 插件', value: 'confirm' },
+      { key: 'Alert 插件', value: 'alert' },
+      { key: 'Toast 插件', value: 'toast' },
+      '|',
+      '验证',
+      { key: 'SmartValidator', value: 'validate' }
     ]
   }
 ]

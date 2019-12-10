@@ -65,9 +65,6 @@ export default {
   display: inline-block;
   padding: $pm-md;
 }
-.btn-toggle-catalog {
-  display: none;
-}
 .pad-home-main {
   width: calc(100% - 235px);
   float: right;
@@ -75,37 +72,4 @@ export default {
   overflow-y: auto;
   overflow-x: hidden;
 }
-@media screen and (max-width: 640px) {
-  .aside-catalog {
-    display: block;
-    position: fixed;
-    height: calc(100% - #{$height-navbar});
-    background-color: white;
-    z-index: 10;
-    border: 1px solid $color-gray-light;
-    left: 0;
-    transform: translate(-100%);
-    transition: transform .4s;
-    &.show {
-      transform: translate(0);
-    }
-  }
-  .btn-toggle-catalog {
-    background-color: rgba(255, 255, 255, .4);
-    box-shadow: $shadow-md;
-    border-radius: $regular;
-    display: block;
-    position: fixed;
-    left: $md;
-    bottom: $md;
-    height: $regular;
-    width: $regular;
-    padding: $pm-sm;
-    .icon {
-      height: 100%;
-      width: 100%;
-    }
-    z-index: 10;
-  }
-} 
 </style>

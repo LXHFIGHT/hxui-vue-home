@@ -2,16 +2,12 @@
   <div class="hx-block bg-gray">
     <div :class="['bg-white', project.isAdmin ? 'hx-block' : 'hx-container']">
       <aside :class="['aside-catalog', showCatalog && 'show']">
-        <hx-catalog 
-          :menus="menus" 
-          :validator="$_initSelection" 
-          :onSelect="doSelectCatalog">
-        </hx-catalog>
+        <hx-catalog :menus="menus" :onSelect="doSelectCatalog"></hx-catalog>
       </aside>
       <button class="btn-toggle-catalog" @click="doToggle">
         <IconCatalog fill="#222222" class="icon"></IconCatalog>
       </button>
-      <div class="hx-main pad-home-main" @click="showCatalog = false">
+      <div class="hx-main pad-home-main">
         <router-view></router-view>
       </div>
     </div>
@@ -20,7 +16,7 @@
 <script>
 import { HxCatalog } from 'hxui'
 import { project } from './../../config'
-import { pluginsCatalog } from './../../config/menus'
+import { layoutsCatalog } from './../../config/menus'
 import IconCatalog from './../../assets/svg/icon-catalog.svg'
 export default {
   components: {
@@ -31,7 +27,7 @@ export default {
     return {
       project,
       showCatalog: false,
-      menus: pluginsCatalog
+      menus: layoutsCatalog
     }
   },
   methods: {
@@ -39,7 +35,7 @@ export default {
       this.$hxui.popTip('Yahoo')
     },
     doSelectCatalog (value) {
-      this.$router.push(`/plugins/${value}`)
+      this.$router.push(`/layouts/${value}`)
     },
     doToggle () {
       this.showCatalog = !this.showCatalog
