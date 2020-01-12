@@ -78,6 +78,13 @@ export const Colors = {
   BLUE: 'cornflowerblue'
 }
 
+export const DotTypes = { // 点组件的样式  
+  DOT: 'dot', // 点状
+  BLANK: 'blank', // 镂空带文案
+  BLOCK: 'block' // 实心带文案
+}
+export const dotTypeArray = [ DotTypes.DOT, DotTypes.BLANK, DotTypes.BLOCK ]
+
 export const ValueTypes = {
   CELLPHONE: 'cellphone' // 手机类型
 }

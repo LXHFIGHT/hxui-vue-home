@@ -15,6 +15,14 @@ $size-bg: 11px;
   position: absolute;
   background-color: $color-red;
   display: block;
+  &.dot {
+    &.red, &.error { background-color: $color-red; }
+    &.green, &.success { background-color: $color-green; }
+    &.orange, &.warn { background-color: $color-orange; }
+    &.blue, &.info, &.default { background-color: $color-blue; }
+    &.golden { background-color: $color-golden; }
+    &.black, &.fatal { background-color: $color-black; }
+  }
   @include common($size-md);
   &.sm { @include common($size-sm); }
   &.bg { @include common($size-bg); }

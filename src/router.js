@@ -36,6 +36,11 @@ export default new Router({
               component: resolve => require(['@/views/components/button.vue'], resolve)
             },
             {
+              path: 'hx-dot',
+              name: 'hx-dot',
+              component: resolve => require(['@/views/components/dot.vue'], resolve)
+            },
+            {
               path: 'hx-input',
               name: 'hx-input',
               component: resolve => require(['@/views/components/input.vue'], resolve)
