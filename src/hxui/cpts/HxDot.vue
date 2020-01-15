@@ -1,20 +1,30 @@
 <template>
-  <div :class="['hx-dot', position, type, (level || color)]">
-    <span class="text" v-if="type !== DotTypes.DOT">
-      <slot></slot>
-    </span>
+  <div :class="['hx-dot', 
+    text && 'text',
+    size, 
+    position, 
+    blank && 'blank', 
+    (level || color)]">
+    {{ text }}
   </div>
 </template>
 
 <script>
-import { dotTypeArray, DotTypes, Positions, levelKeys } from './../const' 
+import { Positions, levelKeys, sizeKeysLess } from './../const' 
 export default {
   props: {
-    type: { // 点组件类型，dot 不带文案的色点  block 带文案的色点  blank 带文案的色点
+    blank: { 
+      type: [String, Boolean, Number],
+      default: ''
+    },
+    text: {
+      type: String
+    },
+    size: {
       type: String,
-      default: DotTypes.DOT,
+      default: 'md',
       validator (val) {
-        return dotTypeArray.includes(val)
+        return sizeKeysLess.includes(val)
       }
     },
     position: { // 点组件所在位置
@@ -32,11 +42,6 @@ export default {
     },
     color: {
       type: String
-    }
-  },
-  data () {
-    return {
-      DotTypes
     }
   }
 }

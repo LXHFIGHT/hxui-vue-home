@@ -58,7 +58,8 @@ export const Sizes = {
   BG: SIZE_BG,
   LG: SIZE_LG
 }
-export const sizeKeys = [ SIZE_XS, SIZE_SM, SIZE_MD, SIZE_BG, SIZE_LG ]
+export const sizeKeys = [SIZE_XS, SIZE_SM, SIZE_MD, SIZE_BG, SIZE_LG]
+export const sizeKeysLess = [SIZE_SM, SIZE_MD, SIZE_BG]
 export const Colors = {
   WHITE: 'white',
   GRAY_LIGHT: '#f8f8f8',
@@ -77,13 +78,6 @@ export const Colors = {
   PINK: '#f688B4',
   BLUE: 'cornflowerblue'
 }
-
-export const DotTypes = { // 点组件的样式  
-  DOT: 'dot', // 点状
-  BLANK: 'blank', // 镂空带文案
-  BLOCK: 'block' // 实心带文案
-}
-export const dotTypeArray = [ DotTypes.DOT, DotTypes.BLANK, DotTypes.BLOCK ]
 
 export const ValueTypes = {
   CELLPHONE: 'cellphone' // 手机类型
