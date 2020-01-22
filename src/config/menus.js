@@ -45,8 +45,12 @@ export const componentsCatalog = [
 // 布局库目录结构
 export const layoutsCatalog = [
   {
-    key: '行组件',
-    value: 'hx-row'
+    key: '基本布局',
+    disabled: true,
+    children: [
+      { key: '行组件', value: 'hx-row' },
+      { key: '域组件', value: 'hx-section' }
+    ]
   }
 ]
 // 插件库目录结构

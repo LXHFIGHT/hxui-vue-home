@@ -78,6 +78,11 @@ export default new Router({
               path: 'hx-row',
               name: 'hx-row',
               component: resolve => require(['@/views/layouts/row.vue'], resolve)
+            },
+            {
+              path: 'hx-section',
+              name: 'hx-section',
+              component: resolve => require(['@/views/layouts/section.vue'], resolve)
             }
           ]
         },
