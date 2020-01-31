@@ -61,7 +61,8 @@ export const pluginsCatalog = [
     children: [
       '提示',
       { key: '确认框', value: 'confirm' },
-      { key: 'Alert 插件', value: 'alert' },
+      { key: '警告框', value: 'alert' },
+      { key: '文本确认框', value: 'prompt' },
       { key: 'Toast 插件', value: 'toast' },
       '|',
       '验证',

@@ -11,16 +11,32 @@
       </span>
       <div class="pad-preview">
         <div class="demo">
-          <hx-button type="error" @click="$hxui.alert('弹出了一个 $hxui.alert')">
-            Alert弹框
+          <hx-button text="text" type="error" @click="$hxui.alert('弹出了一个 $hxui.alert')">
+            弹出一个 Alert 弹框
           </hx-button>
         </div>
         <div class="code">
           <span class="tips">
             记得在 main.js 文件中全局引入 HXUI组件库哦~ 
           </span>
-          <pre class="detail" v-highlightjs="textNext" >
-            <code class="js">
+          <pre class="detail" v-highlightjs="firstText" >
+            <code class="javascript">
+            </code>
+          </pre>
+        </div>
+      </div>
+      <span class="desc">
+        也可以和 <em>console.log</em> 一样，支持传入多参数，连接起来展示。
+      </span>
+      <div class="pad-preview">
+        <div class="demo">
+          <hx-button text="text" type="info" @click="$hxui.alert('弹出了另一个 $hxui.alert:', obj)">
+            弹出一个多参数的 Alert 弹框
+          </hx-button>
+        </div>
+        <div class="code">
+          <pre class="detail" v-highlightjs="secondText" >
+            <code class="javascript">
             </code>
           </pre>
         </div>
@@ -58,10 +74,13 @@ export default {
   components: {},
   data () {
     return {
-      textNext: `this.$hxui.alert('弹出了一个 $hxui.alert')`,
+      firstText: `this.$hxui.alert('弹出了一个 $hxui.alert')`,
+      secondText: `const obj = { foo: 'bar' }
+this.$hxui.alert('弹出了另一个 $hxui.alert', obj)`,
       props: [
         { name: 'text', desc: '警示框中暂时内容', type: 'String', option: '字符串（数字类型也可以）', default: '空字符串' }
-      ]
+      ],
+      obj: { foo: 'bar' }
     }
   }
 }

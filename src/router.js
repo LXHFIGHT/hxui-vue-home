@@ -104,6 +104,11 @@ export default new Router({
               component: resolve => require(['@/views/plugins/alert.vue'], resolve)
             },
             {
+              path: '/plugins/prompt',
+              name: 'Prompt',
+              component: resolve => require(['@/views/plugins/prompt.vue'], resolve)
+            },
+            {
               path: '/plugins/toast',
               name: 'toast',
               component: resolve => require(['@/views/plugins/toast.vue'], resolve)

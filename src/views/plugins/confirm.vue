@@ -162,7 +162,6 @@ export default {
         { name: 'confirmText', desc: '“确认”按钮上的文案', type: 'String', option: '字符串', default: '确认' },
         { name: 'cancelText', desc: '“取消”按钮上的文案', type: 'String', option: '字符串', default: '取消' },
         { name: 'level', desc: '主题等级颜色', type: 'String', option: '颜色值', default: 'main' },
-        { name: 'level', desc: '主题等级颜色', type: 'String', option: '颜色值', default: 'main' },
         { name: 'onConfirm', desc: '点击“确认”按钮回调方法', type: 'Function', option: 'JS方法', default: '空' },
         { name: 'onCancel', desc: '点击“取消”按钮回调方法', type: 'Function', option: 'JS方法', default: '空' }
       ]
