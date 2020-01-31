@@ -1,5 +1,5 @@
 <template>
-  <div class="hx-block bg-gray">
+  <div class="hx-block">
     <div :class="['bg-white', project.isAdmin ? 'hx-block' : 'hx-container']">
       <aside :class="['aside-catalog', showCatalog && 'show']">
         <hx-catalog 
@@ -49,24 +49,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import "./../global.scss";
-  .bg-gray {
-    background-color: #f6f7f7;
-  }
-  .bg-white {
-    background-color: white;
-    height: 100%;
-  }
-  .aside-catalog {
-    width: 230px;
-    display: inline-block;
-    padding: $pm-md;
-  }
-  .pad-home-main {
-    width: calc(100% - 235px);
-    float: right;
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
+@import "./../global.scss";
+.bg-gray {
+  background-color: #f6f7f7;
+}
+.bg-white {
+  background-color: white;
+  height: 100%;
+}
+.pad-home-main {
+  width: calc(100% - 235px);
+  float: right;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 </style>

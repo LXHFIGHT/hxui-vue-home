@@ -60,7 +60,7 @@ export const pluginsCatalog = [
     disabled: true,
     children: [
       '提示',
-      { key: 'Confirm 插件', value: 'confirm' },
+      { key: '确认框', value: 'confirm' },
       { key: 'Alert 插件', value: 'alert' },
       { key: 'Toast 插件', value: 'toast' },
       '|',

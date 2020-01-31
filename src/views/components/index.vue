@@ -1,5 +1,5 @@
 <template>
-  <div class="hx-block bg-gray">
+  <div class="hx-block">
     <div :class="['bg-white', project.isAdmin ? 'hx-block' : 'hx-container']">
       <aside :class="['aside-catalog', showCatalog && 'show']">
         <hx-catalog 
@@ -60,11 +60,7 @@ export default {
   background-color: white;
   height: 100%;
 }
-.aside-catalog {
-  width: 230px;
-  display: inline-block;
-  padding: $pm-md;
-}
+
 .pad-home-main {
   width: calc(100% - 235px);
   float: right;

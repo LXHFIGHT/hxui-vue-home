@@ -75,7 +75,7 @@
     </div>
     <div class="section">
       <span class="title">
-        HxButton Props
+        属性表格
       </span>
       <div class="hx-table">
         <table>

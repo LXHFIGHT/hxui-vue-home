@@ -98,6 +98,12 @@
   display: none;
 }
 
+.aside-catalog {
+  width: 230px;
+  display: inline-block;
+  padding: $pm-md 0;
+}
+
 @media screen and (max-width: 640px) {
   .pad-article {
     padding: $md;

@@ -25,6 +25,7 @@
     <span class="annotation">
       // 此处可以写注释, 可复制上述属性 .section
     </span>
+    <!-- 属性表格 -->
     <div class="section">
       <span class="title">属性表格</span>
       <div class="hx-table">
@@ -45,6 +46,28 @@
               <td v-text="item.type"></td>
               <td v-text="item.option"></td>
               <td v-text="item.default"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- 事件 -->
+    <div class="section">
+      <span class="title">事件</span>
+      <div class="hx-table">
+        <table>
+          <thead>
+            <tr>
+              <td class="sm">事件名称</td>
+              <td class="lg">说明</td>
+              <td class="sm">回调参数</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(item, idx) in props" :key="idx">
+              <td v-text="item.name"></td>
+              <td v-text="item.desc"></td>
+              <td v-text="item.params"></td>
             </tr>
           </tbody>
         </table>
