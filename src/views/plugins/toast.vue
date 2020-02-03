@@ -203,34 +203,34 @@ export default {
     return {
       firstText: `// 弹出纯文本 Toast
 this.$hxui.toast({
-  text: 'Hi, I am a toast message',
+  text: '我是一个纯文本的Toast',
   level: 'info'
 })
 
 // 弹出富文本 Toast
 this.$hxui.toast({
-  html: 'Hi, I am a <strong style="color: orange;">rich</strong> toast message',
+  html: '我是一个<strong style="color: orange;">富文本</strong>的Toast弹框',
   level: 'info'
 })`,  
       secondText: `const doToastDuring = (during) => {
   this.$hxui.toast({
-    text: 'Hi, I am a toast message with different during',
+    text: '我是一个停留时间不一的toast弹框',
     level: 'info',
     during: during
   })
 }`,    
       thirdText: `const doToastPosition = (position) => {
   this.$hxui.toast({
-    text: 'Hi, I am a toast message with different position: ' + position,
+    text: '我是一个弹出方位不一的toast弹框',
     level: 'warn',
     position
   })
 }`, 
-      forthText: `this.$hxui.toast.info('I am a toast message with info level');
-this.$hxui.toast.success('I am a toast message with success level');
-this.$hxui.toast.warn('I am a toast message with warn level');
-this.$hxui.toast.error('I am a toast message with error level');
-this.$hxui.toast.fatal('I am a toast message with fatal level');`,
+      forthText: `this.$hxui.toast.info('我是一个消息级别的toast弹框');
+this.$hxui.toast.success('我是一个成功级别的toast弹框');
+this.$hxui.toast.warn('我是一个警告级别的toast弹框');
+this.$hxui.toast.error('我是一个错误级别的toast弹框');
+this.$hxui.toast.fatal('我是一个崩溃级别的toast弹框');`,
       props: [
         { name: 'text', desc: '纯文本消息内容', type: 'String', option: '字符串', default: '空字符串' },
         { name: 'html', desc: '富文本消息内容', type: 'String', option: '字符串', default: '空字符串' },
@@ -247,26 +247,26 @@ this.$hxui.toast.fatal('I am a toast message with fatal level');`,
   methods: {
     doToastText (type) {
       this.$hxui.toast({
-        text: 'Hi, I am a toast message',
+        text: `我是一个纯文本的Toast弹框: ${type}`,
         level: type || 'info'
       })
     },
     doToastHTML () {
       this.$hxui.toast({
-        html: 'Hi, I am a <strong style="color: orange;">rich</strong> toast message',
+        html: '我是一个<strong style="color: orange;">富文本</strong>的Toast弹框',
         level: 'info'
       })
     },
     doToastDuring (during) {
       this.$hxui.toast({
-        text: 'Hi, I am a toast message with different during',
+        text: '我是一个停留时间不一的toast弹框',
         level: 'info',
         during: during
       })
     },
     doToastPosition (position) {
       this.$hxui.toast({
-        text: 'Hi, I am a toast message with different position: ' + position,
+        text: '我是一个弹出方位不一的toast弹框',
         level: 'warn',
         position
       })

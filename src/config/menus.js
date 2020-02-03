@@ -63,7 +63,7 @@ export const pluginsCatalog = [
       { key: '确认框', value: 'confirm' },
       { key: '警告框', value: 'alert' },
       { key: '文本确认框', value: 'prompt' },
-      { key: 'Toast 插件', value: 'toast' },
+      { key: 'Toast弹框', value: 'toast' },
       '|',
       '验证',
       { key: 'SmartValidator', value: 'validate' }
