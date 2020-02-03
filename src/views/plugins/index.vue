@@ -1,6 +1,6 @@
 <template>
   <div class="hx-block">
-    <div :class="['bg-white', project.isAdmin ? 'hx-block' : 'hx-container']">
+    <div :class="['bg-white', project.isAdmin ? 'hx-block' : 'container']">
       <aside :class="['aside-catalog', showCatalog && 'show']">
         <hx-catalog 
           :menus="menus" 
@@ -56,12 +56,5 @@ export default {
 .bg-white {
   background-color: white;
   height: 100%;
-}
-.pad-home-main {
-  width: calc(100% - 235px);
-  float: right;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 </style>

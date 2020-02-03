@@ -1,6 +1,6 @@
 <template>
   <div class="hx-block pad-center">
-    <div class="hx-container">
+    <div class="container">
       <h1 style="font-size: 40px">Thanks for experiencing HXUI</h1>
       <span class="color-gray">We are willing to take any kind of suggestions</span><br />
     </div>
