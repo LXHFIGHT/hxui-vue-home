@@ -1,6 +1,6 @@
 <template>
   <article class="pad-article">
-    <header class="title">$hxui.confirm</header>
+    <header class="title">$hxui.confirm 确认框</header>
     <span class="desc">
       使用者在需要用户进行二次确认的场景下，可以使用 <em>this.$hxui.confirm(options)</em> 弹出确认框，
       需要传入一个JavaScript对象作为唯一参数，通过对象中的属性定义确认对话框的内容。

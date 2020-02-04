@@ -1,6 +1,6 @@
 <template>
   <article class="pad-article">
-    <header class="title">$hxui.prompt</header>
+    <header class="title">$hxui.prompt 文本确认框</header>
     <span class="desc">
       使用者在需要用户进行简单输入并作确认的场景下，可以使用 <em>this.$hxui.prompt(options)</em> 弹出文本确认框，
       需要传入一个JavaScript对象作为唯一参数，通过对象中的属性定义文本确认对话框的内容。

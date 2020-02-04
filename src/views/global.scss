@@ -27,6 +27,13 @@
     font-weight: 600;
     border-radius: $pm-sm/2;
   }
+  a {
+    color: $color-blue;
+    font-weight: 500;
+    &:hover {
+      color: $color-main;
+    }
+  }
   .section {
     margin: $pm-bg*2 0;
     > .title {

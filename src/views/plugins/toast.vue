@@ -1,6 +1,6 @@
 <template>
   <article class="pad-article">
-    <header class="title">$hxui.toast</header>
+    <header class="title">$hxui.toast 轻量级弹框</header>
     <span class="desc">
       在需要弹出轻量级（不需要用户进行交互，提醒完后自动淡出）的提示的场景下，可以使用 <em>this.$hxui.toast(options)</em>，
       需要传入一个JavaScript对象作为唯一参数，通过对象中的属性定义toast的内容。
@@ -12,7 +12,7 @@
       </span>
       <span class="desc">
         通过 <em>options.text</em> 定义Toast中纯文本的内容，如果需要使用富文本则使用 <em>options.html</em> 配置
-        （引入富文本目的是增加强调部分信息用，一般不建议在轻量级弹框提示中使用过于花里胡哨的样式）
+        （引入富文本目的是可以强调部分信息，不建议在如此轻量级的弹框中使用过于花里胡哨的样式）
       </span>
       <div class="pad-preview">
         <div class="demo">
@@ -102,7 +102,9 @@
           <strong style="width: 100px; margin-right: 16px; display: inline-block;">bottomRight:</strong> 底部居右位置<br/>
         </span>
         <span class="hide-md hide-bg">
+          <strong style="width: 100px; margin-right: 16px; display: inline-block;">top:</strong> 顶部居中位置<br/>
           <strong style="width: 100px; margin-right: 16px; display: inline-block;">center:</strong> 页面正中央位置<br/>
+          <strong style="width: 100px; margin-right: 16px; display: inline-block;">bottom:</strong> 底部居中位置（默认）<br/>
         </span>
       </span>
       <div class="pad-preview">
