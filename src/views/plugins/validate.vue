@@ -119,7 +119,7 @@
   </article>
 </template>
 <script>
-import { HxInput, HxButton } from '@/hxui'
+import { HxInput, HxButton } from 'hxui'
 export default {
   components: { HxInput, HxButton },
   data () {

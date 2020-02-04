@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import { HxSmartUploader } from '@/hxui'
+import { HxSmartUploader } from 'hxui'
 export default {
   components: {
     HxSmartUploader

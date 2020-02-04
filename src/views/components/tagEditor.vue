@@ -141,7 +141,7 @@
   </article>
 </template>
 <script>
-import { HxTagEditor } from '@/hxui'
+import { HxTagEditor } from 'hxui'
 export default {
   components: {
     HxTagEditor

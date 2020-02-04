@@ -177,8 +177,7 @@
 </template>
 
 <script>
-import { HxRow, HxInput } from '@/hxui'
-import { HxSmartUploader } from 'hxui'
+import { HxRow, HxInput, HxSmartUploader } from 'hxui'
 export default {
   components: {
     HxSmartUploader,

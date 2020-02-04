@@ -129,7 +129,7 @@
   </article>
 </template>
 <script>
-import { HxDot } from '@/hxui'
+import { HxDot } from 'hxui'
 export default {
   components: { HxDot },
   data () {
