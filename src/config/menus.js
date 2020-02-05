@@ -64,6 +64,8 @@ export const pluginsCatalog = [
       { key: '警告框', value: 'alert' },
       { key: '文本确认框', value: 'prompt' },
       { key: 'Toast弹框', value: 'toast' },
+      '加载',
+      { key: '加载弹框', value: 'loading' },
       '|',
       '验证',
       { key: 'SmartValidator', value: 'validate' }

@@ -114,6 +114,11 @@ export default new Router({
               component: resolve => require(['@/views/plugins/toast.vue'], resolve)
             },
             {
+              path: '/plugins/loading',
+              name: 'loading',
+              component: resolve => require(['@/views/plugins/loading.vue'], resolve)
+            },
+            {
               path: '/plugins/validate',
               name: 'validate',
               component: resolve => require(['@/views/plugins/validate.vue'], resolve)

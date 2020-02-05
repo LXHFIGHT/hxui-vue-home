@@ -5,7 +5,7 @@
 @import "./../hxui/scss/variable.scss";
 
 .pad-article {
-  padding: $pm-md $pm-bg $pm-md $pm-md;
+  padding: $pm-md $pm-bg;
   max-width: 860px;
   margin: 0 auto;
   > .title {
