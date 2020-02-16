@@ -31,6 +31,9 @@
           <hx-row label="正常文本框">
             <hx-input type="text" placeholder="请输入文本..."/>
           </hx-row>
+          <hx-row label="带单位文本框">
+            <hx-input type="text" placeholder="请输入单价" unit="元/个"/>
+          </hx-row>
           <hx-row label="不可编辑">
             <hx-input disabled type="text" placeholder="请输入文本..."/>
           </hx-row>
@@ -120,6 +123,9 @@ export default {
       hxInput4: '',
       text: `<hx-row label="正常文本框">
   <hx-input type="text" placeholder="请输入文本..."/>
+</hx-row>
+<hx-row label="带单位文本框">
+  <hx-input type="text" placeholder="请输入单价" unit="元/个"/>
 </hx-row>
 <hx-row label="不可编辑">
   <hx-input disabled type="text" placeholder="请输入文本..."/>
