@@ -117,10 +117,16 @@
         border-radius: $pm-sm;
         padding: $sm 0;
         transition: bottom .4s;
+        .pad-options {
+          max-height: 360px;
+          width: 100%;
+          display: block;
+          overflow: auto;
+        }
         .btn-option:first-child .option {
           @include borderRadiusTop($sm);
         }
-        .btn-option:nth-last-child(2) .option {
+        .btn-option:nth-last-child(1) .option {
           @include borderRadiusBottom($sm);
         }
         .option {

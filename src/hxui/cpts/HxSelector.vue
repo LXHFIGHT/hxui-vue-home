@@ -10,20 +10,22 @@
       ref="inputer"
       :disabled="disabled"
       :value="_optionFilter(value)"/>
-    <button v-if="value && !disabled" class="btn-clear" @click="doClear">×</button>
+    <button v-if="value && !disabled" class="btn-clear hide-sm" @click="doClear">×</button>
     <div :class="['hx-pad-options selector', showOptions && 'show']" ref="padOptions" 
       :style="styles">
       <div class="pad-select-zone">
-        <div class="btn-option" v-for="(option, idx) in options" :key="idx">
-          <div @click="doSelect(option)"
-            v-if="option.value !== '|' || option[key] !== '|'"
-            :value="option.value"
-            :class="['option', 
-              option.disabled ? 'disabled' : '', 
-              option.value === value && 'selected']">
-            {{ option[key] }}
+        <div class="pad-options">
+          <div class="btn-option" v-for="(option, idx) in options" :key="idx">
+            <div @click="doSelect(option)"
+              v-if="option.value !== '|' || option[key] !== '|'"
+              :value="option.value"
+              :class="['option', 
+                option.disabled ? 'disabled' : '', 
+                option.value === value && 'selected']">
+              {{ option[key] }}
+            </div>
+            <div class="line-divider" v-if="option.value === '|' && option[key] === '|'"></div>
           </div>
-          <div class="line-divider" v-if="option.value === '|' && option[key] === '|'"></div>
         </div>
         <div class="btn-cancel option" @click="doHideOptions" v-if="screenWidth <= MOBILE_DEVICE_MAX_WIDTH">
           取消选择
@@ -164,19 +166,18 @@ export default {
       this.showOptions = false
     },
     doSelect (option) {
-      console.log('Selected: ', option)
       if (option.disabled) {
         return
       }
       this.showOptions = false
       this.$emit('input', option.value)
       this.$refs.hxSelector.classList.remove('error')
-      this.$emit('change')
+      this.$emit('change', option)
       this.$forceUpdate()
     },
     doHideOptions () {
       this.showOptions = false
-      this.$forceUpdate()
+      this.doClear()
     }
   },
   created () {
