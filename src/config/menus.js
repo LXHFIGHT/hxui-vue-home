@@ -37,6 +37,7 @@ export const componentsCatalog = [
       '表单',
       { key: '输入框', value: 'hx-input' },
       { key: '下拉菜单', value: 'hx-selector' },
+      { key: '开关', value: 'hx-switch' },
       { key: '标签框', value: 'hx-tag-editor' },
       { key: '上传文件组件', value: 'hx-smart-uploader' }
     ]

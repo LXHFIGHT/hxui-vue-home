@@ -110,7 +110,7 @@
 </template>
 
 <script>
-import { HxRow, HxInput } from 'hxui'
+import { HxRow, HxInput } from '@/hxui'
 export default {
   components: {
     HxInput,
