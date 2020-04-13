@@ -5,7 +5,8 @@
       <span class="color-gray">We are willing to take any kind of suggestions</span><br />
     </div>
     <footer class="footer">
-      <a href="mailto: lxhfight1@gmail.com" class="color-gray">lxhfight1@gmail.com</a>
+      <a href="mailto: lxhfight1@gmail.com" class="color-gray">lxhfight1@gmail.com</a> |
+      <a class="color-gray text-icp" target="_blank" href="http://www.beian.miit.gov.cn/">粤ICP备17018923号</a>
     </footer>
   </div>
 </template>
@@ -38,6 +39,12 @@ export default {
       position: absolute;
       @include centerHorizontal;
       bottom: $pm-bg;
+      .text-icp {
+        font-size: $font-md;
+        &:hover {
+          color: $color-blue!important;
+        }
+      }
     }
   }
 </style>
