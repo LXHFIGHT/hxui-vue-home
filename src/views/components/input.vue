@@ -38,13 +38,13 @@
             <hx-input disabled type="text" placeholder="请输入文本..."/>
           </hx-row>
           <hx-row label="带清空按钮">
-            <hx-input type="text" showClearBtn="true" placeholder="请输入文本..." error/>
+            <hx-input type="text" showClearBtn="true" placeholder="请输入文本..."/>
           </hx-row>
           <hx-row label="显示字数">
-            <hx-input v-model="hxInput3" type="text" :showLength="true" placeholder="请输入文本..." error/>
+            <hx-input v-model="hxInput3" type="text" showClearBtn="true" :showLength="true" placeholder="请输入文本..."/>
           </hx-row>
           <hx-row label="限制10个字数">
-            <hx-input v-model="hxInput4" :maxLength="10" type="text" :showLength="true" placeholder="请输入文本..." error/>
+            <hx-input v-model="hxInput4" :maxLength="10" type="text" showClearBtn="true" :showLength="true" placeholder="请输入文本..."/>
           </hx-row>
         </div>
         <div class="code">
@@ -65,7 +65,10 @@
             <hx-input :rows="3" type="text" placeholder="请输入文本..."/>
           </hx-row>
           <hx-row label="带清空按钮">
-            <hx-input :rows="3" type="text" showClearBtn="true" placeholder="请输入文本..." error/>
+            <hx-input :rows="3" type="text" showClearBtn="true" placeholder="请输入文本..."/>
+          </hx-row>
+          <hx-row label="显示字长">
+            <hx-input v-model="hxInput5" :rows="3" type="text" showClearBtn="true" :showLength="true" placeholder="请输入文本..."/>
           </hx-row>
         </div>
         <div class="code">
@@ -121,6 +124,7 @@ export default {
       str: '',
       hxInput3: '',
       hxInput4: '',
+      hxInput5: '',
       text: `<hx-row label="正常文本框">
   <hx-input type="text" placeholder="请输入文本..."/>
 </hx-row>
@@ -134,11 +138,11 @@ export default {
   <hx-input type="text" showClearBtn="true" placeholder="请输入文本..."/>
 </hx-row>
 <hx-row label="显示字数">
-  <hx-input v-model="hxInput3" :showLength="true" 
+  <hx-input v-model="hxInput3" :showLength="true" showClearBtn="true"
     placeholder="请输入文本..."/>
 </hx-row>
 <hx-row label="限制10个字数">
-  <hx-input v-model="hxInput4" :maxLength="10" :showLength="true" 
+  <hx-input v-model="hxInput4" :maxLength="10" showClearBtn="true" :showLength="true" 
     placeholder="请输入文本..."/>
 </hx-row>
 
@@ -148,7 +152,10 @@ export default {
   <hx-input :rows="3" type="text" placeholder="请输入文本..."/>
 </hx-row>
 <hx-row label="带清空按钮">
-  <hx-input :rows="3" type="text" showClearBtn="true" placeholder="请输入文本..." error/>
+  <hx-input :rows="3" type="text" showClearBtn="true" placeholder="请输入文本..."/>
+</hx-row>
+<hx-row label="显示字长">
+  <hx-input :rows="3" type="text" showLength="true" showClearBtn="true" placeholder="请输入文本..."/>
 </hx-row>
 `,
       typeText: ``,
@@ -165,18 +172,6 @@ export default {
         { name: 'disabled', desc: '只读且禁用事件', type: 'Boolean/String', option: 'true/false/"disabled"', default: 'false' },
         { name: 'maxLength', desc: '允许输入的最大字符串', type: 'Number', option: '整数', default: '--' }
       ]
-    }
-  },
-  methods: {
-    popConfirm () {
-      const that = this
-      this.$hxui.confirm({
-        text: 'You are sure to access the file',
-        level: 'error',
-        onConfirm () {
-          that.$hxui.popTip('Yahoo China')
-        }
-      })
     }
   }
 }
