@@ -103,6 +103,29 @@
         </div>
       </div>
     </div>
+    <!-- 其他配置 -->
+    <div class="section">
+      <span class="title">
+        其他配置
+      </span>
+      <span class="desc">
+        <em>options.hideCancelBtn</em>： 如果需要用户执行确认操作，才能进行下一步，则将此项设置为 <em>true</em><br/>
+        <em>options.disableMask</em>： 如果需要禁用点击模态框蒙层关闭模态框的操作，将此项设置为 <em>true</em><br/>
+      </span>
+      <div class="pad-preview">
+        <div class="demo">
+          <hx-button type="info" @click="doConfirmHideCancelBtn">
+            隐藏取消按钮
+          </hx-button>
+        </div>
+        <div class="code">
+          <pre class="detail" v-highlightjs="sixthText">
+            <code class="javascript">
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
     <!-- 回调事件 -->
     <div class="section">
       <span class="title">
@@ -191,6 +214,14 @@ export default {
   onCancel: () => {
     alert('已取消')
   }
+})`, 
+      sixthText: `this.$hxui.prompt({
+  title: '填写配送地址',
+  placeholder: '请输入',
+  hideCancelBtn: true,
+  disableMask: true,
+  level: 'info',
+  tips: '请填写真实地址'
 })`,
       props: [
         { name: 'title', desc: '标题', type: 'String', option: '建议少于10字的字符串', default: '空字符串' },
@@ -206,11 +237,17 @@ export default {
       ]
     }
   },
-  props: [
-    { name: 'content', desc: '下拉菜单选项内容', type: 'Array', option: '由数值、字符串或对象组成', default: '[]' },
-    { name: 'placeholder', desc: '文本为空时的提示信息', type: 'String', option: '文本', default: '空字符串' }
-  ],
   methods: {
+    doConfirmHideCancelBtn () {
+      this.$hxui.prompt({
+        title: '填写配送地址',
+        placeholder: '请输入',
+        hideCancelBtn: true,
+        disableMask: true,
+        level: 'info',
+        tips: '请填写真实地址'
+      })
+    },
     doPromptTitle () {
       this.$hxui.prompt({
         title: '🍬本次糖果屋订单意见',
