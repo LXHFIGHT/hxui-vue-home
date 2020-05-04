@@ -180,7 +180,8 @@ const doChange = (opt) => {
       newVal: '加糖',
       content: ['加糖', '不加糖'], // 第一个值对应“开”状态，第二个值对应“关”状态
       props: [
-        { name: 'content', desc: '开关状态所对应值组成的数组', type: 'Array', option: '第一个是开状态的值，第二个是关状态的值', default: '[]' }
+        { name: 'content', desc: '开关状态所对应值组成的数组', type: 'Array', option: '第一个是开状态的值，第二个是关状态的值', default: '[]' },
+        { name: 'disabled', desc: '是否不可编辑', type: 'Boolean/String', option: 'true/false/"disabled"', default: 'false' }
       ],
       events: [
         { name: 'change', desc: '切换开关触发事件', params: '参数为一个对象，其中包含切换之后对应的值 value 参数，以及该开关绑定的 id，如 { value: 1, id: 1001 }' }
