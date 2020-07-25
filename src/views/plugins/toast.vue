@@ -16,7 +16,7 @@
       </span>
       <div class="pad-preview">
         <div class="demo">
-          <hx-button @click="doToastText">
+          <hx-button @click="doToastText('info')">
             弹出纯文本 Toast
           </hx-button>
           <hx-button @click="doToastHTML">
@@ -248,6 +248,7 @@ this.$hxui.toast.fatal('我是一个崩溃级别的toast弹框');`,
   ],
   methods: {
     doToastText (type) {
+      console.log('Data', type)
       this.$hxui.toast({
         text: `我是一个纯文本的Toast弹框: ${type}`,
         level: type || 'info'

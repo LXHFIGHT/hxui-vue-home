@@ -105,7 +105,7 @@
   </article>
 </template>
 <script>
-import { HxSelector } from 'hxui'
+import { HxSelector } from '@/hxui'
 export default {
   components: {
     HxSelector

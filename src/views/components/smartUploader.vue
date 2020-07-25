@@ -1,5 +1,5 @@
 <template>
-  <article class="pad-article">
+  <article class="pad-article developing">
     <header class="title">上传文件组件 HxSmartUploader</header>
     <span class="desc">
       HxSmartUploader 是一个面向图片、视频等文件上传组件，在上传图片场景中可以对图片进行前端压缩处理，上传成功之后也可以通过HxPreviewImage进行图片预览。

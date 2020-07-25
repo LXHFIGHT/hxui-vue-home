@@ -8,6 +8,18 @@
   padding: $pm-md $pm-bg;
   max-width: 860px;
   margin: 0 auto;
+  position: relative;
+  &.developing::before {
+    position: absolute;
+    right: $pm-md;
+    top: $pm-md;
+    content: "正在完善中";
+    color: $color-white;
+    background-color: $color-blue;
+    padding: $pm-sm $pm-md;
+    border-radius: $pm-sm/2;
+    animation: breatheOpacity 2s infinite;
+  }
   > .title {
     font-size: $font-bg * 2;
     line-height: 1;
