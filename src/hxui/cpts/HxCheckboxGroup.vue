@@ -3,7 +3,7 @@
     <button v-for="(item, idx) in options" 
       :key="idx"
       @click="doSelectItem(item)"
-      :class="['item', value.includes(item.value) && 'selected']">
+      :class="['item', result.includes(item.value) && 'selected']">
       <img class="icon-check" src="./../img/icon/icon-check.png" alt="">
       {{ item.key }}
     </button>
@@ -13,7 +13,8 @@
 export default {
   data () {
     return {
-      options: []
+      options: [],
+      result: []
     }
   },
   props: {
@@ -34,6 +35,7 @@ export default {
   },
   methods: {
     $_init () {
+      console.warn('value', this.value)
       this.options = this.content.map((v, i) => {
         let item = {}
         if (typeof v === 'object') {
@@ -44,9 +46,10 @@ export default {
         }
         return item
       })
+      console.warn(this.options)
     },
     doSelectItem (item) {
-      const tempValue = [].concat(this.value)
+      const tempValue = [].concat(this.result)
       if (tempValue.includes(item.value)) {
         for (let i = 0; i < tempValue.length; i++) {
           if (tempValue[i] === item.value) {
@@ -59,7 +62,9 @@ export default {
         tempValue.push(item.value)
         this.onSelect instanceof Function && this.onSelect(item.value)
       }
-      this.$emit('input', tempValue)
+      this.result = [].concat(tempValue)
+      this.$emit('input', this.result)
+      this.$emit('change', this.result)
     }
   },
   created () {
@@ -70,6 +75,14 @@ export default {
       deep: true,
       handler () {
         this.$_init()
+      }
+    },
+    value: {
+      deep: true,
+      handler (newVal) {
+        if (newVal && newVal.length) {
+          this.result = [].concat(newVal)
+        }
       }
     }
   }
