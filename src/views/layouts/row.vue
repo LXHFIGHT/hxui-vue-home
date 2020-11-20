@@ -162,7 +162,7 @@
           <hx-row label="购买糖果量">
             <hx-input placeholder="请输入金额"></hx-input>
             <span slot="right">克</span>
-            <span slot="tips" class="bg-outstanding">糖果虽舔，请不要多吃哦~ 不如一天一颗吧~</span>
+            <span slot="tips" class="bg-outstanding">糖果虽甜，请不要多吃哦~ 不如一天一颗吧~</span>
           </hx-row>
         </div>
         <div class="code">
@@ -215,7 +215,7 @@ export default {
       text5: `<hx-row label="购买糖果量">
   <hx-input placeholder="请输入金额"></hx-input>
   <span slot="right">克</span>
-  <span slot="tips">糖果虽舔，请不要多吃哦~ 不如一天一颗吧~</span>
+  <span slot="tips">糖果虽甜，请不要多吃哦~ 不如一天一颗吧~</span>
 </hx-row>`, 
       text6: `<hx-row required="required" label="请输入必填项">
   <hx-input required="required" placeholder="请输入内容"></hx-input>
