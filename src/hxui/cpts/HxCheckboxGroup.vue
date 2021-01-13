@@ -35,8 +35,6 @@ export default {
   },
   methods: {
     $_init () {
-      console.log(this.value, 'this.value')
-      console.log('value', this.content, this.value.length)
       this.options = this.content.map((v, i) => {
         let item = {}
         if (typeof v === 'object') {
@@ -83,6 +81,8 @@ export default {
       handler (newVal) {
         if (newVal && newVal.length) {
           this.result = [].concat(newVal)
+        } else {
+          this.result = []
         }
       }
     }

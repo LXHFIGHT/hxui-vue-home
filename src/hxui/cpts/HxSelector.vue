@@ -197,7 +197,8 @@ export default {
   beforeDestroy () {
     window.clearInterval(this.timer)
     const body = document.querySelector('body')
-    body.removeChild(this.$refs.padOptions)
+    console.log('Pad options', this.$refs.padOptions)
+    this.$refs.padOptions && body.removeChild(this.$refs.padOptions)
   },
   destroyed () {
     this.$destroy(true)
