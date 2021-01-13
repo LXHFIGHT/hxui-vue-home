@@ -41,6 +41,11 @@ export default new Router({
               component: resolve => require(['@/views/components/dot.vue'], resolve)
             },
             {
+              path: 'hx-checkbox-group',
+              name: 'hx-checkbox-group',
+              component: resolve => require(['@/views/components/checkboxGroup.vue'], resolve)
+            },
+            {
               path: 'hx-switch',
               name: 'hx-switch',
               component: resolve => require(['@/views/components/switch.vue'], resolve)

@@ -3,7 +3,7 @@
     <button v-for="(item, idx) in options" 
       :key="idx"
       @click="doSelectItem(item)"
-      :class="['item', result.includes(item.value) && 'selected']">
+      :class="['item', result.includes(item.value) && 'selected', disabled ? 'disabled' : '']">
       <img class="icon-check" src="./../img/icon/icon-check.png" alt="">
       {{ item.key }}
     </button>
@@ -26,6 +26,10 @@ export default {
       type: Array,
       required: true
     },
+    disabled: {
+      type: [Number, String, Boolean],
+      default: false
+    },
     onSelect: { // 当选择选项时
       type: Function
     },
@@ -47,6 +51,9 @@ export default {
       })
     },
     doSelectItem (item) {
+      if (this.disabled) {
+        return
+      }
       const tempValue = [].concat(this.result)
       if (tempValue.includes(item.value)) {
         for (let i = 0; i < tempValue.length; i++) {
