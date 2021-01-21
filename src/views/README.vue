@@ -26,64 +26,28 @@
       // 此处可以写注释, 可复制上述属性 .section
     </span>
     <!-- 属性表格 -->
-    <div class="section">
-      <span class="title">属性表格</span>
-      <div class="hx-table">
-        <table>
-          <thead>
-            <tr>
-              <td class="sm">参数</td>
-              <td class="bg">说明</td>
-              <td class="sm">类型</td>
-              <td class="bg">可选值</td>
-              <td class="md">默认值</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, idx) in props" :key="idx">
-              <td v-text="item.name"></td>
-              <td v-text="item.desc"></td>
-              <td v-text="item.type"></td>
-              <td v-text="item.option"></td>
-              <td v-text="item.default"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <props-table :content="props"></props-table>
     <!-- 事件 -->
-    <div class="section">
-      <span class="title">事件</span>
-      <div class="hx-table">
-        <table>
-          <thead>
-            <tr>
-              <td class="sm">事件名称</td>
-              <td class="lg">说明</td>
-              <td class="sm">回调参数</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, idx) in props" :key="idx">
-              <td v-text="item.name"></td>
-              <td v-text="item.desc"></td>
-              <td v-text="item.params"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <events-table :content="events"></events-table>
   </article>
 </template>
 <script>
+import EventsTable from './cpts/EventsTable'
+import PropsTable from './cpts/PropsTable'
 export default {
-  components: {},
+  components: {
+    EventsTable,
+    PropsTable
+  },
   data () {
     return {
       textNext: `代码演示区`,
       props: [
         { name: 'content', desc: '下拉菜单选项内容', type: 'Array', option: '由数值、字符串或对象组成', default: '[]' },
         { name: 'placeholder', desc: '文本为空时的提示信息', type: 'String', option: '文本', default: '空字符串' }
+      ],
+      events: [
+        { name: 'change', desc: '修改内容触发事件', option: '选中的值' }
       ]
     }
   }

@@ -82,42 +82,21 @@
         </div>
       </div>
     </div>
-    <div class="section">
-      <span class="title">
-        HxInput 参数
-      </span>
-      <div class="hx-table">
-        <table>
-          <thead>
-            <tr>
-              <td class="sm">参数</td>
-              <td class="bg">说明</td>
-              <td class="sm">类型</td>
-              <td class="bg">可选值</td>
-              <td class="md">默认值</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, idx) in props" :key="idx">
-              <td v-text="item.name"></td>
-              <td v-text="item.desc"></td>
-              <td v-text="item.type"></td>
-              <td v-text="item.option"></td>
-              <td v-text="item.default"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <props-table :content="props"></props-table>
+    <events-table :content="events"></events-table>
   </article>
 </template>
 
 <script>
 import { HxRow, HxInput } from '@/hxui'
+import EventsTable from './../cpts/EventsTable'
+import PropsTable from './../cpts/PropsTable'
 export default {
   components: {
     HxInput,
-    HxRow
+    HxRow,
+    EventsTable,
+    PropsTable
   },
   data () {
     return {
@@ -171,6 +150,13 @@ export default {
         { name: 'readonly', desc: '是否只读', type: 'Boolean/String', option: 'true/false/"readonly"', default: 'false' },
         { name: 'disabled', desc: '只读且禁用事件', type: 'Boolean/String', option: 'true/false/"disabled"', default: 'false' },
         { name: 'maxLength', desc: '允许输入的最大字符串', type: 'Number', option: '整数', default: '--' }
+      ],
+      events: [
+        { name: 'input', desc: '输入文本事件', option: '输入值' },
+        { name: 'blur', desc: '失去焦点时触发事件', option: '输入值' },
+        { name: 'focus', desc: '捕获焦点时触发事件', option: '输入值' },
+        { name: 'keyup', desc: '按键起来事件', option: '输入值' },
+        { name: 'keydown', desc: '按键按下事件', option: '输入值' }
       ]
     }
   }

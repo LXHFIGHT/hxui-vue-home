@@ -73,62 +73,20 @@
         </div>
       </div>
     </div>
-    <div class="section">
-      <span class="title">
-        属性表格
-      </span>
-      <div class="hx-table">
-        <table>
-          <thead>
-            <tr>
-              <td class="sm">参数</td>
-              <td class="bg">说明</td>
-              <td class="sm">类型</td>
-              <td class="bg">可选值</td>
-              <td class="md">默认值</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>type</td>
-              <td>按钮样式类型</td>
-              <td>String</td>
-              <td>main/default/success/warn/error/fatal</td>
-              <td>default</td>
-            </tr>
-            <tr>
-              <td>size</td>
-              <td>按钮大小</td>
-              <td>String</td>
-              <td>sm 小/md 默认/bg 大</td>
-              <td>md</td>
-            </tr>
-            <tr>
-              <td>blank</td>
-              <td>空心按钮</td>
-              <td>Boolean/String</td>
-              <td>true/false/“blank”</td>
-              <td>false</td>
-            </tr>
-            <tr>
-              <td>text</td>
-              <td>文字按钮</td>
-              <td>Boolean/String</td>
-              <td>true/false/“text”</td>
-              <td>false</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <props-table :content="props"></props-table> 
+    <events-table :content="events"></events-table>
   </article>
 </template>
 
 <script>
 import { HxButton } from 'hxui'
+import EventsTable from '../cpts/EventsTable.vue'
+import PropsTable from '../cpts/PropsTable.vue'
 export default {
   components: {
-    HxButton
+    HxButton,
+    EventsTable,
+    PropsTable
   },
   data () {
     return {
@@ -148,7 +106,16 @@ export default {
 <hx-button type="error" blank>错误</hx-button>
 <hx-button type="main" text>主题色</hx-button>
 <hx-button type="success" text>正常</hx-button>
-<hx-button type="warn" text>警告</hx-button>`
+<hx-button type="warn" text>警告</hx-button>`,
+      events: [
+        { name: 'click', desc: '点击触发事件', option: '组件实例' }
+      ],
+      props: [
+        { name: 'type', desc: '按钮样式类型', type: 'String', option: 'main/default/success/warn/error/fatal', default: 'default' },
+        { name: 'size', desc: '按钮大小', type: 'String', option: 'sm 小/md 默认/bg 大', default: 'md' },
+        { name: 'blank', desc: '空心按钮', type: 'Boolean/String', option: 'true/false/“blank”', default: 'false' },
+        { name: 'text', desc: '文字按钮', type: 'Boolean/String', option: 'true/false/“text”', default: 'false' }
+      ]
     }
   },
   methods: {

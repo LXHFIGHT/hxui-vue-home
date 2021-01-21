@@ -77,38 +77,19 @@
         </div>
       </div>
     </div>
-    <div class="section">
-      <span class="title">HxSelector Props</span>
-      <div class="hx-table">
-        <table>
-          <thead>
-            <tr>
-              <td class="sm">参数</td>
-              <td class="bg">说明</td>
-              <td class="sm">类型</td>
-              <td class="bg">可选值</td>
-              <td class="md">默认值</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, idx) in props" :key="idx">
-              <td v-text="item.name"></td>
-              <td v-text="item.desc"></td>
-              <td v-text="item.type"></td>
-              <td v-text="item.option"></td>
-              <td v-text="item.default"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <props-table :content="props"></props-table>
+    <events-table :content="events"></events-table>
   </article>
 </template>
 <script>
 import { HxSelector } from '@/hxui'
+import EventsTable from './../cpts/EventsTable'
+import PropsTable from './../cpts/PropsTable' 
 export default {
   components: {
-    HxSelector
+    HxSelector,
+    EventsTable,
+    PropsTable
   },
   data () {
     return {
@@ -164,6 +145,9 @@ data () {
         { name: 'disabled', desc: '只读且禁用事件', type: 'Boolean/String', option: 'true/false/"disabled"', default: 'false' },
         { name: 'keyName', desc: 'content数组中对象元素中对应选项文本内容的字段名', type: 'String', option: '文本', default: 'key' },
         { name: 'required', desc: '是否为必填项', type: 'Boolean/String', option: 'true/false/"required"', default: 'false' }
+      ],
+      events: [
+        { name: 'change', desc: '用户确认选定的值时触发', option: '选中值' }
       ]
     }
   }
