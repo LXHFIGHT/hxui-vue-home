@@ -56,6 +56,11 @@ export default new Router({
               component: resolve => require(['@/views/components/input.vue'], resolve)
             },
             {
+              path: 'hx-autocomplete',
+              name: 'hx-autocomplete',
+              component: resolve => require(['@/views/components/autocomplete.vue'], resolve)
+            },
+            {
               path: 'hx-selector',
               name: 'hx-selector',
               component: resolve => require(['@/views/components/selector.vue'], resolve)

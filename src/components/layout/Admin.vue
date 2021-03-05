@@ -65,7 +65,7 @@
 
 <script>
 import { HxNavbar } from 'hxui'
-import menus, { restoreMenu } from '../../config/menus'
+import menus, { restoreMenu } from '../../catalogs'
 import { project } from '../../config'
 import { Themes } from './../../config/const'
 import iconRight from './../../assets/img/icon-caret-right.png'

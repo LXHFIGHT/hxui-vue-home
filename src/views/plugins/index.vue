@@ -20,7 +20,7 @@
 <script>
 import { HxCatalog } from 'hxui'
 import { project } from './../../config'
-import { pluginsCatalog } from './../../config/menus'
+import { pluginsCatalog } from './../../catalogs'
 import IconCatalog from './../../assets/svg/icon-catalog.svg'
 export default {
   components: {

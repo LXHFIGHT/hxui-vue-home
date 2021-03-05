@@ -13,7 +13,7 @@
 
 <script>
 import { HxNavbar } from 'hxui'
-import menus from './../../config/menus'
+import menus from './../../catalogs'
 import { project } from './../../config' 
 export default {
   name: 'front-page',

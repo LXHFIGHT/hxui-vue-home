@@ -21,7 +21,7 @@
 import { HxCatalog } from './../../hxui'
 import IconCatalog from './../../assets/svg/icon-catalog.svg'
 import { project } from './../../config'
-import { componentsCatalog } from './../../config/menus'
+import { componentsCatalog } from './../../catalogs'
 export default {
   components: {
     HxCatalog,
