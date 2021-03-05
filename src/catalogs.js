@@ -36,6 +36,7 @@ export const componentsCatalog = [
       // { key: 'Image 图片', value: 'hx-image' },
       '表单',
       { key: '输入框', value: 'hx-input' },
+      { key: '联想输入框', value: 'hx-auto-complete' },
       { key: '下拉菜单', value: 'hx-selector' },
       { key: '复选框', value: 'hx-checkbox-group' },
       { key: '开关', value: 'hx-switch' },
