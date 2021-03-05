@@ -90,6 +90,8 @@ export default {
   },
   data () {
     return {
+      show: false,
+      follower: null,
       text: `<hx-button type="main"> 主题色 </hx-button>
 <hx-button type="info">提示</hx-button>
 <hx-button type="success"> 正常 </hx-button>
@@ -118,7 +120,16 @@ export default {
       ]
     }
   },
+  mounted () {
+    this.$_init()
+  },
   methods: {
+    doHide () {
+      this.show = false
+    },
+    $_init () {
+      this.follower = this.$refs.follower
+    },
     popTips (position) {
       this.$hxui.popTip({
         text: 'Yahoo',
