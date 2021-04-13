@@ -11,7 +11,7 @@
           <hx-button type="main">主题色</hx-button>
           <hx-button type="info">提示</hx-button>
           <hx-button type="success">正常</hx-button>
-          <hx-button type="default">默认</hx-button>
+          <hx-button >默认</hx-button>
           <hx-button type="warn">警告</hx-button>
           <hx-button type="error">错误</hx-button>
           <hx-button type="fatal">崩溃</hx-button>
@@ -51,7 +51,7 @@
     <!-- 配置按钮类型 -->
     <div class="section">
       <span class="title">配置按钮类型</span>
-      <span class="desc">空心类型按钮添加 blank属性，文本类型按钮添加 text属性</span>
+      <span class="desc">空心类型按钮添加 <em>blank</em> 属性，文本类型按钮添加 <em>text</em> 属性</span>
       <div class="pad-preview">
         <div class="demo">
           <hx-button type="main" blank>主题色</hx-button>
@@ -73,13 +73,33 @@
         </div>
       </div>
     </div>
+    <div class="section">
+      <span class="title">配置按钮是否圆角</span>
+      <span class="desc">如果需要圆角则添加 <em>round</em> 属性，完全不需要默认圆角，则添加 <em>sharp</em> 属性</span>
+      <div class="pad-preview">
+        <div class="demo">
+          <hx-button type="info" round>圆角</hx-button>
+          <hx-button type="info" round blank>警告</hx-button>
+          <hx-button type="info" round text>正常</hx-button>
+          <hx-button type="info" sharp>直角</hx-button>
+          <hx-button type="info" sharp blank>直角</hx-button>
+          <hx-button type="info" sharp text>直角</hx-button>
+        </div>
+        <div class="code">
+          <pre class="detail" v-highlightjs="roundText" >
+            <code class="xml">
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
     <props-table :content="props"></props-table> 
     <events-table :content="events"></events-table>
   </article>
 </template>
 
 <script>
-import { HxButton } from 'hxui'
+import { HxButton } from '@/hxui'
 import EventsTable from '../cpts/EventsTable.vue'
 import PropsTable from '../cpts/PropsTable.vue'
 export default {
@@ -95,7 +115,7 @@ export default {
       text: `<hx-button type="main"> 主题色 </hx-button>
 <hx-button type="info">提示</hx-button>
 <hx-button type="success"> 正常 </hx-button>
-<hx-button type="default"> 默认 </hx-button>
+<hx-button > 默认 </hx-button>
 <hx-button type="warn"> 警告 </hx-button>
 <hx-button type="error"> 错误 </hx-button>
 <hx-button type="fatal"> 崩溃 </hx-button>`,
@@ -109,6 +129,12 @@ export default {
 <hx-button type="main" text>主题色</hx-button>
 <hx-button type="success" text>正常</hx-button>
 <hx-button type="warn" text>警告</hx-button>`,
+      roundText: `<hx-button type="info" round>圆角</hx-button>
+<hx-button type="info" round blank>警告</hx-button>
+<hx-button type="info" round text>正常</hx-button>
+<hx-button type="info" sharp>直角</hx-button>
+<hx-button type="info" sharp blank>直角</hx-button>
+<hx-button type="info" sharp text>直角</hx-button>`,
       events: [
         { name: 'click', desc: '点击触发事件', option: '组件实例' }
       ],
@@ -116,7 +142,9 @@ export default {
         { name: 'type', desc: '按钮样式类型', type: 'String', option: 'main/default/success/warn/error/fatal', default: 'default' },
         { name: 'size', desc: '按钮大小', type: 'String', option: 'sm 小/md 默认/bg 大', default: 'md' },
         { name: 'blank', desc: '空心按钮', type: 'Boolean/String', option: 'true/false/“blank”', default: 'false' },
-        { name: 'text', desc: '文字按钮', type: 'Boolean/String', option: 'true/false/“text”', default: 'false' }
+        { name: 'text', desc: '文字按钮', type: 'Boolean/String', option: 'true/false/“text”', default: 'false' },
+        { name: 'round', desc: '定义圆角', type: 'Boolean/String', option: 'true/false/“round”', default: 'false' },
+        { name: 'sharp', desc: '定义直角', type: 'Boolean/String', option: 'true/false/“sharp”', default: 'false' }
       ]
     }
   },
