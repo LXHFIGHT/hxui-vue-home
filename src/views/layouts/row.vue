@@ -226,6 +226,9 @@ export default {
       props: [
         { name: 'label', desc: '标签的文本', type: 'String', option: '文本', default: '--' },
         { name: 'labelSize', desc: '标签的宽度', type: 'String', option: 'sm/md/bg/lg', default: 'md' },
+        { name: 'label-class', desc: '标签自定义类名', type: 'String', option: '文本类型', default: '--' },
+        { name: 'content-class', desc: '编辑域自定义类名', type: 'String', option: '文本类型', default: '--' },
+        { name: 'labelSize', desc: '标签的宽度', type: 'String', option: 'sm/md/bg/lg', default: 'md' },
         { name: 'tips', desc: '标签下方的提示文本', type: 'String', option: '文本', default: '--' },
         { name: 'required', desc: '是否带有必填项标记', type: 'Boolean/String', option: 'true/false/"required"', default: '空字符串' },
         { name: 'oneline', desc: '标签和行内容是否各占一行', type: 'Boolean/String', option: 'true/false/"oneline"', default: '空字符串' }
