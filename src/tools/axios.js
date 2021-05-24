@@ -1,5 +1,7 @@
-/**
- * Created by lxhfight on 2018/7/26.
+/*
+ * @Author       : liuxuhao
+ * @LastEditors  : liuxuhao
+ * Created on 2018/7/26.
  * Email: lxhfight1@gmail.com
  * Description:
  *   用于发起http/https请求的 工具方法
@@ -27,7 +29,7 @@ const handleError = (err) => { console.log(err) }
 
 const fetch = (method, path, data) => {
   let token = session.get(session.KEY_USER_TOKEN)
-  const contentType = 'application/json'
+  const contentType = method === 'get' ? 'application/x-www-form-urlencoded' : 'application/json'
   const headers = {
     'Content-Type': contentType,
     'Authorization': `Bearer ${token}`
