@@ -1,8 +1,8 @@
 <template>
   <article class="pad-article">
-    <header class="title">复选框 HxCheckboxGroup</header>
+    <header class="title">复选框集合 HxCheckboxGroup</header>
     <span class="desc">
-      HxSelector 是一个用于替代HTML5中的 <em>input:checkbox</em> 元素的复选框组件，
+      HxCheckboxGroup 是一个用于替代HTML5中的 <em>input:checkbox</em> 元素的复选框组件，
       除了样式更加简约大方，支持多个参数使得复选的场景更加容易实现，同时更符合MVVM数据视图分离的思路。
     </span>
     <div class="section">
@@ -61,27 +61,81 @@
         </div>
       </div>
     </div>
+    <header class="title">复选框 HxCheckbox </header>
+    <span class="desc">
+      HxCheckbox是可以配合 <strong>HxCheckboxGroup</strong> 使用的复选框元素，可以不用依赖其 <em>content</em>传入数组生成复选框集合，
+      更加贴合<strong>原生</strong>的<em>input:checkbox</em>写法。
+    </span>
     <div class="section">
-      <span class="title">content</span>
-      <span class="desc">[<strong>重点</strong>]</span>
+      <span class="title">定义选项</span>
+      <span class="desc">在<em>&lt;hx-checkbox-group /&gt;</em> 标签内添加带有value的 <em>&lt;hx-checkbox &gt;&lt;/hx-checkbox&gt;</em>集合</span>
       <div class="pad-preview">
         <div class="demo">
-          展示区
+          <hx-row label="选择糖果类型(元素)" label-size="bg">
+            <hx-checkbox-group v-model="candyTypesII">
+              <hx-checkbox :value="1">棉花糖</hx-checkbox>
+              <hx-checkbox :value="2">棒棒糖</hx-checkbox>
+              <hx-checkbox :value="3">太妃糖</hx-checkbox>
+            </hx-checkbox-group>
+          </hx-row>
+          <!-- 对比用 -->
+          <hx-row label="选择糖果类型(数组)" label-size="bg">
+            <hx-checkbox-group :content="candyTypes" v-model="candyTypesII"></hx-checkbox-group>
+          </hx-row>
+          <hx-row label-size="bg" label="选中的糖果对应的值：">
+            <span class="text bg-gray">{{ candyTypesII.length ? candyTypesII.join(', ') : '暂未选择' }}</span>
+          </hx-row>
         </div>
         <div class="code">
-          <span class="tips">
-            代码中附带的一些小提示
-          </span>
-          <pre class="detail" v-highlightjs="textNext" >
+          <pre class="detail" v-highlightjs="textElem" >
             <code class="xml">
             </code>
           </pre>
         </div>
       </div>
     </div>
-    <span class="annotation">
-      // 此处可以写注释, 可复制上述属性 .section
-    </span>
+     <div class="section">
+      <strong class="title">高阶用法</strong>
+      <span class="desc">使用 <strong>hx-checkbox</strong> 写法代替传入一个 <em>content</em>选项数组除了写法靠近原生，还有一点就是可以更加灵活将选择放置于页面各个角落，而不再拘泥于行内或一个标签内，下面就是一个很好的例子：</span>
+      <div class="pad-preview">
+        <div class="demo">
+          <hx-checkbox-group v-model="candyTypesIII" class="hx-table">
+            <table >
+              <thead>
+                <tr>
+                  <th>序号</th>
+                  <th>糖果类型</th>
+                  <th>糖果数量</th>
+                  <th>单位</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(item, idx) in candyOptions" :key="idx"> 
+                  <td>
+                    <hx-checkbox :value="item.value"></hx-checkbox>
+                  </td>
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.amount }}</td>
+                  <td>{{ item.unit }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </hx-checkbox-group>
+          <hx-row label-size="bg" label="选中的糖果对应的值：" style="margin-top: 16px;">
+            <span class="text bg-gray">{{ candyTypesIII.length ? candyTypesIII.join(', ') : '暂未选择' }}</span>
+          </hx-row>
+        </div>
+        <div class="code">
+          <span class="tips" style="margin-bottom: 0;">
+            使用 hx-checkbox 将可以打破位置上的限制
+          </span>
+          <pre class="detail" v-highlightjs="textElemII" >
+            <code class="xml">
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
     <!-- 属性表格 -->
     <div class="section">
       <span class="title">属性表格</span>
@@ -133,10 +187,11 @@
   </article>
 </template>
 <script>
-import { HxCheckboxGroup } from '@/hxui'
+import { HxCheckboxGroup, HxCheckbox } from '@/hxui'
 export default {
   components: {
-    HxCheckboxGroup
+    HxCheckboxGroup,
+    HxCheckbox
   },
   data () {
     return {
@@ -149,6 +204,15 @@ export default {
         { key: '太妃糖', value: 3 },  
         { key: '奶糖', value: 4 },
         { key: '跳跳糖', value: 5 }
+      ],
+      candyTypesII: [1, 3],
+      candyTypesIII: [1, 3],
+      candyOptions: [
+        { amount: 6, unit: '颗', name: '棉花糖', value: 1 }, 
+        { amount: 20, unit: '颗', name: '棒棒糖', value: 2 },  
+        { amount: 19, unit: '斤', name: '太妃糖', value: 3 },  
+        { amount: 17, unit: '颗', name: '奶糖', value: 4 },
+        { amount: 5, unit: '颗', name: '跳跳糖', value: 5 }
       ],
       targetValues: [1, 3],
       props: [
@@ -179,7 +243,47 @@ export default {
     { key: '跳跳糖', value: 5 }
   ],
   targetValues: [1, 3]
-}`
+}`,
+      textElem: `<hx-row label="选择糖果类型(元素)" label-size="bg">
+  <hx-checkbox-group v-model="candyTypesII">
+    <hx-checkbox :value="1">棉花糖</hx-checkbox>
+    <hx-checkbox :value="2">棒棒糖</hx-checkbox>
+    <hx-checkbox :value="3">太妃糖</hx-checkbox>
+  </hx-checkbox-group>
+</hx-row>
+<!-- 对比 -->
+<hx-row label="选择糖果类型(数组)" label-size="bg">
+  <hx-checkbox-group :content="candyTypes" v-model="candyTypesII"></hx-checkbox-group>
+</hx-row>
+
+// candyTypes同上，candyTypesII 则是一个值为[1,3]的数组
+`,
+      textElemII: `
+
+<hx-checkbox-group v-model="candyTypesIII" class="hx-table">
+  <table >
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>糖果类型</th>
+        <th>糖果数量</th>
+        <th>单位</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(item, idx) in candyOptions" :key="idx"> 
+        <td>
+          <hx-checkbox :value="item.value"></hx-checkbox>
+        </td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.amount }}</td>
+        <td>{{ item.unit }}</td>
+      </tr>
+    </tbody>
+  </table>
+</hx-checkbox-group>
+
+`
     }
   }
 }

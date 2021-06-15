@@ -1,12 +1,21 @@
+<!--
+ * @Author       : liuxuhao
+ * @LastEditors  : liuxuhao
+-->
 <template>
   <div class="hx-checkbox-group">
-    <button v-for="(item, idx) in options" 
-      :key="idx"
-      @click="doSelectItem(item)"
-      :class="['item', result.includes(item.value) && 'selected', disabled ? 'disabled' : '']">
-      <img class="icon-check" src="./../img/icon/icon-check.png" alt="">
-      {{ item.key }}
-    </button>
+    <div class="hx-content-group" v-if="content && content.length">
+      <button v-for="(item, idx) in options" 
+        :key="idx"
+        @click="doSelectItem(item)"
+        :class="['item', result.includes(item.value) && 'selected', disabled ? 'disabled' : '']">
+        <span class="icon-check">
+          <img class="icon" src="./../../img/icon/icon-check.png" alt="">
+        </span>
+        {{ item.key }}
+      </button>
+    </div>
+    <slot></slot>
   </div>
 </template>
 <script>
@@ -19,8 +28,7 @@ export default {
   },
   props: {
     content: {
-      type: Array,
-      required: true
+      type: Array
     },
     value: {
       type: Array,
@@ -38,7 +46,16 @@ export default {
     }
   },
   methods: {
-    $_init () {
+    $_initChildren () {
+      this.$children.forEach((v, i) => {
+        if (this.value.includes(v.value)) {
+          v.init(true)
+        } else {
+          v.init(false)
+        }
+      })
+    },
+    $_initContent () {
       this.options = this.content.map((v, i) => {
         let item = {}
         if (typeof v === 'object') {
@@ -49,6 +66,13 @@ export default {
         }
         return item
       })
+    },
+    $_init () {
+      if (!this.content) {
+        this.$children.length && this.$_initChildren()
+      } else {
+        this.$_initContent()
+      }
     },
     doSelectItem (item) {
       if (this.disabled) {
@@ -63,9 +87,11 @@ export default {
           }
         }
         this.onCancel instanceof Function && this.onCancel(item.value)
+        this.$emit('cancel', item.value) // 可以通过 onCancel 或者 @cancel 做取消勾选事件之后回调
       } else {
         tempValue.push(item.value)
-        this.onSelect instanceof Function && this.onSelect(item.value)
+        this.onSelect instanceof Function && this.onSelect(item.value) 
+        this.$emit('select', item.value)// 可以通过 onSelect 或者 @select 做勾选事件之后回调
       }
       this.result = [].concat(tempValue)
       this.$emit('input', this.result)
@@ -86,6 +112,10 @@ export default {
       deep: true,
       immediate: true,
       handler (newVal) {
+        if (this.$children && this.$children.length) {
+          this.$_initChildren()
+          return
+        }
         if (newVal && newVal.length) {
           this.result = [].concat(newVal)
         } else {
