@@ -28,12 +28,6 @@ export default {
     disabled: {
       type: [Number, String, Boolean],
       default: false
-    },
-    onSelect: { // 当选择选项时
-      type: Function
-    },
-    onCancel: { // 当取消选择选项时
-      type: Function
     }
   },
   methods: {
@@ -44,9 +38,11 @@ export default {
       if (this.disabled) {
         return
       }
+      const item = { value: this.value, key: this.$refs['text'].innerText }
       this.selected = !this.selected
-      this.$parent.doSelectItem({ value: this.value, key: this.$refs['text'].innerText })
-      this.$emit('change', this.selected ? this.value : null)
+      this.$parent.doSelectItem(item)
+      this.selected ? this.$emit('select', item) : this.$emit('cancel', item)
+      this.$emit('change', item)
     },
     isSelected () { // 供父组件调用的获取值的方法
       return this.isSelected ? this.value || this.$refs.text.innerTEXT : null

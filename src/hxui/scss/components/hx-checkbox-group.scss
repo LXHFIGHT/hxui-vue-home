@@ -27,10 +27,12 @@
       border-radius: $pm-sm/2;
       justify-content: center;
       align-items: center;
+      transition: background-color .4s;
       .icon {
         height: 100%;
         width: 100%;
         opacity: .0;
+        transition: opacity .4s;
       }
     }
     &.disabled {

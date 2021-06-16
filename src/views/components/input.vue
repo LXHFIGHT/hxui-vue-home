@@ -148,7 +148,7 @@ export default {
         { name: 'unit', desc: '置于输入框右侧的单位', type: 'String', option: '文本', default: '空字符串' },
         { name: 'showLength', desc: '是否显示已输入字数', type: 'Boolean', option: '整数', default: '空字符串' },
         { name: 'readonly', desc: '是否只读', type: 'Boolean/String', option: 'true/false/"readonly"', default: 'false' },
-        { name: 'disabled', desc: '只读且禁用事件', type: 'Boolean/String', option: 'true/false/"disabled"', default: 'false' },
+        { name: 'disabled', desc: '是否只读', type: 'Boolean/String', option: 'true/false/"disabled"', default: 'false' },
         { name: 'maxLength', desc: '允许输入的最大字符串', type: 'Number', option: '整数', default: '--' }
       ],
       events: [

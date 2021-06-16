@@ -1,20 +1,22 @@
 <template>
   <div class="section">
-    <span class="title">事件</span>
+    <span class="title">{{ title }}</span>
     <div class="hx-table">
       <table>
         <thead>
           <tr>
             <td class="left sm">事件名称</td>
             <td class="left lg">说明</td>
-            <td class="sm">回调参数</td>
+            <td class="bg">回调参数</td>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(item, idx) in content" :key="idx">
-            <td class="left" v-text="item.name"></td>
-            <td class="left" v-text="item.desc"></td>
-            <td  v-text="item.option"></td>
+            <td style="white-space: pre-line" class="left" >
+              <strong style="font-size: 14px;" v-text="item.name"></strong>
+            </td>
+            <td style="white-space: pre-line" class="left" v-text="item.desc"></td>
+            <td style="white-space: pre-line" v-text="item.option"></td>
           </tr>
         </tbody>
       </table>
@@ -28,6 +30,10 @@ export default {
     return {}
   },
   props: {
+    title: {
+      type: String,
+      default: '事件'
+    },
     content: {
       type: Array,
       validator (val) {

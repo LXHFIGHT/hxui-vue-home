@@ -1,3 +1,7 @@
+<!--
+ * @Author       : liuxuhao
+ * @LastEditors  : liuxuhao
+-->
 <template>
   <!-- 属性表格 -->
   <div class="section">
@@ -15,11 +19,13 @@
         </thead>
         <tbody>
           <tr v-for="(item, idx) in content" :key="idx">
-            <td class="left" v-text="item.name"></td>
-            <td class="left" v-text="item.desc"></td>
-            <td v-text="item.type"></td>
-            <td v-text="item.option"></td>
-            <td v-text="item.default"></td>
+            <td style="white-space: pre-line" class="left">
+              <strong style="font-size: 14px;" v-text="item.name"></strong>
+            </td>
+            <td style="white-space: pre-line" class="left" v-text="item.desc"></td>
+            <td style="white-space: pre-line" v-text="item.type"></td>
+            <td style="white-space: pre-line" v-text="item.option"></td>
+            <td style="white-space: pre-line" v-text="item.default"></td>
           </tr>
         </tbody>
       </table>

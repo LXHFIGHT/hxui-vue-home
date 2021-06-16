@@ -142,7 +142,7 @@ data () {
       props: [
         { name: 'content', desc: '下拉菜单选项内容', type: 'Array', option: '由数值、字符串或对象组成', default: '[]' },
         { name: 'placeholder', desc: '文本为空时的提示信息', type: 'String', option: '文本', default: '空字符串' },
-        { name: 'disabled', desc: '只读且禁用事件', type: 'Boolean/String', option: 'true/false/"disabled"', default: 'false' },
+        { name: 'disabled', desc: '是否只读', type: 'Boolean/String', option: 'true/false/"disabled"', default: 'false' },
         { name: 'keyName', desc: 'content数组中对象元素中对应选项文本内容的字段名', type: 'String', option: '文本', default: 'key' },
         { name: 'required', desc: '是否为必填项', type: 'Boolean/String', option: 'true/false/"required"', default: 'false' }
       ],

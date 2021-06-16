@@ -35,7 +35,7 @@ export default {
       required: true
     },
     disabled: {
-      type: [Number, String, Boolean],
+      type: [Boolean],
       default: false
     },
     onSelect: { // 当选择选项时
@@ -48,6 +48,9 @@ export default {
   methods: {
     $_initChildren () {
       this.$children.forEach((v, i) => {
+        if (this.disabled) { // 如果数组定义为不可编辑，则设置子组件不可编辑
+          v.disabled = true
+        }
         if (this.value.includes(v.value)) {
           v.init(true)
         } else {
@@ -86,12 +89,12 @@ export default {
             break
           }
         }
-        this.onCancel instanceof Function && this.onCancel(item.value)
-        this.$emit('cancel', item.value) // 可以通过 onCancel 或者 @cancel 做取消勾选事件之后回调
+        this.onCancel instanceof Function && this.onCancel(item)
+        this.$emit('cancel', item) // 可以通过 onCancel 或者 @cancel 做取消勾选事件之后回调
       } else {
         tempValue.push(item.value)
-        this.onSelect instanceof Function && this.onSelect(item.value) 
-        this.$emit('select', item.value)// 可以通过 onSelect 或者 @select 做勾选事件之后回调
+        this.onSelect instanceof Function && this.onSelect(item) 
+        this.$emit('select', item)// 可以通过 onSelect 或者 @select 做勾选事件之后回调
       }
       this.result = [].concat(tempValue)
       this.$emit('input', this.result)
