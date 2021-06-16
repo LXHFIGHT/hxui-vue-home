@@ -212,7 +212,6 @@
 import { HxCheckboxGroup, HxCheckbox } from '@/hxui'
 import PropsTable from './../cpts/PropsTable'
 import EventsTable from './../cpts/EventsTable'
-import { candyTypes, candyTypeArray } from './../data'
 export default {
   components: {
     HxCheckboxGroup,
