@@ -64,3 +64,4 @@ dist/
 
 *.sh
 w*.js
+publish/config.js
