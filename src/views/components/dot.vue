@@ -110,7 +110,7 @@
   </article>
 </template>
 <script>
-import { HxDot } from '@/hxui'
+import { HxDot } from 'hxui'
 import PropsTable from './../cpts/PropsTable'
 export default {
   components: { HxDot, PropsTable },

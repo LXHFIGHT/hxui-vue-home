@@ -209,7 +209,7 @@
   </article>
 </template>
 <script>
-import { HxCheckboxGroup, HxCheckbox } from '@/hxui'
+import { HxCheckboxGroup, HxCheckbox } from 'hxui'
 import PropsTable from './../cpts/PropsTable'
 import EventsTable from './../cpts/EventsTable'
 export default {
