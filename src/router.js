@@ -40,10 +40,15 @@ export default new Router({
               name: 'hx-dot',
               component: resolve => require(['@/views/components/dot.vue'], resolve)
             },
-            {
+            { // 复选框
               path: 'hx-checkbox-group',
               name: 'hx-checkbox-group',
               component: resolve => require(['@/views/components/checkboxGroup.vue'], resolve)
+            },
+            { // 单选框
+              path: 'hx-radio-group',
+              name: 'hx-radio-group',
+              component: resolve => require(['@/views/components/radioGroup.vue'], resolve)
             },
             {
               path: 'hx-switch',

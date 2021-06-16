@@ -39,6 +39,7 @@ export const componentsCatalog = [
       { key: '联想输入框', value: 'hx-auto-complete' },
       { key: '下拉菜单', value: 'hx-selector' },
       { key: '复选框', value: 'hx-checkbox-group' },
+      { key: '单选框', value: 'hx-radio-group' },
       { key: '开关', value: 'hx-switch' },
       { key: '标签框', value: 'hx-tag-editor' },
       { key: '上传文件组件', value: 'hx-smart-uploader' }

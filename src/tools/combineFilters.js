@@ -13,7 +13,7 @@
  * @param {Boolean} options.isIncludes true 包含比较  false 全等比较（默认）
  * @returns 
  */
-const _getInfo = (array, value, options) => {
+export const _getInfo = (array, value, options) => {
   const valueParam = options.valueParam || 'value' // 用于比较值的参数名  valueParam
   const keyParam = options.keyParam || 'key' // 最终匹配输出的参数名  keyParam
   const isIncludes = options.isIncludes || false // 包含还是全等？ 默认是全等
@@ -26,8 +26,6 @@ const _getInfo = (array, value, options) => {
   }
   return data[0][keyParam] || '-'
 }
-
-console.log(_getInfo)
 
 const combineFilters = (Vue) => {
   // Vue.filter('sex', (value) => _getInfo(sexArray, value))
