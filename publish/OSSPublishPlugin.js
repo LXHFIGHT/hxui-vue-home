@@ -36,7 +36,7 @@ class OSSPublishPlugin {
     })
   }
   // 授权发布操作
-  dodoAuthorizePublish () {
+  doAuthorizePublish () {
     return new Promise((resolve, reject) => {
       const rl = readline.createInterface({
         input: process.stdin,
@@ -99,7 +99,7 @@ class OSSPublishPlugin {
           已完成本次同步，成功${chalk.green(successCount)}个，失败${chalk.red(failCount)}个
           共耗时 ${chalk.green(parseInt((Date.now() - startTime) / 1000))} 秒 :)
           
-=======================================================`)
+=======================================================\n`)
           !config.autoPublish && process.exit()
         }
       }
