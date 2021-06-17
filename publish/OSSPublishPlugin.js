@@ -4,13 +4,16 @@
  */
 const fs = require('fs')
 const path = require('path')
+const readline = require('readline')
 const chalk = require('chalk')
-const ossUtil = require('./ossUtil')
-
-const queue = []
-let isUploading = false
+const OSS = require('ali-oss')
+const config = require('./config')
+const client = new OSS(config.oss)
 
 class OSSPublishPlugin {
+  queue = []
+  totalTaskAmount = 0 // 整体上传任务数
+  isUploading = 0
   constructor (options) {
     this.options = options
   }
@@ -18,18 +21,45 @@ class OSSPublishPlugin {
     compiler.hooks.done.tap('done', complication => {
       setTimeout(() => {
         console.log(`${chalk.green('\n\nBuild Complete\n\n')}`)
-        this.createUploadTasks()
-        this.publish()
+        if (config.autoPublish) {
+          this.createUploadTasks()
+        } else {
+          this.doAuthorizePublish().then(res => {
+            console.log('\n已授权发布 ✅\n')
+            this.createUploadTasks()
+          }).catch(() => {
+            console.log('\n发布未授权，已取消 🚫\n')
+            process.exit()
+          })
+        }
+      })
+    })
+  }
+  // 授权发布操作
+  dodoAuthorizePublish () {
+    return new Promise((resolve, reject) => {
+      const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+      })
+      rl.question(`是否确认发布代码（输入 ${chalk.green(config.answer.join('/'))} 发布）`, answer => {
+        if (config.answer.includes(answer)) {
+          resolve(answer)
+          return
+        }
+        reject(new Error('not authorized'))
       })
     })
   }
   createUploadTasks () {
+    const ctx = this
     async function createTask (path, target = '/') {
       const dir = await fs.promises.opendir(path)
       for await (const dirent of dir) {
         if (dirent.isFile()) {
           const item = { localPath: `${path}/${dirent.name}`, targetPath: `${target}${dirent.name}` }
-          queue.push(item)
+          ctx.queue.push(item)
+          ctx.totalTaskAmount++
         } else if (dirent.isDirectory()) {
           createTask((path + '/' + dirent.name), target + dirent.name + '/')
         }
@@ -37,43 +67,43 @@ class OSSPublishPlugin {
     }
     const dir = path.resolve('dist/')
     createTask(dir, '/')
+    this.publish()
   }
   // 发布到阿里云OSS
   publish () {
-    let sum = 0
     let successCount = 0
     let failCount = 0
+    const startTime = Date.now()
     let timer = setInterval(() => {
-      if (isUploading) {
+      if (this.isUploading >= config.thread) {
         return  
       }
-      if (queue.length) {
-        isUploading = true
-        const item = queue.pop()
-        ossUtil.put(item.localPath, item.targetPath).then(result => {
-          isUploading = false
+      if (this.queue.length) {
+        this.isUploading++
+        const item = this.queue.pop()
+        client.put(item.targetPath, item.localPath).then(result => {
+          this.isUploading--
           successCount++
           console.log(`${chalk.green(`文件成功上传`)} | OSS目标路径：${chalk.green(item.targetPath)}`)
         }).catch(err => {
-          isUploading = false
+          this.isUploading--
           failCount++
           console.log(`Error: ${chalk.red(err)}`)
         })
       } else {
-        if (sum > 5) {
+        if (successCount + failCount >= this.totalTaskAmount) {
           clearInterval(timer)
           console.log(`
 =======================================================
           
           已完成本次同步，成功${chalk.green(successCount)}个，失败${chalk.red(failCount)}个
+          共耗时 ${chalk.green(parseInt((Date.now() - startTime) / 1000))} 秒 :)
           
 =======================================================`)
-        } else {
-          sum++
-          console.log('正在确认同步结果......')
+          !config.autoPublish && process.exit()
         }
       }
-    }, 100)
+    }, config.duration)
   }
 }
 
