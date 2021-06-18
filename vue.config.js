@@ -4,9 +4,12 @@
  */
 var path = require('path')
 const OSSPublishPlugin = require('./publish/OSSPublishPlugin')
+const env = process.env.NODE_ENV
+
 function resolve (dir) {
   return path.join(__dirname, dir)
 }
+
 module.exports = {
   publicPath: '/',
   productionSourceMap: false,
@@ -58,6 +61,8 @@ module.exports = {
       'vue-router': 'VueRouter',
       'vuex': 'Vuex'
     }
-    config.plugins.push(new OSSPublishPlugin({}))
+    if (env === 'production') {
+      config.plugins.push(new OSSPublishPlugin({}))
+    }
   }
 }

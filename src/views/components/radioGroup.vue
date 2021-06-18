@@ -11,14 +11,14 @@
       <div class="pad-preview">
         <div class="demo">
           <hx-row label-size="bg" label="请选择糖果类型">
-            <hx-radio-group :content="types" v-model="targets"></hx-radio-group>
+            <hx-radio-group :content="candyTypes.map(v => v.key)" v-model="values[0]"></hx-radio-group>
           </hx-row>
           <hx-row label-size="bg" label="选中的糖果类型有：">
-            <span class="text bg-gray">{{ targets }}</span>
+            <span class="text bg-gray">{{ values[0] }}</span>
           </hx-row>
         </div>
         <div class="code">
-          <pre class="detail" v-highlightjs="text" >
+          <pre class="detail" v-highlightjs="texts[0]" >
             <code class="xml">
             </code>
           </pre>
@@ -40,21 +40,21 @@
       <div class="pad-preview">
         <div class="demo">
           <hx-row label="请选择糖果类型">
-            <hx-radio-group :content="candyTypes" v-model="targetValue"></hx-radio-group>
+            <hx-radio-group :content="candyTypes" v-model="values[4]"></hx-radio-group>
           </hx-row>
           <hx-row label="不可选糖果类型">
-            <hx-radio-group disabled :content="candyTypes" v-model="targetValue"></hx-radio-group>
+            <hx-radio-group disabled :content="candyTypes" v-model="values[4]"></hx-radio-group>
           </hx-row>
           <hx-row label-size="bg" label="选中的糖果对应的值：">
-            <span class="text bg-gray">{{ targetValue }}</span>
+            <span class="text bg-gray">{{ values[4] }}</span>
           </hx-row>
         </div>
         <div class="code">
-          <pre class="detail" v-highlightjs="text2" >
+          <pre class="detail" v-highlightjs="texts[1]" >
             <code class="xml">
             </code>
           </pre>
-          <pre class="detail" v-highlightjs="text3" >
+          <pre class="detail" v-highlightjs="texts[2]" >
             <code class="javascript">
             </code>
           </pre>
@@ -76,14 +76,14 @@
       <div class="pad-preview">
         <div class="demo">
           <hx-row label="糖果类型(元素)" label-size="bg">
-            <hx-radio-group v-model="candyTypesII">
+            <hx-radio-group v-model="values[1]">
               <hx-radio :value="1">棉花糖</hx-radio>
               <hx-radio :value="2">棒棒糖</hx-radio>
               <hx-radio :value="3">太妃糖</hx-radio>
             </hx-radio-group>
           </hx-row>
           <hx-row label="糖果类型(元素不可选)" label-size="bg">
-            <hx-radio-group v-model="candyTypesII" disabled>
+            <hx-radio-group v-model="values[1]" disabled>
               <hx-radio :value="1">棉花糖</hx-radio>
               <hx-radio :value="2">棒棒糖</hx-radio>
               <hx-radio :value="3">太妃糖</hx-radio>
@@ -91,14 +91,14 @@
           </hx-row>
           <!-- 对比用 -->
           <hx-row label="糖果类型(数组)" label-size="bg">
-            <hx-radio-group :content="candyTypes" v-model="candyTypesII"></hx-radio-group>
+            <hx-radio-group :content="candyTypes" v-model="values[1]"></hx-radio-group>
           </hx-row>
           <hx-row label-size="bg" label="选中的糖果对应的值：">
-            <span class="text bg-gray">{{ candyTypesII }}</span>
+            <span class="text bg-gray">{{ values[1] }}</span>
           </hx-row>
         </div>
         <div class="code">
-          <pre class="detail" v-highlightjs="textElem" >
+          <pre class="detail" v-highlightjs="texts[3]" >
             <code class="xml">
             </code>
           </pre>
@@ -110,7 +110,7 @@
       <span class="desc">使用 <strong>hx-radio</strong> 写法代替传入一个 <em>content</em> 选项数组除了写法靠近原生，还有一点就是可以更加灵活将选择放置于页面各个角落，而不再拘泥于行内或一个标签内，下面就是一个很好的例子：</span>
       <div class="pad-preview">
         <div class="demo">
-          <hx-radio-group v-model="candyTypesIII" class="hx-table">
+          <hx-radio-group type="button" v-model="values[2]" class="hx-table">
             <table >
               <thead>
                 <tr>
@@ -121,11 +121,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(item, idx) in candyOptions" :key="idx"> 
+                <tr v-for="(item, idx) in candyTypes" :key="idx"> 
                   <td>
                     <hx-radio :value="item.value"></hx-radio>
                   </td>
-                  <td>{{ item.name }}</td>
+                  <td>{{ item.key }}</td>
                   <td>{{ item.amount }}</td>
                   <td>{{ item.unit }}</td>
                 </tr>
@@ -133,18 +133,18 @@
             </table>
           </hx-radio-group>
           <hx-row label-size="bg" label="选中的糖果对应的值：" style="margin-top: 16px;">
-            <span class="text bg-gray">{{ candyTypesIII }}</span>
+            <span class="text bg-gray">{{ values[2] }}</span>
           </hx-row>
         </div>
         <div class="code">
-          <span class="tips" style="margin-bottom: 0;">
+          <span class="tips" style="margin-bottom: 16px;">
             使用 hx-radio 将可以打破位置上的限制
           </span>
-          <pre class="detail" v-highlightjs="textElemII" >
+          <pre class="detail" v-highlightjs="texts[4]" >
             <code class="xml">
             </code>
           </pre>
-          <pre class="detail" style="padding-top: 0;" v-highlightjs="textElemIII" >
+          <pre class="detail" style="padding-top: 0;" v-highlightjs="texts[5]" >
             <code class="javascript">
             </code>
           </pre>
@@ -156,6 +156,36 @@
       <props-table :content="props2"></props-table>
     </div>
     <header class="title">汇总</header>
+    <div class="section">
+      <strong class="title">样式</strong>
+      <span class="desc">
+        如果觉得仿原生的 <strong>radio</strong> 元素样式比较单调，
+        可以通过 <em>type</em> 可以定义radio的样式类型，当前支持按钮类型的 <strong>button</strong> 和 圆形按钮 <strong>round-button</strong>。
+      </span>
+      <div class="pad-preview">
+        <div class="demo">
+          <hx-row label="普通按钮类型" label-size="bg">
+            <hx-radio-group type="button" v-model="values[3]">
+              <hx-radio v-for="(item, idx) in candyTypes" :key="idx" 
+                :value="item.value">{{ item.key }}
+              </hx-radio>
+            </hx-radio-group>
+          </hx-row>
+          <hx-row label="圆形按钮类型" label-size="bg">
+            <hx-radio-group type="round-button"
+              :content="candyTypes" 
+              v-model="values[3]">
+            </hx-radio-group>
+          </hx-row>
+        </div>
+        <div class="code">
+          <pre class="detail" v-highlightjs="texts[5]" >
+            <code class="xml">
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
     <!-- 事件调用 -->
     <div class="section">
       <strong class="title">事件调用</strong>
@@ -166,7 +196,7 @@
       <div class="pad-preview">
         <div class="demo">
           <hx-row label="糖果类型(元素)" label-size="bg">
-            <hx-radio-group v-model="candyTypesII">
+            <hx-radio-group v-model="values[5]">
               <hx-radio v-for="(item, idx) in candyTypes" 
                 :key="idx" 
                 @change="doChange"
@@ -181,7 +211,7 @@
               @change="doChange" 
               @select="doSelect" 
               :content="candyTypes" 
-              v-model="candyTypesII">
+              v-model="values[5]">
             </hx-radio-group>
           </hx-row>
         </div>
@@ -189,11 +219,11 @@
           <span class="tips">
             HxRadioGroup 的 @change 参数是 变更后整体的值，而 HxRadio 的 @change 参数是 当前选项的对象。
           </span>
-          <pre class="detail" v-highlightjs="textElemIV" >
+          <pre class="detail" v-highlightjs="texts[6]" >
             <code class="xml">
             </code>
           </pre>
-          <pre class="detail" style="padding-top: 0;" v-highlightjs="textElemV" >
+          <pre class="detail" style="padding-top: 0;" v-highlightjs="texts[7]" >
             <code class="javascript">
             </code>
           </pre>
@@ -219,67 +249,41 @@ export default {
   },
   data () {
     return {
-      textNext: `代码演示区`,
       types: ['棉花糖', '棒棒糖', '太妃糖', '奶糖', '跳跳糖'],
-      targets: '棉花糖',
-      candyTypes: [ 
-        { key: '棉花糖', value: 1 }, 
-        { key: '棒棒糖', value: 2 },  
-        { key: '太妃糖', value: 3 },  
-        { key: '奶糖', value: 4 },
-        { key: '跳跳糖', value: 5 }
+      candyTypes: [
+        { amount: 6, unit: '颗', key: '棉花糖', value: 1 }, 
+        { amount: 20, unit: '颗', key: '棒棒糖', value: 2 },  
+        { amount: 19, unit: '斤', key: '太妃糖', value: 3 },  
+        { amount: 17, unit: '颗', key: '奶糖', value: 4 },
+        { amount: 5, unit: '颗', key: '跳跳糖', value: 5 }
       ],
-      candyTypesII: 3,
-      candyTypesIII: 3,
-      candyOptions: [
-        { amount: 6, unit: '颗', name: '棉花糖', value: 1 }, 
-        { amount: 20, unit: '颗', name: '棒棒糖', value: 2 },  
-        { amount: 19, unit: '斤', name: '太妃糖', value: 3 },  
-        { amount: 17, unit: '颗', name: '奶糖', value: 4 },
-        { amount: 5, unit: '颗', name: '跳跳糖', value: 5 }
-      ],
-      targetValue: 1,
-      props: [
-        { name: 'content', desc: '多选框菜单选项内容', type: 'Array', option: '由数值、字符串或对象组成', default: '[]' },
-        { name: 'value', desc: '对应选择的值', type: 'Boolean/String/Number', option: 'true/false/"disabled"', default: '' },
-        { name: 'disabled', desc: '是否只读', type: 'Boolean', option: 'true/false', default: 'false' },
-        { name: 'keyName', desc: 'content数组中对象元素中对应选项文本内容的字段名', type: 'String', option: '文本', default: 'key' },
-        { name: 'onSelect', desc: '勾选选项时调用方法\n(推荐使用事件@select)', type: 'Function', option: '', default: '' }
-      ],
-      props2: [
-        { name: 'value', desc: '对应选择的值', type: 'Boolean/String/Number', option: '基本数据类型', default: '-' },
-        { name: 'disabled', desc: '是否只读', type: 'Boolean', option: 'true/false', default: 'false' }
-      ],
-      events: [
-        { name: '@select', desc: '勾选某一项时触发', option: '对应项的对象 (对象包含key和value)' },
-        { name: '@change', desc: '勾选或取消选中某一项时触发', option: '对应选择项的对象 (对象包含key和value)' }
-      ],
-      text: `<hx-radio-group :content="types" v-model="targets"></hx-radio-group>`,
-      text2: `<hx-row label="请选择糖果类型">
-  <hx-radio-group :content="candyTypes" v-model="targetValue"></hx-radio-group>
+      values: ['棉花糖', 3, 3, 3, 1, 2],
+      texts: [
+        `<hx-radio-group :content="types" v-model="value"></hx-radio-group>`,
+        `<hx-row label="请选择糖果类型">
+  <hx-radio-group :content="candyTypes" v-model="value"></hx-radio-group>
 </hx-row>
 <!-- 不可选状态 -->
 <hx-row label="不可选糖果类型">
   <hx-radio-group 
     disabled
     :content="candyTypes" 
-    v-model="targetValue">
+    v-model="value">
   </hx-radio-group>
 </hx-row>`,
-      text3: `
-// 声明对象数组 
+        `// 声明对象数组, 后续采用的数组同此
 {
   candyTypes: [ 
-    { key: '棉花糖', value: 1 }, 
-    { key: '棒棒糖', value: 2 },  
-    { key: '太妃糖', value: 3 },  
-    { key: '奶糖', value: 4 },
-    { key: '跳跳糖', value: 5 }
+    { amount: 6, unit: '颗', key: '棉花糖', value: 1 }, 
+    { amount: 20, unit: '颗', key: '棒棒糖', value: 2 },  
+    { amount: 19, unit: '斤', key: '太妃糖', value: 3 },  
+    { amount: 17, unit: '颗', key: '奶糖', value: 4 },
+    { amount: 5, unit: '颗', key: '跳跳糖', value: 5 }
   ],
-  targetValue: 1
+  value: 1
 }`,
-      textElem: `<hx-row label="选择糖果类型(元素)" label-size="bg">
-  <hx-radio-group v-model="candyTypesII">
+        `<hx-row label="选择糖果类型(元素)" label-size="bg">
+  <hx-radio-group v-model="value">
     <hx-radio :value="1">棉花糖</hx-radio>
     <hx-radio :value="2">棒棒糖</hx-radio>
     <hx-radio :value="3">太妃糖</hx-radio>
@@ -287,12 +291,11 @@ export default {
 </hx-row>
 <!-- 对比 -->
 <hx-row label="选择糖果类型(数组)" label-size="bg">
-  <hx-radio-group :content="candyTypes" v-model="candyTypesII"></hx-radio-group>
+  <!--  candyTypes同上，value 则是一个值为 3  -->
+  <hx-radio-group :content="candyTypes" v-model="value"></hx-radio-group>
 </hx-row>
-
-// candyTypes同上，candyTypesII 则是一个值为[1,3]的数组
 `,
-      textElemII: `<hx-radio-group v-model="candyTypesIII" class="hx-table">
+        `<hx-radio-group v-model="value" class="hx-table">
   <table >
     <thead>
       <tr>
@@ -303,30 +306,34 @@ export default {
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(item, idx) in candyOptions" :key="idx"> 
+      <!-- candyTypes 参照上文 -->
+      <tr v-for="(item, idx) in candyTypes" :key="idx"> 
         <td>
           <hx-radio :value="item.value"></hx-radio>
         </td>
-        <td>{{ item.name }}</td>
+        <td>{{ item.key }}</td>
         <td>{{ item.amount }}</td>
         <td>{{ item.unit }}</td>
       </tr>
     </tbody>
   </table>
-</hx-radio-group>`,
-      textElemIII: `
-// 声明对象数组 
-{
-  candyOptions: [
-    { amount: 6, unit: '颗', name: '棉花糖', value: 1 }, 
-    { amount: 20, unit: '颗', name: '棒棒糖', value: 2 },  
-    { amount: 19, unit: '斤', name: '太妃糖', value: 3 },  
-    { amount: 17, unit: '颗', name: '奶糖', value: 4 },
-    { amount: 5, unit: '颗', name: '跳跳糖', value: 5 }
-  ]
-}`,
-      textElemIV: `<hx-row label="糖果类型(元素)" label-size="bg">
-  <hx-radio-group v-model="candyTypesII">
+</hx-radio-group>`, 
+        `
+<hx-row label="普通按钮类型" label-size="bg">
+  <hx-radio-group type="button" v-model="value">
+    <hx-radio v-for="(item, idx) in candyTypes" :key="idx" 
+      :value="item.value">{{ item.key }}
+    </hx-radio>
+  </hx-radio-group>
+</hx-row>
+<hx-row label="圆形按钮类型" label-size="bg">
+  <hx-radio-group type="round-button"
+    :content="candyTypes" 
+    v-model="value">
+  </hx-radio-group>
+</hx-row>`,
+        `<hx-row label="糖果类型(元素)" label-size="bg">
+  <hx-radio-group v-model="value">
     <hx-radio v-for="(item, idx) in candyTypes" 
       :key="idx" 
       @change="doChange"
@@ -340,10 +347,10 @@ export default {
     @change="doChange" 
     @select="doSelect" 
     :content="candyTypes" 
-    v-model="candyTypesII">
+    v-model="value">
   </hx-radio-group>
 </hx-row>`,
-      textElemV: `{
+        `{
   methods: {
     doChange (item) {
       this.$hxui.toast(('状态变换选项：' + JSON.stringify(item)))
@@ -352,11 +359,30 @@ export default {
       this.$hxui.alert('勾选选项：', item)
     }
   }
-}
-`
+}`],
+      props: [
+        { name: 'content', desc: '多选框菜单选项内容', type: 'Array', option: '由数值、字符串或对象组成', default: '[]' },
+        { name: 'value', desc: '对应选择的值', type: 'Boolean/String/Number', option: 'true/false/"disabled"', default: '' },
+        { name: 'tabbar', desc: '是否以标签栏形式展示', type: 'Boolean', option: 'true/false', default: 'false' },
+        { name: 'label-class', desc: '自定义文本的样式类', type: 'String', option: '字符串', default: '空字符串' },
+        { name: 'disabled', desc: '是否只读', type: 'Boolean', option: 'true/false', default: 'false' },
+        { name: 'keyName', desc: 'content数组中对象元素中对应选项文本内容的字段名', type: 'String', option: '文本', default: 'key' },
+        { name: 'onSelect', desc: '勾选选项时调用方法\n(推荐使用事件@select)', type: 'Function', option: '', default: '' }
+      ],
+      props2: [
+        { name: 'value', desc: '对应选择的值', type: 'Boolean/String/Number', option: '基本数据类型', default: '-' },
+        { name: 'disabled', desc: '是否只读', type: 'Boolean', option: 'true/false', default: 'false' }
+      ],
+      events: [
+        { name: '@select', desc: '勾选某一项时触发', option: '对应项的对象 (对象包含key和value)' },
+        { name: '@change', desc: '勾选或取消选中某一项时触发', option: '对应选择项的对象 (对象包含key和value)' }
+      ]
     }
   },
   methods: {
+    popText () {
+      return this.texts.pop()
+    },
     doChange (item) {
       this.$hxui.toast(('状态变换选项：' + JSON.stringify(item)))
     },
