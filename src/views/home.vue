@@ -25,7 +25,7 @@ export default {
       options: {
         strings: [
           `<strong>HXUI</strong> is a sweet UI library for Vue^2500`,
-          '<strong>HXUI</strong> provides <i><strong>Layouts</strong></i>, ^800<i><strong>Components</strong></i>^800 and also <i><strong>Plugins</strong></i>^2500',
+          '<strong>HXUI</strong> provides <i><strong>Layouts</strong></i>, ^800 <i><strong>Components</strong></i>^800 and also <i><strong>Plugins</strong></i>^2500',
           'Thanks^800 for experiencing <strong style="color: cornflowerblue;">HXUI</strong>'
         ],
         typeSpeed: 60,
