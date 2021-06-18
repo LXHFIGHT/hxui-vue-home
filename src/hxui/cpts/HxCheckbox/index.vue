@@ -1,7 +1,3 @@
-<!--
- * @Author       : liuxuhao
- * @LastEditors  : liuxuhao
--->
 <template>
   <button @click="doSelectItem"
     :class="['hx-checkbox item', selected ? 'selected' : '', disabled ? 'disabled' : '']">

@@ -1,7 +1,3 @@
-<!--
- * @Author       : liuxuhao
- * @LastEditors  : liuxuhao
--->
 <template>
   <div class="hx-radio-group">
     <div class="hx-content-group" v-if="content && content.length">
