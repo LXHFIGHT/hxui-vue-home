@@ -50,7 +50,7 @@
     }
     &.button {
       border: 1px solid $color-gray;
-      padding: $pm-sm/2 $pm-sm;
+      padding: $pm-sm/2 $pm-xs*3;
       min-height: 18px;
       &:first-child {
         border-top-left-radius: $pm-xs;
@@ -75,8 +75,11 @@
     }
     &.round-button {
       border: 1px solid $color-gray;
-      padding: $pm-sm/2 $pm-xs*3;
+      padding: $pm-sm/2 $pm-sm;
       border-radius: 20px;
+      .txt {
+        margin: 0 $pm-xs;
+      }
       .icon-check {
         display: none;
       }

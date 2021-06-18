@@ -110,7 +110,7 @@
       <span class="desc">使用 <strong>hx-radio</strong> 写法代替传入一个 <em>content</em> 选项数组除了写法靠近原生，还有一点就是可以更加灵活将选择放置于页面各个角落，而不再拘泥于行内或一个标签内，下面就是一个很好的例子：</span>
       <div class="pad-preview">
         <div class="demo">
-          <hx-radio-group type="button" v-model="values[2]" class="hx-table">
+          <hx-radio-group type="round-button" v-model="values[2]" class="hx-table">
             <table >
               <thead>
                 <tr>
@@ -157,9 +157,37 @@
     </div>
     <header class="title">汇总</header>
     <div class="section">
-      <strong class="title">样式</strong>
+      <strong class="title">元素类型</strong>
       <span class="desc">
         如果觉得仿原生的 <strong>radio</strong> 元素样式比较单调，
+        可以通过 <em>type</em> 可以定义radio的样式类型，当前支持按钮类型的 <strong>button</strong> 和 圆形按钮 <strong>round-button</strong>。
+      </span>
+      <div class="pad-preview">
+        <div class="demo">
+          <hx-row label="普通按钮类型" label-size="bg">
+            <hx-radio-group type="button" v-model="values[3]">
+              <hx-radio v-for="(item, idx) in candyTypes" :key="idx" 
+                :value="item.value">{{ item.key }}
+              </hx-radio>
+            </hx-radio-group>
+          </hx-row>
+          <hx-row label="圆形按钮类型" label-size="bg">
+            <hx-radio-group type="round-button"
+              :content="candyTypes" 
+              v-model="values[3]">
+            </hx-radio-group>
+          </hx-row>
+        </div>
+        <div class="code">
+          <pre class="detail" v-highlightjs="texts[5]" >
+            <code class="xml">
+            </code>
+          </pre>
+        </div>
+      </div>
+      <strong class="title">自定义类名</strong>
+      <span class="desc">
+        <strong>HxRadioGroup</strong> 和 <strong>HxRadio</strong> 均提供了一下几种自定义，
         可以通过 <em>type</em> 可以定义radio的样式类型，当前支持按钮类型的 <strong>button</strong> 和 圆形按钮 <strong>round-button</strong>。
       </span>
       <div class="pad-preview">
@@ -198,7 +226,8 @@
           <hx-row label="糖果类型(元素)" label-size="bg">
             <hx-radio-group v-model="values[5]">
               <hx-radio v-for="(item, idx) in candyTypes" 
-                :key="idx" 
+                :key="idx"
+                data-color="red"
                 @change="doChange"
                 @select="doSelect" 
                 :value="item.value">

@@ -6,7 +6,7 @@
         @click="doSelectItem(item)"
         :class="['item', type, value === item.value && 'selected', disabled ? 'disabled' : '']">
         <span class="icon-check"></span>
-        <span :class="['txt', labelClass || '']">{{ item.key }}</span>
+        <span :class="['txt']">{{ item.key }}</span>
       </button>
     </div>
     <slot></slot>
@@ -35,9 +35,6 @@ export default {
     onSelect: { // 当选择选项时
       type: Function
     },
-    labelClass: { // 文本的自定义类名
-      type: String 
-    },
     color: { // 文本的自定义类名
       type: String 
     },
@@ -53,7 +50,6 @@ export default {
     $_initChildren () {
       this.$children.forEach((v, i) => {
         this.disabled && (v.disabled = true) // 如果数组定义为不可编辑，则设置子组件不可编辑
-        this.labelClass && (v.labelClass = this.labelClass)
         v.type = this.type
         v.init(this.value === v.value)
       })

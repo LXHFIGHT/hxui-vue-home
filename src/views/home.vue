@@ -1,7 +1,13 @@
+<!--
+ * @Author       : liuxuhao
+ * @LastEditors  : liuxuhao
+-->
 <template>
   <div class="hx-block pad-center">
     <div class="container">
-      <h1 style="font-size: 40px">Thanks for experiencing HXUI</h1>
+      <span class="text-main" style="font-size: 40px"></span>
+      <br />
+      <br />
       <span class="color-gray">We are willing to take any kind of suggestions</span><br />
     </div>
     <footer class="footer">
@@ -11,12 +17,32 @@
   </div>
 </template>
 <script>
+import Typed from 'typed.js'
 export default {
   data () {
     return {
+      className: '.text-main',
+      options: {
+        strings: [
+          `<strong>HXUI</strong>  is a sweet UI library for Vue^1500`,
+          '<strong>HXUI</strong> provides <i><strong>Layouts</strong></i>^800, <i><strong>Components</strong></i>^800 and also <i><strong>Plugins</strong></i>^1500',
+          'Thanks for experiencing <strong style="color: cornflowerblue;">HXUI</strong>'
+        ],
+        typeSpeed: 60,
+        backSpeed: 30,
+        startDelay: 1500,
+        smartBackspace: true
+      }
     }
   },
   methods: {
+    $_init () {
+      let typed = new Typed(this.className, this.options)
+      console.log('Initiated ', typed)
+    }
+  },
+  mounted () {
+    this.$_init()
   }
 }
 </script>
