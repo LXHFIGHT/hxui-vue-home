@@ -24,13 +24,13 @@ export default {
       className: '.text-main',
       options: {
         strings: [
-          `<strong>HXUI</strong>  is a sweet UI library for Vue^1500`,
-          '<strong>HXUI</strong> provides <i><strong>Layouts</strong></i>^800, <i><strong>Components</strong></i>^800 and also <i><strong>Plugins</strong></i>^1500',
-          'Thanks for experiencing <strong style="color: cornflowerblue;">HXUI</strong>'
+          `<strong>HXUI</strong> is a sweet UI library for Vue^2500`,
+          '<strong>HXUI</strong> provides <i><strong>Layouts</strong></i>, ^800<i><strong>Components</strong></i>^800 and also <i><strong>Plugins</strong></i>^2500',
+          'Thanks^800 for experiencing <strong style="color: cornflowerblue;">HXUI</strong>'
         ],
         typeSpeed: 60,
         backSpeed: 30,
-        startDelay: 1500,
+        startDelay: 600,
         smartBackspace: true
       }
     }
