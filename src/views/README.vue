@@ -1,3 +1,7 @@
+<!--
+ * @Author       : liuxuhao
+ * @LastEditors  : liuxuhao
+-->
 <template>
   <article class="pad-article">
     <header class="title">组件名 Demo For Copy</header>
@@ -15,7 +19,7 @@
           <span class="tips">
             代码中附带的一些小提示
           </span>
-          <pre class="detail" v-highlightjs="textNext" >
+          <pre class="detail" v-highlightjs="tests[0]" >
             <code class="xml">
             </code>
           </pre>
@@ -41,7 +45,9 @@ export default {
   },
   data () {
     return {
-      textNext: `代码演示区`,
+      texts: [
+        `代码演示区1`
+      ],
       props: [
         { name: 'content', desc: '下拉菜单选项内容', type: 'Array', option: '由数值、字符串或对象组成', default: '[]' },
         { name: 'placeholder', desc: '文本为空时的提示信息', type: 'String', option: '文本', default: '空字符串' }

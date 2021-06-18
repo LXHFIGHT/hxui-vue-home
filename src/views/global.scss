@@ -6,7 +6,7 @@
 
 .pad-article {
   padding: $pm-md $pm-bg;
-  max-width: 860px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
   &.developing::before {
@@ -24,6 +24,7 @@
     font-size: $font-bg * 2;
     line-height: 1;
     margin: $pm-bg 0 $pm-sm;
+    font-weight: 500;
   }
   .desc {
     color: $color-dark;
@@ -53,6 +54,7 @@
       display: block;
       width: 100%;
       margin-bottom: $pm-md;
+      font-weight: 600;
     }
     // 内容预览区
     .pad-preview {
@@ -91,6 +93,8 @@
             display: inline-block!important;
             width: 100%;
             padding: 0 $pm-md;
+            font-size: 14px;
+            line-height: 1.6;
           }
         }
       }

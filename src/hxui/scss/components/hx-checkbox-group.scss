@@ -2,42 +2,49 @@
 .hx-checkbox-group {
   display: block;
   .item {
-    margin: 0 $pm-sm $pm-sm/2 0;
+    margin-bottom: $pm-xs;
     padding: $pm-sm/2;
     position: relative;
     background-color: transparent;
-    transition: background-color .4s;
+    transition: background-color .2s;
     font-size: $font-md;
+    & + .item {
+      margin: 0 0 $pm-sm/2 $pm-sm;
+    }
     &.selected {
       .icon-check {
         background-color: $color-main;
-      }
-      &:hover {
-        .icon-check {
-          background-color: darken($color-main, 5%);
+        .icon {
+          opacity: 1.0;
         }
       }
     }
     .icon-check {
       height: $height-normal/2;
       width: $height-normal/2;
-      display: inline-block;
+      display: inline-flex;
       padding: $pm-sm/2;
-      background-color: $color-gray;
+      background-color: $color-gray-light;
+      border: 1px solid $color-gray;
       float: left;
       margin-right: $pm-sm;
       border-radius: $pm-sm/2;
+      justify-content: center;
+      align-items: center;
+      transition: background-color .2s;
+      &.no-text {
+        margin-right: 0;
+      }
+      .icon {
+        height: 100%;
+        width: 100%;
+        opacity: .0;
+        transition: opacity .2s;
+      }
     }
     &.disabled {
-      .icon-check {
-        cursor: not-allowed;
-      }
-      &:hover {
-        background-color: transparent;
-      }
-    }
-    &:hover {
-      background-color: $color-gray-light;
+      opacity: .6;
+      cursor: not-allowed;
     }
   }
 }

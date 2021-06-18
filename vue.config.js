@@ -1,7 +1,15 @@
+/*
+ * @Author       : liuxuhao
+ * @LastEditors  : liuxuhao
+ */
 var path = require('path')
-function resolve(dir) {
-	return path.join(__dirname, dir)
+const OSSPublishPlugin = require('./publish/OSSPublishPlugin')
+const env = process.env.NODE_ENV
+
+function resolve (dir) {
+  return path.join(__dirname, dir)
 }
+
 module.exports = {
   publicPath: '/',
   productionSourceMap: false,
@@ -40,18 +48,21 @@ module.exports = {
     //     return options
     //   })
   },
-	configureWebpack: config => {
+  configureWebpack: config => {
     config.resolve = {
-			extensions: ['.js', '.vue', '.json'],
-			alias: {
-				'@': resolve('src'),
-			}
+      extensions: ['.js', '.vue', '.json'],
+      alias: {
+        '@': resolve('src')
+      }
     }
     config.externals = {
       'vue': 'Vue',
       'axios': 'axios',
       'vue-router': 'VueRouter',
       'vuex': 'Vuex'
+    }
+    if (env === 'production') {
+      config.plugins.push(new OSSPublishPlugin({}))
     }
   }
 }

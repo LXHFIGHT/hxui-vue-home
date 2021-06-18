@@ -3,7 +3,8 @@ import HxAutoComplete from './cpts/HxAutoComplete'
 import HxButton from './cpts/HxButton/'
 import HxCalendar from './cpts/HxCalendar'
 import HxCatalog from './cpts/HxCatalog'
-import HxCheckboxGroup from './cpts/HxCheckboxGroup'
+import HxCheckbox from './cpts/HxCheckbox'
+import HxCheckboxGroup from './cpts/HxCheckbox/group'
 import HxDatetimePicker from './cpts/HxDatetimePicker'
 import HxDot from './cpts/HxDot'
 import HxHeader from './cpts/HxHeader'
@@ -21,7 +22,8 @@ import HxPagination from './cpts/HxPagination'
 import HxProgressBar from './cpts/HxProgressBar'
 import HxProgressModal from './cpts/HxProgressModal'
 import HxRank from './cpts/HxRank'
-import HxRadioGroup from './cpts/HxRadioGroup'
+import HxRadio from './cpts/HxRadio'
+import HxRadioGroup from './cpts/HxRadio/group'
 import HxRow from './cpts/HxRow'
 import HxSearch from './cpts/HxSearch'
 import HxSearchItem from './cpts/HxSearchItem'
@@ -72,6 +74,7 @@ export {
   HxButton,
   HxCalendar,
   HxCatalog,
+  HxCheckbox,
   HxCheckboxGroup,
   HxDatetimePicker,
   HxDot,
@@ -91,6 +94,7 @@ export {
   HxProgressModal,
   HxRank,
   HxRadioGroup,
+  HxRadio,
   HxRow,
   HxSearch,
   HxSearchItem,

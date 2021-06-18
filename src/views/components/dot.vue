@@ -50,12 +50,12 @@
     <div class="section">
       <span class="title">带文字的实心气泡</span>
       <span class="desc">
-        如果气泡内需要展示文字的时候，
+        如果气泡内需要展示文字的时候，可以通过 <em>text</em> 定义文本，<strong>但作者更推荐直接将文本写在标签内。</strong>
       </span>
       <div class="pad-preview">
         <div class="demo">
-          <hx-button >新的消息<hx-dot level="info" text="2"></hx-dot></hx-button>
-          <hx-button >版本介绍<hx-dot level="error" text="New"></hx-dot></hx-button>
+          <hx-button >新的消息<hx-dot level="info">2</hx-dot></hx-button>
+          <hx-button >版本介绍<hx-dot level="error">New</hx-dot></hx-button>
         </div>
         <div class="code">
           <span class="tips">
@@ -91,7 +91,9 @@
           <hx-button >默认<hx-dot position="topRight" level="error"/></hx-button>
           <hx-button >左上角的气泡<hx-dot position="topLeft" level="warn" /></hx-button>
           <hx-button >左下角的气泡<hx-dot position="bottomLeft" level="success"/></hx-button>
-          <hx-button >右下角的气泡<hx-dot position="bottomRight" color="golden" text="+2"/></hx-button>
+          <hx-button >右下角的气泡
+            <hx-dot position="bottomRight" color="golden">+2</hx-dot>
+          </hx-button>
         </div>
         <div class="code">
           <pre class="detail" v-highlightjs="fifthText">
@@ -102,36 +104,16 @@
       </div>
     </div>
     <div class="section">
-      <span class="title">属性表格</span>
-      <div class="hx-table">
-        <table>
-          <thead>
-            <tr>
-              <td class="sm">参数</td>
-              <td class="bg">说明</td>
-              <td class="sm">类型</td>
-              <td class="bg">可选值</td>
-              <td class="md">默认值</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, idx) in props" :key="idx">
-              <td v-text="item.name"></td>
-              <td v-text="item.desc"></td>
-              <td v-text="item.type"></td>
-              <td v-text="item.option"></td>
-              <td v-text="item.default"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <!-- 属性表格 -->
+      <props-table :content="props"></props-table>
     </div>
   </article>
 </template>
 <script>
 import { HxDot } from 'hxui'
+import PropsTable from './../cpts/PropsTable'
 export default {
-  components: { HxDot },
+  components: { HxDot, PropsTable },
   data () {
     return {
       firstText: `<hx-button>有新的消息<hx-dot level="info" /></hx-button>
@@ -145,7 +127,8 @@ export default {
 <hx-button >有中的消息<hx-dot size="md"/></hx-button>
 <hx-button >有大的消息<hx-dot size="bg"/></hx-button>`,
       thirdText: `<hx-button >新的消息<hx-dot level="info" text="2"></hx-dot></hx-button>
-<hx-button >版本介绍<hx-dot level="error" text="New"></hx-dot></hx-button>`,
+<!-- 更推荐下面这种写法 -->
+<hx-button >版本介绍<hx-dot level="error">New</hx-dot></hx-button>`,
       forthText: `<hx-button>空的气泡<hx-dot color="red" blank="blank"/></hx-button>
 <hx-button>空的气泡2<hx-dot size="bg" color="golden" blank="blank"/></hx-button>
 <hx-button>空的消息<hx-dot color="red" blank="blank" text="2"/></hx-button>
@@ -155,7 +138,7 @@ export default {
 <hx-button >左下角的气泡<hx-dot position="bottomLeft" level="success"/></hx-button>
 <hx-button >右下角的气泡<hx-dot position="bottomRight" color="golden" text="+2"/></hx-button>`,
       props: [
-        { name: 'text', desc: '气泡上的文本', type: 'String', option: '颜色值', default: 'red（红色）' },
+        { name: 'text', desc: '气泡上的文本\n(也支持在标签内放置文本)', type: 'String', option: '颜色值', default: '空字符串' },
         { name: 'size', desc: '大小', type: 'String', option: 'sm/md/bg', default: 'md（中等）' },
         { name: 'color', desc: '颜色', type: 'String', option: '颜色值选项', default: 'red（红色）' },
         { name: 'level', desc: '等级颜色', type: 'String', option: '等级选项', default: 'error（红色）' },
