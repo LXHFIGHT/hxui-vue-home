@@ -42,7 +42,11 @@ export const componentsCatalog = [
       { key: '单选框', value: 'hx-radio-group' },
       { key: '开关', value: 'hx-switch' },
       { key: '标签框', value: 'hx-tag-editor' },
-      { key: '上传文件组件', value: 'hx-smart-uploader' }
+      { key: '上传文件', value: 'hx-smart-uploader' },
+      '综合',
+      { key: '日历', value: 'hx-calendar' },
+      { key: '地图', value: 'hx-map' },
+      { key: '选址器', value: 'hx-address-selector' }
     ]
   }
 ]

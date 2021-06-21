@@ -81,6 +81,21 @@ export default new Router({
               component: resolve => require(['@/views/components/smartUploader.vue'], resolve)
             },
             {
+              path: 'hx-calendar',
+              name: 'hx-calendar',
+              component: resolve => require(['@/views/components/calendar.vue'], resolve)
+            },
+            {
+              path: 'hx-map',
+              name: 'hx-map',
+              component: resolve => require(['@/views/components/map.vue'], resolve)
+            },
+            {
+              path: 'hx-address-selector',
+              name: 'hx-address-selector',
+              component: resolve => require(['@/views/components/addressSelector.vue'], resolve)
+            },
+            {
               path: 'demo',
               name: 'demo',
               component: resolve => require(['@/views/README.vue'], resolve)

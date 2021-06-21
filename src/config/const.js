@@ -19,3 +19,5 @@ export const Themes = {
   LIGHT: 'light',
   DARK: 'dark'
 } // 主题风格
+
+export const scriptText = `<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=您申请的key值"></script>`
