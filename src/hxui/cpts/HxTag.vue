@@ -1,7 +1,3 @@
-<!--
- * @Author       : liuxuhao
- * @LastEditors  : liuxuhao
--->
 <template>
   <span :class="['hx-tag', 
     level, 
