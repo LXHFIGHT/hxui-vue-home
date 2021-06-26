@@ -33,6 +33,7 @@ export const componentsCatalog = [
       '基本',
       { key: 'Button 按钮', value: 'hx-button' },
       { key: 'Dot 气泡', value: 'hx-dot' },
+      { key: 'Tag 标签', value: 'hx-tag' },
       // { key: 'Image 图片', value: 'hx-image' },
       '表单',
       { key: '输入框', value: 'hx-input' },

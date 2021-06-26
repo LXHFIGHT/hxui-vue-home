@@ -36,8 +36,8 @@
   </article>
 </template>
 <script>
-import EventsTable from './cpts/EventsTable'
-import PropsTable from './cpts/PropsTable'
+import EventsTable from '@/views/cpts/EventsTable'
+import PropsTable from '@/views/cpts/PropsTable'
 export default {
   components: {
     EventsTable,
@@ -60,5 +60,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "./global.scss";
+@import "@/views/global.scss";
 </style>

@@ -111,7 +111,7 @@
 </template>
 <script>
 import { HxDot } from 'hxui'
-import PropsTable from './../cpts/PropsTable'
+import PropsTable from './../../cpts/PropsTable'
 export default {
   components: { HxDot, PropsTable },
   data () {
@@ -150,5 +150,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "./../global.scss";
+@import "./../../global.scss";
 </style>

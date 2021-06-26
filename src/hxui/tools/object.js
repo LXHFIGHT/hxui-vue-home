@@ -47,11 +47,11 @@ export const randomString = (length, isJustNumber = false) => {
  */
 export const _isSameArray = (arr1 = [], arr2 = []) => {
   if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
-    console.log(`_isSameArray 方法要求第一和第二个参数为数组类型`)
+    console.warn(`_isSameArray 方法要求第一和第二个参数为数组类型`)
     return false
   }
   if (arr1.length !== arr2.length) {
-    console.log(`第一和第二个数组长度不一致`)
+    console.warn(`第一和第二个数组长度不一致`)
     return false
   }
   let i = 0
@@ -91,7 +91,7 @@ export const isShallowEqual = (val1, val2) => {
     const val1Keys = Object.keys(val1)
     const val2Keys = Object.keys(val2)
     if (!_isSameArray(val1Keys, val2Keys)) {
-      console.log('参与比较的对象的属性不一致')
+      console.warn('参与比较的对象的属性不一致')
       return false
     }
     for (let param in val1) {

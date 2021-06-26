@@ -92,12 +92,12 @@ export default {
         { name: 'lat', desc: '纬度坐标', type: 'String,Number', option: '0~180', default: '必填' },
         { name: 'lng', desc: '经度坐标', type: 'String,Number', option: '0~90', default: '必填' },
         { name: 'type', desc: '坐标系，目前仅支持 gcj02（高德，默认）和 bg09（百度）', type: 'String', option: 'gcj02 | bd09', default: 'gcj02' },
-        { name: 'height*', desc: '地图高度', type: 'String', option: '样式中长宽的值', default: '200px' },
-        { name: 'width*', desc: '地图宽度', type: 'String', option: '样式中长宽的值', default: '100%' },
-        { name: 'level*', desc: '地图加载时缩放级别', type: 'Number', option: '3 ~ 18', default: '14' }
+        { status: 'no-demo', name: 'height', desc: '地图高度', type: 'String', option: '样式中长宽的值', default: '200px' },
+        { status: 'no-demo', name: 'width', desc: '地图宽度', type: 'String', option: '样式中长宽的值', default: '100%' },
+        { status: 'planning', name: 'level', desc: '地图加载时缩放级别', type: 'Number', option: '3 ~ 18', default: '14' }
       ],
       events: [
-        { name: 'change', desc: '修改内容触发事件', option: '选中的值' }
+        { name: 'click', desc: '点击地图事件, 一般用于选取坐标信息（经度纬度）', option: '坐标对象 { lat: "纬度", lng: "经度" } ' }
       ]
     }
   }

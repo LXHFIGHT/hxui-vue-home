@@ -100,8 +100,8 @@
 
 <script>
 import { HxButton } from 'hxui'
-import EventsTable from '../cpts/EventsTable.vue'
-import PropsTable from '../cpts/PropsTable.vue'
+import EventsTable from './../../cpts/EventsTable.vue'
+import PropsTable from './../../cpts/PropsTable.vue'
 export default {
   components: {
     HxButton,
@@ -109,7 +109,7 @@ export default {
     PropsTable
   },
   data () {
-    return {
+    return { 
       show: false,
       follower: null,
       text: `<hx-button type="main"> 主题色 </hx-button>
@@ -180,7 +180,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./../global.scss";
+@import "./../../global.scss";
 .demo .hx-button {
   margin-right: $pm-sm;
 }

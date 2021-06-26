@@ -26,9 +26,10 @@
   }
   > .title {
     font-size: $font-bg * 2;
-    line-height: 1;
-    margin: $pm-bg 0 $pm-sm;
+    margin: $pm-md 0;
     font-weight: 500;
+    display: flex;
+    align-items: center;
   }
   .desc {
     color: $color-dark;
@@ -114,6 +115,18 @@
   }
   .hx-button + .hx-button {
     margin-left: 8px;
+  }
+}
+
+.hx-table {
+  tr.no-demo {
+    background-color: rgba($color-orange, .1);
+  }
+  tr.planning {
+    background-color: rgba($color-red, .15);
+  }
+  .hx-tag {
+    margin-left: $pm-xs;
   }
 }
 

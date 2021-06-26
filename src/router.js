@@ -33,12 +33,17 @@ export default new Router({
             {
               path: 'hx-button',
               name: 'hx-button',
-              component: resolve => require(['@/views/components/button.vue'], resolve)
+              component: resolve => require(['@/views/components/basic/button.vue'], resolve)
             },
             {
               path: 'hx-dot',
               name: 'hx-dot',
-              component: resolve => require(['@/views/components/dot.vue'], resolve)
+              component: resolve => require(['@/views/components/basic/dot.vue'], resolve)
+            },
+            {
+              path: 'hx-tag',
+              name: 'hx-tag',
+              component: resolve => require(['@/views/components/basic/tag.vue'], resolve)
             },
             { // 复选框
               path: 'hx-checkbox-group',
