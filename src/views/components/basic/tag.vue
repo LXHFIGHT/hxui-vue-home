@@ -50,7 +50,7 @@
       </span>
       <div class="pad-preview">
         <div class="demo">
-          <hx-tag level="red" blank round>线框和圆边</hx-tag>
+          <hx-tag color="red" blank round>线框和圆边</hx-tag>
           <hx-tag level="blue" material round>material风格和圆边</hx-tag>
         </div>
         <div class="code">

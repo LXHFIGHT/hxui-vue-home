@@ -1,3 +1,7 @@
+<!--
+ * @Author       : liuxuhao
+ * @LastEditors  : liuxuhao
+-->
 <template>
   <span :class="['hx-tag', 
     level, 
@@ -13,6 +17,7 @@
 
 <script>
 import { levelKeys } from '../const'
+import { getColorStyle } from './../tools/dom'
 export default {
   name: 'HxTag',
   data () {
@@ -48,9 +53,11 @@ export default {
   },
   computed: {
     style () {
-      const backgroundColor = this.color ? `border: 1px solid ${this.color}; background-color: ${this.color};` : ''
-      const color = this.textColor ? `color: ${this.textColor};` : ''
-      return backgroundColor + color
+      return getColorStyle({
+        color: this.color,
+        textColor: this.textColor,
+        blank: this.blank
+      }) 
     }
   },
   methods: {

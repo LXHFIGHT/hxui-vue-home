@@ -121,35 +121,16 @@
       </div>
     </div>
     <div class="section">
-      <span class="title">属性表格</span>
-      <div class="hx-table">
-        <table>
-          <thead>
-            <tr>
-              <td class="sm">参数</td>
-              <td class="bg">说明</td>
-              <td class="sm">类型</td>
-              <td class="bg">可选值</td>
-              <td class="md">默认值</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, idx) in props" :key="idx">
-              <td v-text="item.name"></td>
-              <td v-text="item.desc"></td>
-              <td v-text="item.type"></td>
-              <td v-text="item.option"></td>
-              <td v-text="item.default"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <props-table :content="props"></props-table>
     </div>
   </article>
 </template>
 <script>
+import PropsTable from './../cpts/PropsTable'
 export default {
-  components: {},
+  components: {
+    PropsTable
+  },
   data () {
     return {
       firstText: `this.$hxui.confirm({

@@ -9,6 +9,14 @@
       <br />
       <br />
       <span class="color-gray">We are willing to take any kind of suggestions</span><br />
+      <div class="pad-buttons">
+        <hx-button size="bg" blank round color="#242A2E">
+          <strong>Github</strong>  
+        </hx-button>
+        <hx-button size="bg" blank round>
+          <strong>GMAIL</strong>  
+        </hx-button>
+      </div>
     </div>
     <footer class="footer">
       <a href="mailto: lxhfight1@gmail.com" class="color-gray">lxhfight1@gmail.com</a> |
@@ -17,8 +25,12 @@
   </div>
 </template>
 <script>
+import { HxButton } from '@/hxui'
 import Typed from 'typed.js'
 export default {
+  components: {
+    HxButton
+  },
   data () {
     return {
       className: '.text-main',
@@ -70,6 +82,15 @@ export default {
         &:hover {
           color: $color-blue!important;
         }
+      }
+    }
+    .pad-buttons {
+      margin-top: $pm-lg;
+      .hx-button {
+        min-width: 100px;
+      }
+      .hx-button + .hx-button {
+        margin-left: $pm-bg;
       }
     }
   }
