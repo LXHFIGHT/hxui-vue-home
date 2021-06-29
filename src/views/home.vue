@@ -10,11 +10,14 @@
       <br />
       <span class="color-gray">We are willing to take any kind of suggestions</span><br />
       <div class="pad-buttons">
-        <hx-button size="bg" blank round color="#242A2E">
+        <hx-button @click="toLink('https://github.com/lxhfight/hxui')" size="bg" blank round color="#242A2E">
           <strong>Github</strong>  
         </hx-button>
-        <hx-button size="bg" blank round>
-          <strong>GMAIL</strong>  
+        <hx-button @click="toLink('https://npmjs.org/hxui')" size="bg" blank round color="#F9640A">
+          <strong>npm</strong>  
+        </hx-button>
+        <hx-button @click="toMail" size="bg" blank round color="#F44335">
+          <strong>Email</strong>
         </hx-button>
       </div>
     </div>
@@ -49,12 +52,18 @@ export default {
   },
   methods: {
     $_init () {
-      let typed = new Typed(this.className, this.options)
-      console.log('Initiated ', typed)
+      // eslint-disable-next-line
+      const typed = new Typed(this.className, this.options)
+    },
+    toLink (link) {
+      window.open(link, '_blank')
+    },
+    toMail () {
+      window.open('mailto:lxhfight51@qq.com', '_blank')
     }
   },
   mounted () {
-    this.$_init()
+    this.$_init() 
   }
 }
 </script>

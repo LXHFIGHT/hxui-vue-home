@@ -16,7 +16,8 @@ export default new Router({
         {
           path: '/home',
           name: 'home',
-          component: resolve => require(['@/views/home.vue'], resolve)
+          component: resolve => require(['@/views/home.vue'], resolve),
+          meta: { keepAlive: true }
         },
         // 组件库
         {

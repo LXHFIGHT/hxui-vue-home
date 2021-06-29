@@ -12,7 +12,11 @@ let menus = [
   },
   {
     name: 'Layout',
-    state: '/layouts/hx-row'
+    state: '/layouts/hx-row',
+    children: [
+      { name: '行', state: '/layouts/hx-row' },
+      { name: '域', state: '/layouts/hx-section' }
+    ]
   },
   {
     name: 'Components',
@@ -57,8 +61,8 @@ export const layoutsCatalog = [
     key: '基本布局',
     disabled: true,
     children: [
-      { key: '行组件', value: 'hx-row' },
-      { key: '域组件', value: 'hx-section' }
+      { key: '行布局', value: 'hx-row' },
+      { key: '域布局', value: 'hx-section' }
     ]
   }
 ]
