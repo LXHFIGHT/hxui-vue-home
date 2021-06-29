@@ -7,6 +7,8 @@ const path = require('path')
 const readline = require('readline')
 const chalk = require('chalk')
 const OSS = require('ali-oss')
+
+const clearBucket = require('./clearBucket')
 const config = require('./config')
 const client = new OSS(config.oss)
 
@@ -25,8 +27,11 @@ class OSSPublishPlugin {
           this.createUploadTasks()
         } else {
           this.doAuthorizePublish().then(res => {
-            console.log('\n已授权发布 ✅\n')
-            this.createUploadTasks()
+            console.log('\n正在清空旧数据....\n')
+            clearBucket().then(() => {
+              console.log('\n已清空旧数据.... \n已授权发布，正在发布中...✅\n')
+              this.createUploadTasks()
+            })
           }).catch(() => {
             console.log('\n发布未授权，已取消 🚫\n')
             process.exit()
