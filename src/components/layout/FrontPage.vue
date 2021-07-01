@@ -1,10 +1,14 @@
+<!--
+ * @Author       : liuxuhao
+ * @LastEditors  : liuxuhao
+-->
 <template>
   <div class="hx-block">
     <!-- HXUI对于文档页面的应用 -->
     <hx-navbar :menus="menus"
       :logo="logo"
       :onSelect="doSelect">
-      <hx-tag level="success" size="sm" slot="follow">0.3.5</hx-tag>
+      <hx-tag level="success" size="sm" slot="follow">0.3.6</hx-tag>
     </hx-navbar>
     <div class="hx-main">
       <router-view></router-view>
