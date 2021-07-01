@@ -39,7 +39,7 @@ export const componentsCatalog = [
       { key: 'Dot 气泡', value: 'hx-dot' },
       { key: 'Tag 标签', value: 'hx-tag' },
       { key: 'Loading 加载', value: 'hx-loading' },
-      { key: 'Image 图片', value: 'hx-image' },
+      // { key: 'Image 图片', value: 'hx-image' },
       '表单',
       { key: '输入框', value: 'hx-input' },
       { key: '联想输入框', value: 'hx-auto-complete' },
