@@ -121,7 +121,7 @@
 </template>
 
 <script>
-import { HxButton } from '@/hxui'
+import { HxButton } from 'hxui'
 import EventsTable from './../../cpts/EventsTable.vue'
 import PropsTable from './../../cpts/PropsTable.vue'
 export default {

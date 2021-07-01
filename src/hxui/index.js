@@ -68,6 +68,7 @@ const install = (Vue) => {
 //   install(window.Vue)
 // }
 
+const HxLoading = HxLoadingIcon
 export {
   HxAddressSelector, // 地址选择组件
   HxAutoComplete,
@@ -81,6 +82,7 @@ export {
   HxHeader,
   HxImage,
   HxInput,
+  HxLoading,
   HxLoadingIcon,
   HxStatusIcon,
   HxMap,

@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import HxLoadingIcon from './../cpts/HxLoadingIcon'
+import HxLoadingIcon from './HxLoadingIcon'
 import IconExpend from './../img/svg/expend.svg' 
 import IconUpload from './../img/svg/upload.svg' 
 import IconDelete from './../img/svg/delete.svg' 

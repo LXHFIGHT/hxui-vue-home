@@ -29,7 +29,12 @@ export default new Router({
             {
               path: 'hx-image',
               name: 'hx-image',
-              component: resolve => require(['@/views/components/image.vue'], resolve)
+              component: resolve => require(['@/views/components/basic/image.vue'], resolve)
+            },
+            {
+              path: 'hx-loading',
+              name: 'hx-loading',
+              component: resolve => require(['@/views/components/basic/loading.vue'], resolve)
             },
             {
               path: 'hx-button',
