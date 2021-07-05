@@ -3,6 +3,7 @@
 .hx-image {
   position: relative;
   background-color: transparent;
+  overflow: hidden;
   &.block {
     height: 100%;
     width: 100%;
@@ -11,14 +12,14 @@
   .img {
     display: block;
   }
-  &.centerVertical {
+  &.adjust.centerVertical {
     .img {
       width: 100%;
       height: auto;
       @include centerVertical;
     }
   }
-  &.centerHorizontal {
+  &.adjust.centerHorizontal {
     .img {
       height: 100%;
       width: auto;
