@@ -16,16 +16,32 @@
       </span>
       <div class="pad-preview">
         <div class="demo"> 
+            <hx-row label="引入相对路径图片" label-size="bg">
+              <hx-image style="height: 150px; border-radius: 5px;" :src="require('@/assets/bg/bg-login.jpg')"></hx-image>
+            </hx-row>
+            <hx-row label="引入URL图片" label-size="bg">
+              <hx-image style="height: 150px; border-radius: 5px;" src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>
+            </hx-row>
+        </div>
+        <div class="code">
+          <pre class="detail" v-highlightjs="texts[3]">
+            <code class="xml">
+            </code>
+          </pre>
+        </div>
+      </div>
+      <div class="pad-preview">
+        <div class="demo"> 
           <div class="hx-pad-left" style="height: 132px;">
             <hx-row label="定高不定宽：" label-size="bg">
-              <hx-image height="100px" src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>
+              <hx-image style="height: 100px" src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>
               <span class="tips" slot="tips">仅高度设置为100px</span>
             </hx-row>
           </div>
           <div class="hx-pad-right" style="height: 132px;">
             <hx-row label="定宽不定高：" label-size="bg">
-              <hx-image width="132px" src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>
-              <span class="tips" slot="tips">仅宽度设置为132px</span>
+              <hx-image style="width: 55%;" src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>
+              <span class="tips" slot="tips">仅宽度设置为55%</span>
             </hx-row>
           </div>
           <hx-row label="定宽定宽智能展示：" label-size="bg">
@@ -33,8 +49,8 @@
             <span class="tips" slot="tips">高度定义100px，宽度定义340px, 此时智能展示垂直方向中央部分</span>
           </hx-row>
           <hx-row label="定宽定宽智能展示：" label-size="bg">
-            <hx-image height="100px" width="70px"  src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>
-            <span class="tips" slot="tips">高度定义100px，宽度定义70px，此时展示水平方向中央部分</span>
+            <hx-image style="height: 100px; width: 100px" round src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>
+            <span class="tips" slot="tips">高度定义100px，宽度定义100px，此时展示水平方向中央部分</span>
           </hx-row>
         </div>
         <div class="code">
@@ -47,10 +63,34 @@
           </pre>
         </div>
       </div>
+      <span class="title">加载和异常状态</span>
+      <span class="desc">
+        使用 <strong>hx-image</strong> 展示图片时，会对大图加载状态 和 加载不了图片的异常状态进行体验上的优化；
+      </span>
+      <div class="pad-preview">
+        <div class="demo"> 
+          <hx-row label="加载大图" label-size="bg">
+            <hx-image height="150px" src="https://unsplash.com/photos/-ayOfwsd9mY/download?force=true"></hx-image>
+            <span class="tips" slot="tips">仅高度设置为100px</span>
+          </hx-row>
+          <hx-row label="默认加载出错" label-size="bg">
+            <hx-image width="20%" src="https://static.lxhfight.com/img/image-candy.png"></hx-image>
+          </hx-row>
+          <hx-row label="alt配置错误信息" label-size="bg">
+            <hx-image style="width: 20%"  alt="<strong style='color: red'>图片加载失败</strong>" src="https://static.lxhfight.com/img/image-candy.png"></hx-image>
+            <span class="tips" slot="tips">图片链接加载不出时，提示alt错误信息</span>
+          </hx-row>
+        </div>
+        <div class="code">
+          <pre class="detail" v-highlightjs="texts[2]">
+            <code class="xml">
+            </code>
+          </pre>
+        </div>
+      </div>
+      
     </div>
-    <span class="annotation">
-      // 此处可以写注释, 可复制上述属性 .section
-    </span>
+   
     <!-- 属性表格 -->
     <props-table :content="props"></props-table>
     <!-- 事件 -->
@@ -59,6 +99,7 @@
 </template>
 <script>
 import { HxImage } from '@/hxui'
+import bgImage from './../../../assets/bg/bg-login.jpg'
 import EventsTable from '@/views/cpts/EventsTable'
 import PropsTable from '@/views/cpts/PropsTable'
 export default {
@@ -69,18 +110,31 @@ export default {
   },
   data () {
     return {
+      bgImage,
       texts: [
-        `<hx-image height="100px" src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>
-<hx-image width="132px" src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>
-<hx-image height="100px" width="300px" src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>
-<hx-image height="100px" width="70px" src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>`
+        `<hx-image style="height: 100px" src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>
+<hx-image style="width: 55%;" src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>
+<hx-image height="100px" width="300px"  src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>
+<hx-image style="height: 100px; width: 100px" round src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>`, `<hx-image height="200px" src="https://unsplash.com/photos/-ayOfwsd9mY/download?force=true"></hx-image>`, `
+<hx-image height="150px" src="https://unsplash.com/photos/-ayOfwsd9mY/download?force=true"></hx-image>
+<hx-image height="100px" width="225px" src="https://static.lxhfight.com/img/image-candy.png"></hx-image>
+<hx-image height="100px" width="225px" alt="<strong style='color: red'>图片加载失败</strong>" src="https://static.lxhfight.com/img/image-candy.png"></hx-image>
+`, `<hx-row label="引入相对路径图片" label-size="bg">
+  <hx-image style="height: 150px; border-radius: 5px;" :src="require('@/assets/bg/bg-login.jpg')"></hx-image>
+</hx-row>
+<hx-row label="引入URL图片" label-size="bg">
+  <hx-image style="height: 150px; border-radius: 5px;" src="https://static.lxhfight.com/img/image-candy.jpg"></hx-image>
+</hx-row>`
       ],
       props: [
-        { name: 'content', desc: '下拉菜单选项内容', type: 'Array', option: '由数值、字符串或对象组成', default: '[]' },
-        { name: 'placeholder', desc: '文本为空时的提示信息', type: 'String', option: '文本', default: '空字符串' }
+        { name: 'height', desc: '图片的高度（也支持style定义）', type: 'String', option: 'CSS距离值', default: '空字符串' },
+        { name: 'width', desc: '图片的宽度（也支持style定义）', type: 'String', option: 'CSS距离值', default: '空字符串' },
+        { name: 'round', desc: '圆角图片', type: 'Boolean', option: 'true/false', default: 'false' },
+        { name: 'src', desc: '图片的链接，支持引入URL，也支持使用require方式引入相对路径图片', type: 'String', option: '图片相对路径或URL', default: '必传' },
+        { name: 'alt', desc: '加载失败时展示的内容（支持HTML）', type: 'HTMLText', option: 'HTML片段或字符串', default: '图片加载不出' }
       ],
       events: [
-        { name: 'change', desc: '修改内容触发事件', option: '选中的值' }
+        { name: 'click', desc: '点击图片事件', option: '图片链接' }
       ]
     }
   }
