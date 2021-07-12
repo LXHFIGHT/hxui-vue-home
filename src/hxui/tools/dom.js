@@ -1,7 +1,3 @@
-/*
- * @Author       : liuxuhao
- * @LastEditors  : liuxuhao
- */
 export const $ = (query) => {
   return document.querySelectorAll(query)
 }

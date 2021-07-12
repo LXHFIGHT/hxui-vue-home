@@ -29,7 +29,7 @@
       </div>
       <span class="title">基本属性</span>
       <span class="desc">
-        通过 <strong>lat</strong> 定义坐标的纬度， <strong>lng</strong> 定位坐标的经度。
+        通过 <em>lat</em> 定义坐标的纬度， <em>lng</em> 定位坐标的经度。
         <br/>
         <strong>注意：</strong>
           地图组件默认采用
@@ -50,7 +50,7 @@
             <small>百度坐标系[type="bd09"]:</small>
             <br/>经度 <strong>116.40395°E</strong> 纬度 <strong>39.91324°N</strong>
             <br/><br/>
-            <hx-map id="bmap" type="bd09" lat="39.91324" lng="116.40395"></hx-map>
+            <hx-map hide-logo id="bmap" type="bd09" lat="39.91324" lng="116.40395"></hx-map>
           </div>
         </div>
         <div class="code">
@@ -58,6 +58,46 @@
             <strong style="color: red;">如为百度坐标，请一定要设置 type="bd09"</strong>
           </span>
           <pre class="detail" v-highlightjs="texts[1]" >
+            <code class="xml">
+            </code>
+          </pre>
+        </div>
+      </div>
+      <span class="desc">
+        和多数组件一样，可以通过 <em>height</em> 和 <em>width</em>
+        定义地图展示组件的高度和宽度，当然也支持在内联样式中定义高宽。<br>
+        如果觉得需要隐藏底部的高德地图logo和版权信息，还可以设置 <em>hide-logo</em> 属性。
+      </span>
+      <div class="pad-preview">
+        <div class="demo">
+          <hx-map id="amapII" height="200px" width="60%" hide-logo lat="39.906901" lng="116.397551" ></hx-map>
+        </div>
+        <div class="code">
+          <pre class="detail" v-highlightjs="texts[2]" >
+            <code class="xml">
+            </code>
+          </pre>
+        </div>
+      </div>
+      <span class="desc">
+        支持通过 <em>level</em> 设置地图显示的缩放级别。
+        <strong>注意：缩放级别的方位在 3 ~ 18 </strong>
+      </span>
+      <div class="pad-preview">
+        <div class="demo" style="height: 300px;">
+          <div class="hx-pad-left">
+            缩放级别为 <strong>13</strong>
+            <br/><br/>
+            <hx-map level="13" lat="39.906901" lng="116.397551"></hx-map>
+          </div>
+          <div class="hx-pad-right">
+            缩放级别为 <strong>16</strong>
+            <br/><br/>
+            <hx-map level="16" lat="39.906901" lng="116.397551"></hx-map>
+          </div>
+        </div>
+        <div class="code">
+          <pre class="detail" v-highlightjs="texts[3]" >
             <code class="xml">
             </code>
           </pre>
@@ -86,15 +126,18 @@ export default {
       texts: [
         scriptText,
         `<hx-map id="amap" lat="39.906901" lng="116.397551"></hx-map>
-<hx-map id="bmap" type="bd09" lat="39.91324" lng="116.40395"></hx-map>`
+<hx-map id="bmap" type="bd09" lat="39.91324" lng="116.40395"></hx-map>`, `<hx-map id="amapII" height="200px" width="60%" hide-logo ></hx-map>`, 
+        `<hx-map level="13" lat="39.906901" lng="116.397551"></hx-map>
+<hx-map level="16" lat="39.906901" lng="116.397551"></hx-map>`
       ],
       props: [
         { name: 'lat', desc: '纬度坐标', type: 'String,Number', option: '0~180', default: '必填' },
         { name: 'lng', desc: '经度坐标', type: 'String,Number', option: '0~90', default: '必填' },
         { name: 'type', desc: '坐标系，目前仅支持 gcj02（高德，默认）和 bg09（百度）', type: 'String', option: 'gcj02 | bd09', default: 'gcj02' },
-        { status: 'no-demo', name: 'height', desc: '地图高度', type: 'String', option: '样式中长宽的值', default: '200px' },
-        { status: 'no-demo', name: 'width', desc: '地图宽度', type: 'String', option: '样式中长宽的值', default: '100%' },
-        { status: 'planning', name: 'level', desc: '地图加载时缩放级别', type: 'Number', option: '3 ~ 18', default: '14' }
+        { name: 'height', desc: '地图高度', type: 'String', option: '样式中长宽的值', default: '200px' },
+        { name: 'width', desc: '地图宽度', type: 'String', option: '样式中长宽的值', default: '100%' },
+        { name: 'hideLogo', desc: '是否隐藏左下角高德地图 Logo 和 版权信息内容， true表示隐藏', type: 'Boolean', option: '布尔值', default: 'false' },
+        { name: 'level', desc: '地图加载时缩放级别', type: 'Number', option: '3 ~ 18', default: '14' }
       ],
       events: [
         { name: 'click', desc: '点击地图事件, 一般用于选取坐标信息（经度纬度）', option: '坐标对象 { lat: "纬度", lng: "经度" } ' }

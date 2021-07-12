@@ -110,9 +110,9 @@ export default {
       props: [
         { name: 'size', desc: '标签尺寸（sm小 20px、md 26px、bg 34px）', type: 'String', option: 'sm/md/bg', default: 'md' },
         { name: 'level', desc: '标签级别', type: 'String', option: 'info/warn/success/error/fatal', default: '空字符串' },
-        { name: 'blank', desc: '是否为线框样式', type: 'Boolean', option: 'true/false', default: 'false' },
-        { name: 'material', desc: '是否拟物化风格', type: 'Boolean', option: 'true/false', default: 'false' },
-        { name: 'round', desc: '是否为圆边标签', type: 'Boolean', option: 'true/false', default: 'false' },
+        { name: 'blank', desc: '是否为线框样式', type: 'Boolean', option: '布尔值', default: 'false' },
+        { name: 'material', desc: '是否拟物化风格', type: 'Boolean', option: '布尔值', default: 'false' },
+        { name: 'round', desc: '是否为圆边标签', type: 'Boolean', option: '布尔值', default: 'false' },
         { name: 'color', desc: '自定义标签背景色', type: 'String', option: 'css中的色值', default: '空字符串' },
         { name: 'textColor', desc: '自定义标签文本颜色', type: 'String', option: 'css中的色值', default: '空字符串' }
       ],

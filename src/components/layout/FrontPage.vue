@@ -8,7 +8,7 @@
     <hx-navbar :menus="menus"
       :logo="logo"
       :onSelect="doSelect">
-      <hx-tag level="success" size="sm" slot="follow">0.3.6</hx-tag>
+      <hx-tag level="success" size="sm" slot="follow">0.3.7</hx-tag>
     </hx-navbar>
     <div class="hx-main">
       <router-view></router-view>
