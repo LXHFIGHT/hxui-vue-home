@@ -172,10 +172,10 @@ export default {
         { name: 'textColor', desc: '按钮文本颜色（高优先级）', type: 'String', option: 'css颜色值', default: '空字符串' },
         { name: 'icon', desc: '按钮前图标链接', type: 'String', option: '图片相对路径/URL', default: '空字符串' },
         { name: 'size', desc: '按钮大小', type: 'String', option: 'sm 小/md 默认/bg 大', default: 'md' },
-        { name: 'text', desc: '文字按钮', type: 'Boolean', option: 'true/false', default: 'false' },
-        { name: 'blank', desc: '空心按钮', type: 'Boolean', option: 'true/false', default: 'false' },
-        { name: 'round', desc: '定义圆角', type: 'Boolean', option: 'true/false', default: 'false' },
-        { name: 'sharp', desc: '定义直角', type: 'Boolean', option: 'true/false', default: 'false' }
+        { name: 'text', desc: '文字按钮', type: 'Boolean', option: '布尔值', default: 'false' },
+        { name: 'blank', desc: '空心按钮', type: 'Boolean', option: '布尔值', default: 'false' },
+        { name: 'round', desc: '定义圆角', type: 'Boolean', option: '布尔值', default: 'false' },
+        { name: 'sharp', desc: '定义直角', type: 'Boolean', option: '布尔值', default: 'false' }
       ]
     }
   },

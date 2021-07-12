@@ -392,15 +392,15 @@ export default {
       props: [
         { name: 'content', desc: '多选框菜单选项内容', type: 'Array', option: '由数值、字符串或对象组成', default: '[]' },
         { name: 'value', desc: '对应选择的值', type: 'Boolean/String/Number', option: 'true/false/"disabled"', default: '' },
-        { name: 'tabbar', desc: '是否以标签栏形式展示', type: 'Boolean', option: 'true/false', default: 'false' },
+        { name: 'tabbar', desc: '是否以标签栏形式展示', type: 'Boolean', option: '布尔值', default: 'false' },
         { name: 'label-class', desc: '自定义文本的样式类', type: 'String', option: '字符串', default: '空字符串' },
-        { name: 'disabled', desc: '是否只读', type: 'Boolean', option: 'true/false', default: 'false' },
+        { name: 'disabled', desc: '是否只读', type: 'Boolean', option: '布尔值', default: 'false' },
         { name: 'keyName', desc: 'content数组中对象元素中对应选项文本内容的字段名', type: 'String', option: '文本', default: 'key' },
         { name: 'onSelect', desc: '勾选选项时调用方法\n(推荐使用事件@select)', type: 'Function', option: '', default: '' }
       ],
       props2: [
         { name: 'value', desc: '对应选择的值', type: 'Boolean/String/Number', option: '基本数据类型', default: '-' },
-        { name: 'disabled', desc: '是否只读', type: 'Boolean', option: 'true/false', default: 'false' }
+        { name: 'disabled', desc: '是否只读', type: 'Boolean', option: '布尔值', default: 'false' }
       ],
       events: [
         { name: '@select', desc: '勾选某一项时触发', option: '对应项的对象 (对象包含key和value)' },

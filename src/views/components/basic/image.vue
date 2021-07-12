@@ -88,7 +88,6 @@
           </pre>
         </div>
       </div>
-      
     </div>
    
     <!-- 属性表格 -->
@@ -98,7 +97,7 @@
   </article>
 </template>
 <script>
-import { HxImage } from '@/hxui'
+import { HxImage } from 'hxui'
 import bgImage from './../../../assets/bg/bg-login.jpg'
 import EventsTable from '@/views/cpts/EventsTable'
 import PropsTable from '@/views/cpts/PropsTable'
@@ -129,7 +128,7 @@ export default {
       props: [
         { name: 'height', desc: '图片的高度（也支持style定义）', type: 'String', option: 'CSS距离值', default: '空字符串' },
         { name: 'width', desc: '图片的宽度（也支持style定义）', type: 'String', option: 'CSS距离值', default: '空字符串' },
-        { name: 'round', desc: '圆角图片', type: 'Boolean', option: 'true/false', default: 'false' },
+        { name: 'round', desc: '圆角图片', type: 'Boolean', option: '布尔值', default: 'false' },
         { name: 'src', desc: '图片的链接，支持引入URL，也支持使用require方式引入相对路径图片', type: 'String', option: '图片相对路径或URL', default: '必传' },
         { name: 'alt', desc: '加载失败时展示的内容（支持HTML）', type: 'HTMLText', option: 'HTML片段或字符串', default: '图片加载不出' }
       ],
