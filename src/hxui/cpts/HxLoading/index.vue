@@ -36,6 +36,10 @@ export default {
     height: { // 准备弃用
       type: String
     },
+    inline: { // 是否行内
+      type: Boolean,
+      default: false
+    },
     iconSize: {
       type: String,
       default: '34px'

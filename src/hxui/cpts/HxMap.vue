@@ -1,7 +1,4 @@
-<!--
- * @Author       : liuxuhao
- * @LastEditors  : liuxuhao
--->
+
 <template>
   <div class="hx-pad-map" :style="hxMapStyle">
     <div class="hx-map"
@@ -105,6 +102,45 @@ export default {
         this.$refs.hxMap.querySelector('.amap-copyright').remove()
       }
     },
+    doClick (e) {
+      const { lat, lng } = e.lnglat
+      this.$emit('click', { lat, lng, level: this.level, originEvent: e.originEvent })
+    },
+    doDoubleClick (e) {
+      const { lat, lng } = e.lnglat
+      this.$emit('dblclick', { lat, lng, level: this.level, originEvent: e.originEvent })
+    },
+    doMoving () {
+      const level = this.map.getZoom()
+      const center = this.map.getCenter()
+      this.$emit('moving', { center, level })
+    },
+    doMoveStart () {
+      const level = this.map.getZoom()
+      const center = this.map.getCenter()
+      this.$emit('movestart', { center, level })
+    },
+    doMoveEnd () {
+      const level = this.map.getZoom()
+      const center = this.map.getCenter()
+      this.$emit('moveend', { center, level })
+    },
+    $_initEvents () {
+      const { click, dblclick, moving, movestart, moveend } = this.$listeners
+      click && this.map.on('click', this.doClick)
+      dblclick && this.map.on('dblclick', this.doDoubleClick)
+      moving && this.map.on('moving', this.doMoving)
+      movestart && this.map.on('movestart', this.doMoveStart)
+      moveend && this.map.on('moveend', this.doMoveEnd)
+    },
+    $_unloadEvents () {
+      const { click, dblclick, moving, movestart, moveend } = this.$listeners
+      click && this.map.off('click', this.doClick)
+      dblclick && this.map.off('dblclick', this.doDoubleClick)
+      moving && this.map.off('moving', this.doMoving)
+      movestart && this.map.off('movestart', this.doMoveStart)
+      moveend && this.map.off('moveend', this.doMoveEnd)
+    },
     toCenter (level) {
       this.map.setZoomAndCenter(level || this.level, [this.lng, this.lat])
     }
@@ -114,6 +150,10 @@ export default {
   },
   mounted () {
     this.$_reloadMap()
+    this.$_initEvents()
+  },
+  beforeDestroy () {
+    this.$_unloadEvents()
   },
   computed: {
     hxMapStyle () {

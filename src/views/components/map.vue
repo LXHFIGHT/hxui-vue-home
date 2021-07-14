@@ -1,7 +1,3 @@
-<!--
- * @Author       : liuxuhao
- * @LastEditors  : liuxuhao
--->
 <template>
   <article class="pad-article">
     <header class="title">地图 Map</header>
@@ -50,7 +46,7 @@
             <small>百度坐标系[type="bd09"]:</small>
             <br/>经度 <strong>116.40395°E</strong> 纬度 <strong>39.91324°N</strong>
             <br/><br/>
-            <hx-map hide-logo id="bmap" type="bd09" lat="39.91324" lng="116.40395"></hx-map>
+            <hx-map @click="doClick" id="bmap" type="bd09" lat="39.91324" lng="116.40395"></hx-map>
           </div>
         </div>
         <div class="code">
@@ -103,6 +99,36 @@
           </pre>
         </div>
       </div>
+      <span class="title">事件</span>
+      <span class="desc">
+        <strong>HxMap</strong> 支持两个原生事件，单击地图 <em>click</em> 和 双击地图 <em>dblclick</em> 事件，事件参数为所点选的位置的经纬度、缩放比例以及原生的JS事件对象。
+        <br/>除此之外，还支持了拖拽地图行为中对应的 开始移动 <em>movestart</em>、移动地图中 <em>moving</em> 和 移动结束 <em>moveend</em> 事件。
+      </span>
+      <div class="pad-preview">
+        <div class="demo">
+          在下面地图上做对应行为可以查看到对应的参数:
+          <br/><br/>
+          <hx-map
+            height="300px" 
+            width="100%" 
+            @click="doClick" 
+            @dblclick="doDoubleClick" 
+            @movestart="doMoveStart"
+            @moving="doMoving"
+            @moveend="doMoveEnd"
+            lat="39.906901" 
+            lng="116.397551">
+            <div class="pad-text" slot="topRight" ref="textPad">
+            </div>
+          </hx-map>
+        </div>
+        <div class="code">
+          <pre class="detail" v-highlightjs="texts[3]" >
+            <code class="xml">
+            </code>
+          </pre>
+        </div>
+      </div>
     </div>
     <!-- 属性表格 -->
     <props-table :content="props"></props-table>
@@ -140,9 +166,20 @@ export default {
         { name: 'level', desc: '地图加载时缩放级别', type: 'Number', option: '3 ~ 18', default: '14' }
       ],
       events: [
-        { name: 'click', desc: '点击地图事件, 一般用于选取坐标信息（经度纬度）', option: '坐标对象 { lat: "纬度", lng: "经度" } ' }
+        { name: 'click', desc: '点击地图事件, 一般用于选取坐标信息（经度纬度）', option: '坐标对象，对象中包含 lat 纬度, lng 经度, level 缩放比例 和 originEvent 原始事件' },
+        { name: 'dblclick', desc: '双击地图事件', option: '坐标对象，对象中包含 lat 纬度, lng 经度, level 缩放比例 和 originEvent 原始事件' },
+        { name: 'moving', desc: '在地图上移动中触发事件', option: '移动中地图中心点对象，对象中包含 lat 纬度, lng 经度' },
+        { name: 'movestart', desc: '在地图上开始移动时触发事件', option: '移动中地图中心点对象，对象中包含 lat 纬度, lng 经度' },
+        { name: 'moveend', desc: '在地图上移动结束时触发事件', option: '移动中地图中心点对象，对象中包含 lat 纬度, lng 经度' }
       ]
     }
+  },
+  methods: {
+    doClick (e) { this.showText(e) },
+    doDoubleClick (e) { this.showText(e) },
+    doMoveStart (e) { this.showText(e) },
+    doMoving (e) { this.showText(e) },
+    doMoveEnd (e) { this.showText(e) }
   }
 }
 </script>
