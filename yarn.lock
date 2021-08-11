@@ -4729,10 +4729,10 @@ humanize-ms@^1.2.0, humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-hxui@^0.3.1:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/hxui/-/hxui-0.3.3.tgz#c66a14c6c2836d5ca263b3b60f19c5fd0f5f1f72"
-  integrity sha512-RRbe/abnREVyFIq5xlRXN++a1aNttGrgm4O6m7yzODFv4bo8R3+0KN8pukoIjDUg3siY44IqS0RFdhklhY6jpw==
+hxui@^0.3.7:
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/hxui/-/hxui-0.3.7.tgz#b84252b25740d74fcfaa06ee1c1a25b38d516936"
+  integrity sha512-RNwLmRDrLZ3AHWI5PD9hQNCbKTr57e+5CRqYSMumAbpUwLM2dziooM9sIsnp38aAdGZcY6SNjqL8LAi7w9KgOw==
   dependencies:
     core-js "^2.6.5"
     vue "^2.6.10"
@@ -6727,9 +6727,9 @@ path-key@^2.0.0, path-key@^2.0.1:
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
 path-parse@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.npm.taobao.org/path-parse/download/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
-  integrity sha1-1i27VnlAXXLEc37FhgDp3c8G0kw=
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
+  integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
 path-to-regexp@0.1.7:
   version "0.1.7"
@@ -7583,11 +7583,6 @@ regexpu-core@^4.5.4:
     regjsparser "^0.6.0"
     unicode-match-property-ecmascript "^1.0.4"
     unicode-match-property-value-ecmascript "^1.1.0"
-
-register-service-worker@^1.6.2:
-  version "1.6.2"
-  resolved "https://registry.npm.taobao.org/register-service-worker/download/register-service-worker-1.6.2.tgz#9297e54c205c371c6e49bfa88f6997e8dd315f4c"
-  integrity sha1-kpflTCBcNxxuSb+oj2mX6N0xX0w=
 
 regjsgen@^0.2.0:
   version "0.2.0"
