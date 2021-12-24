@@ -4729,10 +4729,10 @@ humanize-ms@^1.2.0, humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-hxui@^0.3.1:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/hxui/-/hxui-0.3.3.tgz#c66a14c6c2836d5ca263b3b60f19c5fd0f5f1f72"
-  integrity sha512-RRbe/abnREVyFIq5xlRXN++a1aNttGrgm4O6m7yzODFv4bo8R3+0KN8pukoIjDUg3siY44IqS0RFdhklhY6jpw==
+hxui@^0.3.7:
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/hxui/-/hxui-0.3.7.tgz#b84252b25740d74fcfaa06ee1c1a25b38d516936"
+  integrity sha512-RNwLmRDrLZ3AHWI5PD9hQNCbKTr57e+5CRqYSMumAbpUwLM2dziooM9sIsnp38aAdGZcY6SNjqL8LAi7w9KgOw==
   dependencies:
     core-js "^2.6.5"
     vue "^2.6.10"
@@ -7584,11 +7584,6 @@ regexpu-core@^4.5.4:
     unicode-match-property-ecmascript "^1.0.4"
     unicode-match-property-value-ecmascript "^1.1.0"
 
-register-service-worker@^1.6.2:
-  version "1.6.2"
-  resolved "https://registry.npm.taobao.org/register-service-worker/download/register-service-worker-1.6.2.tgz#9297e54c205c371c6e49bfa88f6997e8dd315f4c"
-  integrity sha1-kpflTCBcNxxuSb+oj2mX6N0xX0w=
-
 regjsgen@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npm.taobao.org/regjsgen/download/regjsgen-0.2.0.tgz#6c016adeac554f75823fe37ac05b92d5a4edb1f7"
@@ -9018,9 +9013,9 @@ url-loader@^1.1.2:
     schema-utils "^1.0.0"
 
 url-parse@^1.4.3:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.5.1.tgz#d5fa9890af8a5e1f274a2c98376510f6425f6e3b"
-  integrity sha512-HOfCOUJt7iSYzEx/UqgtwKRMC6EU91NFhsCHMv9oM03VJcVo2Qrp8T8kI9D7amFf1cu+/3CEhgb3rF9zL7k85Q==
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.5.3.tgz#71c1303d38fb6639ade183c2992c8cc0686df862"
+  integrity sha512-IIORyIQD9rvj0A4CLWsHkBBJuNqWpFQe224b6j9t/ABmquIS0qDU2pY6kl6AuOrL5OkCXHMCFNe1jBcuAggjvQ==
   dependencies:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
