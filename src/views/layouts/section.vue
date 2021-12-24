@@ -2,7 +2,7 @@
   <article class="pad-article">
     <header class="title">域 HxSection</header>
     <span class="desc">
-      域组件是一种划分区域的布局，一般适用于在表单内容多的页面中，可以明显区分不同模块内容，
+      域布局是一种划分区域的布局，一般适用于在表单内容多的页面中，可以明显区分不同模块内容，
       搭配不同的 <strong>插槽</strong> 以及 <em>hx-row</em> 行布局，可以很快生成大方美观的页面布局。  
     </span>
     <!-- 域标题 -->
@@ -28,7 +28,7 @@
         </div>
         <div class="code">
           <span class="tips">
-            hx-section域组件已默认在 <strong>main.js</strong> 中全局引入，所以在业务页面组件中无需重复引入。
+            hx-section域布局已默认在 <strong>main.js</strong> 中全局引入，所以在业务页面组件中无需重复引入。
           </span>
           <pre class="detail" v-highlightjs="firstText" >
             <code class="xml">
@@ -110,7 +110,7 @@
     <div class="section">
       <span class="title">插槽</span>
       <span class="desc">
-        域组件提供了一个默认的内容插槽以及两个可自定义的插槽（<strong>left</strong> 插槽和<strong>right</strong> 插槽）<br /><br />
+        域布局提供了一个默认的内容插槽以及两个可自定义的插槽（<strong>left</strong> 插槽和<strong>right</strong> 插槽）<br /><br />
         <strong>left</strong>插槽位置在紧随标题后的位置，而<strong>right</strong>在标题行最右侧的位置。
         <strong>值得注意的是，left 和 right 插槽必须在 <em>title</em> 属性不为空的情况下才可以使用。</strong>
       </span>
@@ -144,36 +144,15 @@
       </div>
     </div>
     <!-- 表格属性 -->
-    <div class="section">
-      <span class="title">属性表格</span>
-      <div class="hx-table">
-        <table>
-          <thead>
-            <tr>
-              <td class="sm">参数</td>
-              <td class="bg">说明</td>
-              <td class="sm">类型</td>
-              <td class="bg">可选值</td>
-              <td class="md">默认值</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, idx) in props" :key="idx">
-              <td v-text="item.name"></td>
-              <td v-text="item.desc"></td>
-              <td v-text="item.type"></td>
-              <td v-text="item.option"></td>
-              <td v-text="item.default"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <props-table :content="props"></props-table>
   </article>
 </template>
 <script>
+import PropsTable from './../cpts/PropsTable'
 export default {
-  components: {},
+  components: {
+    PropsTable
+  },
   data () {
     return {
       firstText: `<hx-section title="各种糖价格">

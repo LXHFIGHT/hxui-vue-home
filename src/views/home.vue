@@ -9,6 +9,17 @@
       <br />
       <br />
       <span class="color-gray">We are willing to take any kind of suggestions</span><br />
+      <div class="pad-buttons">
+        <hx-button @click="toLink('https://github.com/lxhfight/hxui')" size="bg" blank round color="#242A2E">
+          <strong>Github</strong>  
+        </hx-button>
+        <hx-button @click="toLink('https://npmjs.org/hxui')" size="bg" blank round color="#F9640A">
+          <strong>npm</strong>  
+        </hx-button>
+        <hx-button @click="toMail" size="bg" blank round color="#F44335">
+          <strong>Email</strong>
+        </hx-button>
+      </div>
     </div>
     <footer class="footer">
       <a href="mailto: lxhfight1@gmail.com" class="color-gray">lxhfight1@gmail.com</a> |
@@ -17,8 +28,12 @@
   </div>
 </template>
 <script>
+import { HxButton } from '@/hxui'
 import Typed from 'typed.js'
 export default {
+  components: {
+    HxButton
+  },
   data () {
     return {
       className: '.text-main',
@@ -37,12 +52,18 @@ export default {
   },
   methods: {
     $_init () {
-      let typed = new Typed(this.className, this.options)
-      console.log('Initiated ', typed)
+      // eslint-disable-next-line
+      const typed = new Typed(this.className, this.options)
+    },
+    toLink (link) {
+      window.open(link, '_blank')
+    },
+    toMail () {
+      window.open('mailto:lxhfight51@qq.com', '_blank')
     }
   },
   mounted () {
-    this.$_init()
+    this.$_init() 
   }
 }
 </script>
@@ -70,6 +91,15 @@ export default {
         &:hover {
           color: $color-blue!important;
         }
+      }
+    }
+    .pad-buttons {
+      margin-top: $pm-lg;
+      .hx-button {
+        min-width: 100px;
+      }
+      .hx-button + .hx-button {
+        margin-left: $pm-bg;
       }
     }
   }

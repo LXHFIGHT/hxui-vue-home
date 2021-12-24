@@ -3,8 +3,6 @@
  * @LastEditors  : liuxuhao
  */
 var path = require('path')
-const OSSPublishPlugin = require('./publish/OSSPublishPlugin')
-const env = process.env.NODE_ENV
 
 function resolve (dir) {
   return path.join(__dirname, dir)
@@ -60,9 +58,6 @@ module.exports = {
       'axios': 'axios',
       'vue-router': 'VueRouter',
       'vuex': 'Vuex'
-    }
-    if (env === 'production') {
-      config.plugins.push(new OSSPublishPlugin({}))
     }
   }
 }

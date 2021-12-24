@@ -9,22 +9,27 @@
   max-width: 900px;
   margin: 0 auto;
   position: relative;
-  &.developing::before {
+  &.developing::before, &.planing::before {
     position: absolute;
     right: $pm-md;
     top: $pm-md;
-    content: "正在完善中";
+    content: "文档完善中";
     color: $color-white;
     background-color: $color-blue;
     padding: $pm-sm $pm-md;
     border-radius: $pm-sm/2;
     animation: breatheOpacity 2s infinite;
   }
+  &.planing::before {
+    content: "正在开发中";
+    background-color: $color-orange;
+  }
   > .title {
     font-size: $font-bg * 2;
-    line-height: 1;
-    margin: $pm-bg 0 $pm-sm;
+    margin: $pm-md 0;
     font-weight: 500;
+    display: flex;
+    align-items: center;
   }
   .desc {
     color: $color-dark;
@@ -110,6 +115,18 @@
   }
   .hx-button + .hx-button {
     margin-left: 8px;
+  }
+}
+
+.hx-table {
+  tr.no-demo {
+    background-color: rgba($color-orange, .1);
+  }
+  tr.planning {
+    background-color: rgba($color-red, .15);
+  }
+  .hx-tag {
+    margin-left: $pm-xs;
   }
 }
 

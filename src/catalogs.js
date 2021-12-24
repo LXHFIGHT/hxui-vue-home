@@ -12,7 +12,11 @@ let menus = [
   },
   {
     name: 'Layout',
-    state: '/layouts/hx-row'
+    state: '/layouts/hx-row',
+    children: [
+      { name: '行', state: '/layouts/hx-row' },
+      { name: '域', state: '/layouts/hx-section' }
+    ]
   },
   {
     name: 'Components',
@@ -33,7 +37,9 @@ export const componentsCatalog = [
       '基本',
       { key: 'Button 按钮', value: 'hx-button' },
       { key: 'Dot 气泡', value: 'hx-dot' },
-      // { key: 'Image 图片', value: 'hx-image' },
+      { key: 'Tag 标签', value: 'hx-tag' },
+      { key: 'Loading 加载', value: 'hx-loading' },
+      { key: 'Image 图片', value: 'hx-image' },
       '表单',
       { key: '输入框', value: 'hx-input' },
       { key: '联想输入框', value: 'hx-auto-complete' },
@@ -42,7 +48,11 @@ export const componentsCatalog = [
       { key: '单选框', value: 'hx-radio-group' },
       { key: '开关', value: 'hx-switch' },
       { key: '标签框', value: 'hx-tag-editor' },
-      { key: '上传文件组件', value: 'hx-smart-uploader' }
+      { key: '上传文件', value: 'hx-smart-uploader' },
+      '综合',
+      { key: '日历', value: 'hx-calendar' },
+      { key: '地图', value: 'hx-map' },
+      { key: '选址器', value: 'hx-address-selector' }
     ]
   }
 ]
@@ -52,8 +62,8 @@ export const layoutsCatalog = [
     key: '基本布局',
     disabled: true,
     children: [
-      { key: '行组件', value: 'hx-row' },
-      { key: '域组件', value: 'hx-section' }
+      { key: '行布局', value: 'hx-row' },
+      { key: '域布局', value: 'hx-section' }
     ]
   }
 ]

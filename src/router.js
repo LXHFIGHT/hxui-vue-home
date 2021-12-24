@@ -16,7 +16,8 @@ export default new Router({
         {
           path: '/home',
           name: 'home',
-          component: resolve => require(['@/views/home.vue'], resolve)
+          component: resolve => require(['@/views/home.vue'], resolve),
+          meta: { keepAlive: true }
         },
         // 组件库
         {
@@ -28,17 +29,27 @@ export default new Router({
             {
               path: 'hx-image',
               name: 'hx-image',
-              component: resolve => require(['@/views/components/image.vue'], resolve)
+              component: resolve => require(['@/views/components/basic/image.vue'], resolve)
+            },
+            {
+              path: 'hx-loading',
+              name: 'hx-loading',
+              component: resolve => require(['@/views/components/basic/loading.vue'], resolve)
             },
             {
               path: 'hx-button',
               name: 'hx-button',
-              component: resolve => require(['@/views/components/button.vue'], resolve)
+              component: resolve => require(['@/views/components/basic/button.vue'], resolve)
             },
             {
               path: 'hx-dot',
               name: 'hx-dot',
-              component: resolve => require(['@/views/components/dot.vue'], resolve)
+              component: resolve => require(['@/views/components/basic/dot.vue'], resolve)
+            },
+            {
+              path: 'hx-tag',
+              name: 'hx-tag',
+              component: resolve => require(['@/views/components/basic/tag.vue'], resolve)
             },
             { // 复选框
               path: 'hx-checkbox-group',
@@ -79,6 +90,21 @@ export default new Router({
               path: 'hx-smart-uploader',
               name: 'hx-smart-uploader',
               component: resolve => require(['@/views/components/smartUploader.vue'], resolve)
+            },
+            {
+              path: 'hx-calendar',
+              name: 'hx-calendar',
+              component: resolve => require(['@/views/components/calendar.vue'], resolve)
+            },
+            {
+              path: 'hx-map',
+              name: 'hx-map',
+              component: resolve => require(['@/views/components/map.vue'], resolve)
+            },
+            {
+              path: 'hx-address-selector',
+              name: 'hx-address-selector',
+              component: resolve => require(['@/views/components/addressSelector.vue'], resolve)
             },
             {
               path: 'demo',

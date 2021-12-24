@@ -4,12 +4,12 @@
 -->
 <template>
   <article class="pad-article">
-    <header class="title">组件名 Demo For Copy</header>
+    <header class="title">日历 Calendar</header>
     <span class="desc">
-      整体描述写于此 （<em>关键词</em>） 
+      <em>HxCalendar</em> 是HXUI提供的一个轻量级且高可拓展的日历控件，可以填写用户新（<em>关键词</em>） 
     </span>
     <div class="section">
-      <span class="title">属性名</span>
+      <span class="title">常规</span>
       <span class="desc">属性描述[<strong>重点</strong>]</span>
       <div class="pad-preview">
         <div class="demo">
@@ -36,8 +36,8 @@
   </article>
 </template>
 <script>
-import EventsTable from '@/views/cpts/EventsTable'
-import PropsTable from '@/views/cpts/PropsTable'
+import EventsTable from './../cpts/EventsTable'
+import PropsTable from './../cpts/PropsTable'
 export default {
   components: {
     EventsTable,
@@ -60,5 +60,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "@/views/global.scss";
+@import "./../global.scss";
 </style>

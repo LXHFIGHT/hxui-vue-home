@@ -1,8 +1,8 @@
 <template>
   <article class="pad-article">
-    <header class="title">行组件 HxRow</header>
+    <header class="title">行布局 HxRow</header>
     <span class="desc">
-      HxRow是一个可以拼入其他表单元素并为之添加标签，且具有响应式效果的行组件，同时HxRow带有多个位置的插槽</span>
+      HxRow是一个可以拼入其他表单元素并为之添加标签，且具有响应式效果的行布局，同时HxRow带有多个位置的插槽</span>
     <!-- 文本输入框 -->
     <div class="section">
       <span class="title">行标签的相关属性</span>
@@ -115,7 +115,7 @@
     <div class="section">
       <span class="title">插槽</span>
       <span class="desc">
-        行组件提供了一个默认的内容插槽以及三个可自定义的插槽（<strong>label</strong> 插槽、<strong>right</strong> 插槽和 <strong>tips</strong> 插槽）<br /><br />
+        行布局提供了一个默认的内容插槽以及三个可自定义的插槽（<strong>label</strong> 插槽、<strong>right</strong> 插槽和 <strong>tips</strong> 插槽）<br /><br />
         <strong>首先</strong>先介绍一下 <strong>label</strong> 插槽： 内容置于标签区域中， 一般用于放置字数较少提示信息，如果上传图片规格<br />
       </span>
       <div class="pad-preview">

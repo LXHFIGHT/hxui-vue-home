@@ -35,9 +35,6 @@ export default {
     onSelect: { // 当选择选项时
       type: Function
     },
-    color: { // 文本的自定义类名
-      type: String 
-    },
     type: { // radio按钮组织形式
       type: String,
       default: 'default',

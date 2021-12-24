@@ -14,13 +14,15 @@
             <td class="left bg">说明</td>
             <td class="sm">类型</td>
             <td class="bg">可选值</td>
-            <td class="md">默认值</td>
+            <td class="sm">默认值</td>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, idx) in content" :key="idx">
+          <tr :class="item.status" v-for="(item, idx) in content" :key="idx">
             <td style="white-space: pre-line" class="left">
               <strong style="font-size: 14px;" v-text="item.name"></strong>
+              <hx-tag size="sm" v-if="item.status === 'no-demo'" level="orange" >暂无示例</hx-tag>
+              <hx-tag size="sm" v-if="item.status === 'planning'" level="red">开发计划中</hx-tag>
             </td>
             <td style="white-space: pre-line" class="left" v-text="item.desc"></td>
             <td style="white-space: pre-line" v-text="item.type"></td>
@@ -34,9 +36,13 @@
 </template>
 
 <script>
+import { HxTag } from '@/hxui'
 export default {
   data () {
     return {}
+  },
+  components: {
+    HxTag
   },
   props: {
     content: {
