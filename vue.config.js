@@ -1,9 +1,10 @@
 /*
  * @Author       : liuxuhao
- * @LastEditors  : liuxuhao
+ * @LastEditors  : lxhfight lxhfight1@gmail.com
  */
 var path = require('path')
-const OSSPublishPlugin = require('./publish/OSSPublishPlugin')
+const OSSPublishPlugin = require('oss-publish-webpack-plugin')
+const publishConfig = require('./publish/config')
 const env = process.env.NODE_ENV
 
 function resolve (dir) {
@@ -62,7 +63,11 @@ module.exports = {
       'vuex': 'Vuex'
     }
     if (env === 'production') {
-      config.plugins.push(new OSSPublishPlugin({}))
+      config.plugins.push(new OSSPublishPlugin({
+        ossConfig: publishConfig.oss,
+        autoPublish: true,
+        clearPrefixList: ['css/', 'img/', 'js/', 'precache-manifest.']
+      }))
     }
   }
 }

@@ -42,6 +42,7 @@
     "chalk": "^4.1.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "oss-publish-webpack-plugin": "^0.3.0",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
     "vue-svg-loader": "^0.12.0",
